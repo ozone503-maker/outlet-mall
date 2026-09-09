@@ -1,0 +1,64 @@
+name: Unpack Outlet Mall
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'outlet-mall-code.zip'
+      - 'outlet-mall-assets.zip'
+      - '.github/workflows/unpack-mall.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  unpack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Unpack mall
+        shell: bash
+        run: |
+          set -e
+          rm -rf .unpacked
+          mkdir .unpacked
+
+          unzip -oq outlet-mall-code.zip -d .unpacked
+          unzip -oq outlet-mall-assets.zip -d .unpacked
+
+          INDEX_PATH="$(find .unpacked -type f -name index.html | head -n 1)"
+          if [ -z "$INDEX_PATH" ]; then
+            echo "No index.html found after unzipping"
+            exit 1
+          fi
+
+          SITE_DIR="$(dirname "$INDEX_PATH")"
+          echo "Website root: $SITE_DIR"
+
+          rsync -a "$SITE_DIR"/ ./ \
+            --exclude '.git/' \
+            --exclude '.github/' \
+            --exclude 'outlet-mall-code.zip' \
+            --exclude 'outlet-mall-assets.zip'
+
+          # If the assets archive unpacked into a sibling assets folder, merge it too.
+          for ASSET_DIR in $(find .unpacked -type d -name assets); do
+            mkdir -p assets
+            rsync -a "$ASSET_DIR"/ assets/
+          done
+
+          rm -rf .unpacked
+
+      - name: Commit extracted site
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Nothing to commit"
+          else
+            git commit -m "Unpack outlet mall for Vercel"
+            git push
+          fi
