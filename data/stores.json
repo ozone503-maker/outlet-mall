@@ -1,0 +1,21 @@
+[
+  {"id":"arcade","name":"The Arcade","path":"/units/arcade/","image":"/assets/arcade.jpg","description":"Nine machines, a claw full of skin cream, and one cabinet you can hear.","district":"entertainment","status":"open"},
+  {"id":"fruity-puppy-skincare","name":"Fruity Puppy Skincare","path":"/units/fruity-puppy-skincare/","image":"/assets/fruity-puppy-skincare.png","description":"Handmade biological skin cream, cold-extracted and refrigerated.","district":"main","status":"open"},
+  {"id":"fish-store","name":"Wet Pets","path":"/units/fish-store/","image":"/assets/fish-store.jpg","description":"Freshwater, saltwater, and a back tunnel that stays dark all day.","district":"retail","status":"open"},
+  {"id":"burger-shack","name":"Burger Shack","path":"/units/burger-shack/","image":"/assets/burger-shack.jpg","description":"Food court. One guy behind the counter is trying to leave.","district":"food","status":"open"},
+  {"id":"fitting-room","name":"The Rack","path":"/units/fitting-room/","image":"/assets/fitting-room.png","description":"Four racks, no order to any of it. Six fitting rooms, five that latch.","district":"retail","status":"open"},
+  {"id":"restaurant","name":"Italian Restaurant","path":"/units/restaurant/","image":"/assets/restaurant.jpg","description":"Sconces, wine racks, and a back table set every night.","district":"food","status":"open"},
+  {"id":"comic-shop","name":"Bad Habitats + Good Habits","path":"/units/comic-shop/","image":"/assets/comic-shop.jpg","description":"Comics. We don't sell them, we point you at the free ones.","district":"entertainment","status":"open"},
+  {"id":"fruity-puppy-merch","name":"Fruity Puppy Merch","path":"/units/fruity-puppy-merch/","image":"/assets/fruity-puppy-merch.png","description":"Tees, hats, and everything else.","district":"main","status":"open"},
+  {"id":"brobots-retail","name":"BroBots Space Factory","path":"/units/brobots-retail/","image":"/assets/brobots-retail.png","description":"Imagination builds better humans. Robots for a brighter tomorrow.","district":"main","status":"open"},
+  {"id":"brobots-multimedia","name":"BroBots Multimedia Studios","path":"/units/brobots-multimedia/","image":"/assets/brobots-multimedia.png","description":"Content creation, production, and design.","district":"entertainment","status":"open"},
+  {"id":"thorny-toad","name":"Thorny Toad Toner Warehouse","path":"/units/thorny-toad/","image":"/assets/thorny-toad.png","description":"Botanical tonics and desert extracts.","district":"main","status":"open"},
+  {"id":"lava-guava","name":"LavaGuava Bomb Balm","path":"/units/lava-guava/","image":"/assets/lava-guava.png","description":"Lava meets guava. Heat meets fruit.","district":"main","status":"open"},
+  {"id":"fpx-boutique","name":"FPX Boutique","path":"/units/fpx-boutique/","image":"/assets/fpx-boutique.png","description":"Fruity Puppy Extended armor and exclusive gear.","district":"main","status":"open"},
+  {"id":"seven-eleven","name":"7-Eleven","path":"/units/seven-eleven/","image":"/assets/seven-eleven.png","description":"Open 24/7. Convenience meets Fruity Puppy.","district":"retail","status":"open"},
+  {"id":"dairy-queen","name":"Dairy Queen","path":"/units/dairy-queen/","image":"/assets/dairy-queen.png","description":"Frozen treats meet Fruity Puppy flavors.","district":"food","status":"open"},
+  {"id":"museum","name":"Museum","path":"/units/museum/","image":"/assets/museum.png","description":"Natural history, dinosaurs, and discovery.","district":"entertainment","status":"open"},
+  {"id":"theater","name":"Theater","path":"/units/theater/","image":"/assets/theater.png","description":"Movies, snacks, and Fruity Puppy now playing.","district":"entertainment","status":"open"},
+  {"id":"shoe-store","name":"Shoe Station","path":"/units/shoe-store/","image":"/assets/shoe-store.png","description":"Good shoes, brighter days. Comfort, style, every step.","district":"retail","status":"open"},
+  {"id":"meadows","name":"Kudoken Meadows","path":"/meadows/","image":"/assets/meadows.jpg","description":"Behind the mall. Open grounds, mostly unfinished.","district":"meadows","status":"open"}
+]
