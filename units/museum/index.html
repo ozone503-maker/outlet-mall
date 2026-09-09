@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Outlet Mall Natural History Museum</title>
+<link rel="stylesheet" href="/outletmall/mall.css">
+<style>
+body{background:#0B0A08;color:#EFEAE0;padding-bottom:80px}
+.museum-header{padding:3rem 2rem;text-align:center;border-bottom:1px solid #241F18}
+.museum-header h1{font-size:2.5rem;font-weight:600;margin-bottom:.5rem}
+.museum-header p{color:#8C826C;font-size:1rem}
+.museum-content{max-width:1000px;margin:0 auto;padding:2rem}
+.exhibit{margin:2rem 0;padding:2rem;background:#16130E;border:1px solid #241F18}
+.exhibit h2{font-size:1.5rem;margin-bottom:1rem;color:#D4A574}
+.exhibit p{line-height:1.6;color:#9A9184;margin-bottom:1rem}
+.cta{display:inline-block;padding:.75rem 1.5rem;background:#241F18;color:#EFEAE0;text-decoration:none;border-radius:2px;transition:background 180ms}
+.cta:hover{background:#2A251D}
+</style>
+</head>
+<body>
+  <div class="museum-header">
+    <p style="font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:#8C826C">Unit · Fruity Puppy Outlet Mall</p>
+    <h1>Natural History Museum</h1>
+    <p>Discovery connects us</p>
+  </div>
+  
+  <div class="museum-content">
+    <div class="exhibit">
+      <h2>Giants of a Bigger World</h2>
+      <p>Explore the prehistoric world through our extensive dinosaur fossil collection. Walk among the skeletons of creatures that ruled the earth millions of years ago.</p>
+      <a href="#" class="cta">Learn More</a>
+    </div>
+    
+    <div class="exhibit">
+      <h2>Wildlife Through Time</h2>
+      <p>From ancient species to modern ecosystems, discover how life has evolved and adapted across our planet.</p>
+      <a href="#" class="cta">Explore</a>
+    </div>
+    
+    <div class="exhibit">
+      <h2>Fossil Discoveries</h2>
+      <p>Our collection features carefully preserved fossils from every continent, each telling the story of life millions of years ago.</p>
+      <a href="#" class="cta">View Collection</a>
+    </div>
+  </div>
+
+<div class="unit-nav">
+  <a class="unit-nav__back" href="/outletmall/" aria-label="Back to hallway">← Back to hallway</a>
+  <div class="unit-nav__doors">
+    <a class="unit-nav__prev" href="#" id="nav-prev" aria-label="Previous store">&larr; Previous</a>
+    <a class="unit-nav__next" href="#" id="nav-next" aria-label="Next store">Next &rarr;</a>
+  </div>
+</div>
+
+<script src="/outletmall/hallway.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const prev = document.getElementById('nav-prev');
+  const next = document.getElementById('nav-next');
+  const unitId = 'museum';
+  const prevUnit = window.mallNav.getPrev(unitId);
+  const nextUnit = window.mallNav.getNext(unitId);
+  
+  if (prevUnit) prev.href = prevUnit.path;
+  else prev.style.display = 'none';
+  
+  if (nextUnit) next.href = nextUnit.path;
+  else next.style.display = 'none';
+});
+</script>
+</body>
+</html>

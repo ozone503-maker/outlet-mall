@@ -1,7 +1,5 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
-  "framework": null,
-  "buildCommand": "bash prepare-vercel.sh",
-  "outputDirectory": "dist",
-  "cleanUrls": true
+  "buildCommand": "echo 'Static site, no build needed'",
+  "outputDirectory": ".",
+  "devCommand": "python3 -m http.server 3000"
 }

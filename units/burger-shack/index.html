@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Burger Shack</title>
+<link rel="stylesheet" href="/outletmall/mall.css">
+<link rel="stylesheet" href="/outletmall/units/burger-shack/burger-shack.css">
+</head>
+<body class="shack">
+
+<section class="panel" id="approach">
+  <div class="panel__band">
+    <p class="eyebrow">Unit 06 &middot; Fruity Puppy Outlet Mall</p>
+    <h1 class="title">Burger Shack</h1>
+    <p class="sub">Food court, next to the pet store. Open till nine. One guy
+      behind the counter is trying to leave.</p>
+    <p class="hot">Now hiring &middot; Ask inside</p>
+  </div>
+</section>
+
+<div class="wrap">
+
+  <section class="block">
+    <div class="label"><h2>Jimmy</h2><span>Shift lead, most days</span></div>
+    <div class="jimmy">
+      <div id="jimmy-mov"></div>
+      <div class="jimmy__say">
+        <b>In his words</b>
+        <p>I've worked this line since I was seventeen. I know the fryer timer by
+           sound. I can tell you what day it is by what's in the walk-in.</p>
+        <p>Then a pink dog came through and handed me a jar and said try it on
+           your hands, they're wrecked. She was right. They were.</p>
+        <p><em>I'm not trying to be a burger guy forever.</em></p>
+      </div>
+    </div>
+
+    <div class="goal">
+      <div class="goal__top">
+        <b>Jimmy's number</b>
+        <span id="goal-note"></span>
+      </div>
+      <div class="goal__bar"><div class="goal__fill" id="goal-fill"></div></div>
+      <div class="goal__nums">
+        <strong id="goal-now">0</strong>
+        <small id="goal-of"></small>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="label"><h2>The pitch</h2><span>Short videos</span></div>
+    <div class="eps" id="eps"></div>
+  </section>
+
+</div>
+
+<section class="block full">
+  <div class="partner">
+    <h3>He's not the only one who can do this.</h3>
+    <p>The partner program is how Fruity Puppy gets sold by people who actually
+       use it. Jimmy started with one jar and a shift he wanted out of. Three
+       guys at the table outside are reading the flyer right now.</p>
+    <a href="https://fruitypuppy.com" target="_blank" rel="noopener">Partner program</a>
+    <small id="partner-note"></small>
+  </div>
+</section>
+
+<div class="wrap">
+
+  <section class="block">
+    <div class="label"><h2>Outside the counter</h2><span>Table by the rail</span></div>
+    <div class="split">
+      <div id="gang-mov"></div>
+      <div class="jimmy__say">
+        <b>Reading the flyer</b>
+        <p>They came for lunch. Jimmy left a stack of them on the condiment
+           station, which he is not supposed to do.</p>
+        <p>They have been at that table forty minutes.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="label"><h2>Still on the menu</h2><span>For now</span></div>
+    <div class="split">
+      <div class="menu" id="menu"></div>
+      <div id="softserve-mov"></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="label"><h2>Around the counter</h2><span></span></div>
+    <div class="pair" id="pair"></div>
+  </section>
+
+</div>
+
+<p class="fine">Burger Shack is not affiliated with Fruity Puppy. Jimmy is doing
+  this on his own time.</p>
+
+<div class="rotate" id="rotate">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <rect x="3" y="7" width="18" height="10" rx="2"/>
+    <path d="M8 3.5A9 9 0 0 1 20 6"/><path d="M17.5 3v3.5H21"/>
+  </svg>
+  Turn sideways
+  <button type="button" id="rotate-x" aria-label="Dismiss">&times;</button>
+</div>
+
+<div class="unit-nav">
+  <a class="unit-nav__back" href="/outletmall/" aria-label="Back to hallway">← Back to hallway</a>
+  <div class="unit-nav__doors">
+    <a class="unit-nav__prev" href="#" id="nav-prev" aria-label="Previous store">&larr; Previous</a>
+    <a class="unit-nav__next" href="#" id="nav-next" aria-label="Next store">Next &rarr;</a>
+  </div>
+</div>
+
+<script src="/outletmall/hallway.js" defer></script>
+
+
+<script src="/outletmall/mall.js" defer></script>
+<script src="/outletmall/mall-tickets.js" defer></script>
+<script src="/outletmall/units/burger-shack/burger-shack.js" defer></script>
+<script src="/outletmall/video-governor.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const prev = document.getElementById('nav-prev');
+  const next = document.getElementById('nav-next');
+  const unitId = 'burger-shack';
+  const prevUnit = window.mallNav.getPrev(unitId);
+  const nextUnit = window.mallNav.getNext(unitId);
+  
+  if (prevUnit) prev.href = prevUnit.path;
+  else prev.style.display = 'none';
+  
+  if (nextUnit) next.href = nextUnit.path;
+  else next.style.display = 'none';
+});
+</script>
+</body>
+</html>

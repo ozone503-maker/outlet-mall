@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thorny Toad Toner Warehouse</title>
+    <link rel="stylesheet" href="/outletmall/mall.css">
+    <style>
+body {
+    background: #0f0d0a;
+    color: #efeae0;
+    font-family: system-ui, -apple-system, sans-serif;
+    padding-bottom: 80px;
+}
+
+.warehouse {
+    min-height: 100vh;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.warehouse-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    border: 2px solid #d4a574;
+    background: rgba(212, 165, 116, 0.05);
+}
+
+.warehouse-header h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.02em;
+    color: #d4a574;
+}
+
+.warehouse-header p {
+    color: #8c826c;
+    font-size: 1rem;
+}
+
+.warehouse-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.warehouse-section {
+    background: #16130e;
+    border: 1px solid #241f18;
+    padding: 2rem;
+}
+
+.warehouse-section h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #d4a574;
+}
+
+.warehouse-section p {
+    line-height: 1.6;
+    color: #9a9184;
+    margin-bottom: 1rem;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.product-card {
+    background: #0f0d0a;
+    border: 1px solid #241f18;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.product-card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.product-card p {
+    font-size: 0.9rem;
+    color: #8c826c;
+}
+
+.cta-btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: #241f18;
+    color: #efeae0;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 2px;
+    transition: all 180ms;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 1rem;
+}
+
+.cta-btn:hover {
+    background: #2a251d;
+}
+    </style>
+</head>
+<body>
+    <div class="warehouse">
+        <div class="warehouse-header">
+            <h1>Thorny Toad Face Juice</h1>
+            <p>Botanical toner warehouse</p>
+        </div>
+
+        <div class="warehouse-content">
+            <div class="warehouse-section">
+                <h2>Toners & Tonics</h2>
+                <p>Desert-sourced botanical extracts and face tonics. Prickly pear, cactus flower, and more from the Thorny Toad collection.</p>
+                
+                <div class="product-grid">
+                    <div class="product-card">
+                        <h3>Desert Squirt</h3>
+                        <p>Prickly pear toner</p>
+                    </div>
+                    <div class="product-card">
+                        <h3>Cactus Bloom</h3>
+                        <p>Flower extract</p>
+                    </div>
+                    <div class="product-card">
+                        <h3>Arid Refresh</h3>
+                        <p>Mineral tonic</p>
+                    </div>
+                    <div class="product-card">
+                        <h3>Spice Serum</h3>
+                        <p>Botanical blend</p>
+                    </div>
+                </div>
+                
+                <a href="#" class="cta-btn">Shop Toners</a>
+            </div>
+
+            <div class="warehouse-section">
+                <h2>Bulk Orders</h2>
+                <p>Wholesale and bulk purchasing available for retailers and professionals. Contact us for wholesale pricing.</p>
+                <a href="#" class="cta-btn">Wholesale Inquiries</a>
+            </div>
+        </div>
+    </div>
+
+<div class="unit-nav">
+  <a class="unit-nav__back" href="/outletmall/" aria-label="Back to hallway">← Back to hallway</a>
+  <div class="unit-nav__doors">
+    <a class="unit-nav__prev" href="#" id="nav-prev" aria-label="Previous store">&larr; Previous</a>
+    <a class="unit-nav__next" href="#" id="nav-next" aria-label="Next store">Next &rarr;</a>
+  </div>
+</div>
+
+<script src="/outletmall/hallway.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const prev = document.getElementById('nav-prev');
+  const next = document.getElementById('nav-next');
+  const unitId = 'thorny-toad';
+  const prevUnit = window.mallNav.getPrev(unitId);
+  const nextUnit = window.mallNav.getNext(unitId);
+  
+  if (prevUnit) prev.href = prevUnit.path;
+  else prev.style.display = 'none';
+  
+  if (nextUnit) next.href = nextUnit.path;
+  else next.style.display = 'none';
+});
+</script>
+</body>
+</html>

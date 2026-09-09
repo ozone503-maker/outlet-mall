@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Kudoken Meadows &middot; Fruity Puppy Outlet Mall</title>
+<link rel="stylesheet" href="/outletmall/mall.css">
+<link rel="stylesheet" href="/outletmall/meadows/meadows.css">
+</head>
+<body class="meadows">
+
+<section class="backdoor">
+  <div class="lamp"></div>
+  <p class="backdoor__eyebrow">Behind the Outlet Mall</p>
+  <p class="backdoor__line">Past the arcade, through the service door, across the
+    back lot. The lamp's been on out here a long time.</p>
+</section>
+
+<section class="gate">
+  <div class="gate__arch">
+    <div class="gate__small">You are entering</div>
+    <h1 class="gate__name">Kudoken Meadows</h1>
+  </div>
+  <p class="gate__note">Open grounds. Some of it is finished, most of it isn't.</p>
+</section>
+
+<div class="fence"></div>
+
+<section class="grounds">
+  <div class="plot">
+    <div class="purse">
+      <div><b id="purse-bal">0</b><small>Tickets on you</small></div>
+    </div>
+
+    <div class="sect"><h2>The grounds</h2><span></span></div>
+    <p class="sect__note">What's out here, and what's still being built.</p>
+    <div class="lots" id="lots"></div>
+
+    <p class="legacy">The Meadows were laid out in <em>2021</em> and left alone for
+      a while. Signage from that era is still standing. We're not taking it down.</p>
+  </div>
+</section>
+
+<div class="unit-nav">
+  <a class="unit-nav__back" href="/outletmall/" aria-label="Back to hallway">← Back to hallway</a>
+  <div class="unit-nav__doors">
+    <a class="unit-nav__prev" href="#" id="nav-prev" aria-label="Previous store">&larr; Previous</a>
+    <a class="unit-nav__next" href="#" id="nav-next" aria-label="Next store">Next &rarr;</a>
+  </div>
+</div>
+
+<script src="/outletmall/hallway.js" defer></script>
+<script src="/outletmall/mall.js" defer></script>
+<script src="/outletmall/mall-tickets.js" defer></script>
+<script src="/outletmall/meadows/meadows.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const prev = document.getElementById('nav-prev');
+  const next = document.getElementById('nav-next');
+  const unitId = 'meadows';
+  const prevUnit = window.mallNav.getPrev(unitId);
+  const nextUnit = window.mallNav.getNext(unitId);
+  
+  if (prevUnit) prev.href = prevUnit.path;
+  else prev.style.display = 'none';
+  
+  if (nextUnit) next.href = nextUnit.path;
+  else next.style.display = 'none';
+});
+</script>
+</body>
+</html>

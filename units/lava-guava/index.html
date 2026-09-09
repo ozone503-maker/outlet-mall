@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LavaGuava Bomb Balm Store</title>
+    <link rel="stylesheet" href="/outletmall/mall.css">
+    <style>
+body {
+    background: #0f0d0a;
+    color: #efeae0;
+    font-family: system-ui, -apple-system, sans-serif;
+    padding-bottom: 80px;
+}
+
+.balm-store {
+    min-height: 100vh;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.balm-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    border: 2px solid #c42a2a;
+    background: rgba(196, 42, 42, 0.05);
+}
+
+.balm-header h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.02em;
+    color: #f2c230;
+}
+
+.balm-header p {
+    color: #8c826c;
+    font-size: 1rem;
+}
+
+.balm-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.balm-section {
+    background: #16130e;
+    border: 1px solid #241f18;
+    padding: 2rem;
+}
+
+.balm-section h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #f2c230;
+}
+
+.balm-section p {
+    line-height: 1.6;
+    color: #9a9184;
+    margin-bottom: 1rem;
+}
+
+.flavor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.flavor-card {
+    background: #0f0d0a;
+    border: 1px solid #241f18;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.flavor-card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.flavor-card p {
+    font-size: 0.9rem;
+    color: #8c826c;
+}
+
+.cta-btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: #241f18;
+    color: #efeae0;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 2px;
+    transition: all 180ms;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 1rem;
+}
+
+.cta-btn:hover {
+    background: #2a251d;
+}
+    </style>
+</head>
+<body>
+    <div class="balm-store">
+        <div class="balm-header">
+            <h1>LavaGuava Bomb Balm</h1>
+            <p>Lava meets guava. Heat meets fruit.</p>
+        </div>
+
+        <div class="balm-content">
+            <div class="balm-section">
+                <h2>Lip Balm Collection</h2>
+                <p>Tropical guava blended with volcanic heat. Each balm packs flavor, moisture, and a burst of island energy.</p>
+                
+                <div class="flavor-grid">
+                    <div class="flavor-card">
+                        <h3>LavaGuava Original</h3>
+                        <p>Classic heat & fruit blend</p>
+                    </div>
+                    <div class="flavor-card">
+                        <h3>Guava Burst</h3>
+                        <p>Pure tropical flavor</p>
+                    </div>
+                    <div class="flavor-card">
+                        <h3>Spice Island</h3>
+                        <p>Guava with kick</p>
+                    </div>
+                    <div class="flavor-card">
+                        <h3>Cream Dream</h3>
+                        <p>Smoothed & creamy</p>
+                    </div>
+                </div>
+                
+                <a href="#" class="cta-btn">Shop Balms</a>
+            </div>
+
+            <div class="balm-section">
+                <h2>Why LavaGuava?</h2>
+                <p>We started with an idea: what if lava could taste like fruit? Now we're here, stocked up, and ready to make your lips sing.</p>
+                <a href="#" class="cta-btn">Our Story</a>
+            </div>
+        </div>
+    </div>
+
+<div class="unit-nav">
+  <a class="unit-nav__back" href="/outletmall/" aria-label="Back to hallway">← Back to hallway</a>
+  <div class="unit-nav__doors">
+    <a class="unit-nav__prev" href="#" id="nav-prev" aria-label="Previous store">&larr; Previous</a>
+    <a class="unit-nav__next" href="#" id="nav-next" aria-label="Next store">Next &rarr;</a>
+  </div>
+</div>
+
+<script src="/outletmall/hallway.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const prev = document.getElementById('nav-prev');
+  const next = document.getElementById('nav-next');
+  const unitId = 'lava-guava';
+  const prevUnit = window.mallNav.getPrev(unitId);
+  const nextUnit = window.mallNav.getNext(unitId);
+  
+  if (prevUnit) prev.href = prevUnit.path;
+  else prev.style.display = 'none';
+  
+  if (nextUnit) next.href = nextUnit.path;
+  else next.style.display = 'none';
+});
+</script>
+</body>
+</html>

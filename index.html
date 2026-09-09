@@ -1,181 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>7-Eleven</title>
-    <link rel="stylesheet" href="/outletmall/mall.css">
-    <style>
-body {
-    background: #0f0d0a;
-    color: #efeae0;
-    font-family: system-ui, -apple-system, sans-serif;
-    padding-bottom: 80px;
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Fruity Puppy Outlet Mall</title>
+<link rel="stylesheet" href="/outletmall/mall.css">
+<style>
+:root{--pad:clamp(18px,4vw,64px)}
+body{margin:0;background:#0B0A08;color:#EFEAE0;
+  font-family:system-ui,-apple-system,sans-serif;line-height:1.5}
+.hallway{max-width:1400px;margin:0 auto;padding:clamp(48px,12vh,120px) var(--pad) 90px}
+.hallway__title{margin:0 0 clamp(48px,10vh,100px);text-align:center}
+.hallway__title p{margin:0;font-size:.6rem;letter-spacing:.32em;text-transform:uppercase;color:#8C826C}
+.hallway__title h1{margin:.6em 0 0;font-weight:600;letter-spacing:-.025em;font-size:clamp(2rem,7vmin,4.4rem);line-height:1}
+.storefronts{display:flex;flex-direction:column;gap:clamp(24px,5vh,60px);perspective:1000px}
+.storefront{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,48px);align-items:center;padding:clamp(24px,5vw,48px);background:#0F0D0A;border:1px solid #241F18;border-radius:4px;transition:background 180ms cubic-bezier(.22,1,.36,1);text-decoration:none;color:inherit}
+.storefront:hover{background:#16130E}
+.storefront:nth-child(even) .storefront__text{order:2}
+.storefront:nth-child(even) .storefront__door{order:1}
+.storefront__door{display:flex;align-items:center;justify-content:center;aspect-ratio:3/4;background:#161310;border:1px solid #2A251D;border-radius:2px;min-height:240px;font-size:3.2rem;color:#8C826C;object-fit:cover;object-position:center}
+.storefront__door[src]{color:auto;font-size:auto}
+.storefront__text h2{margin:0;font-size:clamp(1.2rem,3vw,2rem);font-weight:600;line-height:1.1}
+.storefront__text p{margin:.6em 0 0;font-size:.95rem;color:#9A9184;line-height:1.5}
+.storefront.under-construction .storefront__door{background:#0F0D0A;color:#5A5248;font-size:1.2rem}
+@media (max-width:680px){
+  .storefront{grid-template-columns:1fr;gap:16px}
+  .storefront:nth-child(even) .storefront__text{order:unset}
+  .storefront:nth-child(even) .storefront__door{order:unset}
+  .storefront__door{aspect-ratio:auto;min-height:160px}
 }
-
-.seven-eleven {
-    min-height: 100vh;
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.seven-header {
-    text-align: center;
-    margin-bottom: 3rem;
-    padding: 2rem;
-    border: 2px solid #c42a2a;
-    background: rgba(196, 42, 42, 0.05);
-}
-
-.seven-header h1 {
-    font-size: 2.8rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    letter-spacing: 0.02em;
-    color: #f2c230;
-}
-
-.seven-header p {
-    color: #8c826c;
-    font-size: 1rem;
-}
-
-.seven-content {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.seven-section {
-    background: #16130e;
-    border: 1px solid #241f18;
-    padding: 2rem;
-}
-
-.seven-section h2 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: #f2c230;
-}
-
-.seven-section p {
-    line-height: 1.6;
-    color: #9a9184;
-    margin-bottom: 1rem;
-}
-
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1.5rem;
-}
-
-.product-card {
-    background: #0f0d0a;
-    border: 1px solid #241f18;
-    padding: 1.5rem;
-    text-align: center;
-}
-
-.product-card h3 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-}
-
-.product-card p {
-    font-size: 0.9rem;
-    color: #8c826c;
-}
-
-.cta-btn {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background: #241f18;
-    color: #efeae0;
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 600;
-    border-radius: 2px;
-    transition: all 180ms;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-top: 1rem;
-}
-
-.cta-btn:hover {
-    background: #2a251d;
-}
-    </style>
+</style>
 </head>
 <body>
-    <div class="seven-eleven">
-        <div class="seven-header">
-            <h1>7-Eleven</h1>
-            <p>Open 24/7 at the Outlet Mall</p>
-        </div>
-
-        <div class="seven-content">
-            <div class="seven-section">
-                <h2>Grab & Go</h2>
-                <p>Convenience meets quality. Shop Fruity Puppy products, snacks, drinks, and everything you need for on-the-go.</p>
-                
-                <div class="product-grid">
-                    <div class="product-card">
-                        <h3>Big Gulp</h3>
-                        <p>Signature drinks</p>
-                    </div>
-                    <div class="product-card">
-                        <h3>Fresh Food</h3>
-                        <p>Hot & ready</p>
-                    </div>
-                    <div class="product-card">
-                        <h3>Snacks</h3>
-                        <p>All your favorites</p>
-                    </div>
-                    <div class="product-card">
-                        <h3>Fruity Puppy</h3>
-                        <p>Exclusive line</p>
-                    </div>
-                </div>
-                
-                <a href="#" class="cta-btn">Shop Now</a>
-            </div>
-
-            <div class="seven-section">
-                <h2>24/7 Availability</h2>
-                <p>Always open. Always stocked. Always convenient.</p>
-                <a href="#" class="cta-btn">Find a Store</a>
-            </div>
-        </div>
+  <div class="hallway">
+    <div class="hallway__title">
+      <p>Enter through any door</p>
+      <h1>Fruity Puppy Outlet Mall</h1>
     </div>
-
-<div class="unit-nav">
-  <a class="unit-nav__back" href="/outletmall/" aria-label="Back to hallway">← Back to hallway</a>
-  <div class="unit-nav__doors">
-    <a class="unit-nav__prev" href="#" id="nav-prev" aria-label="Previous store">&larr; Previous</a>
-    <a class="unit-nav__next" href="#" id="nav-next" aria-label="Next store">Next &rarr;</a>
+    <div class="storefronts">
+            <a class="storefront" href="/outletmall/units/arcade/" data-unit="arcade" data-index="0">
+        <img class="storefront__door" src="/outletmall/assets/arcade.jpg" alt="The Arcade">
+        <div class="storefront__text">
+          <h2>The Arcade</h2>
+          <p>Nine machines, a claw full of skin cream, and one cabinet you can hear.</p>
+        </div>
+      </a>
+      <a class="storefront" href="/outletmall/units/fruity-puppy-skincare/" data-unit="fruity-puppy-skincare" data-index="1">
+        <img class="storefront__door" src="/outletmall/assets/fruity-puppy-skincare.png" alt="Fruity Puppy Skincare">
+        <div class="storefront__text">
+          <h2>Fruity Puppy Skincare</h2>
+          <p>Handmade biological skin cream, cold-extracted and refrigerated.</p>
+        </div>
+      </a>
+      <a class="storefront" href="/outletmall/units/fish-store/" data-unit="fish-store" data-index="2">
+        <img class="storefront__door" src="/outletmall/assets/fish-store.jpg" alt="Wet Pets">
+        <div class="storefront__text">
+          <h2>Wet Pets</h2>
+          <p>Freshwater, saltwater, and a back tunnel that stays dark all day.</p>
+        </div>
+      </a>
+      <a class="storefront" href="/outletmall/units/burger-shack/" data-unit="burger-shack" data-index="3">
+        <img class="storefront__door" src="/outletmall/assets/burger-shack.jpg" alt="Burger Shack">
+        <div class="storefront__text">
+          <h2>Burger Shack</h2>
+          <p>Food court. One guy behind the counter is trying to leave.</p>
+        </div>
+      </a>
+      <a class="storefront" href="/outletmall/units/fitting-room/" data-unit="fitting-room" data-index="4">
+        <img class="storefront__door" src="/outletmall/assets/fitting-room.png" alt="The Rack">
+        <div class="storefront__text">
+          <h2>The Rack</h2>
+          <p>Four racks, no order to any of it. Six fitting rooms, five that latch.</p>
+        </div>
+      </a>
+      <a class="storefront" href="/outletmall/units/restaurant/" data-unit="restaurant" data-index="5">
+        <img class="storefront__door" src="/outletmall/assets/restaurant.jpg" alt="Italian Restaurant">
+        <div class="storefront__text">
+          <h2>Italian Restaurant</h2>
+          <p>Sconces, wine racks, and a back table set every night.</p>
+        </div>
+      </a>
+      <a class="storefront" href="/outletmall/units/comic-shop/" data-unit="comic-shop" data-index="6">
+        <img class="storefront__door" src="/outletmall/assets/comic-shop.jpg" alt="Bad Habitats + Good Habits">
+        <div class="storefront__text">
+          <h2>Bad Habitats + Good Habits</h2>
+          <p>Comics. We don't sell them, we point you at the free ones.</p>
+        </div>
+      </a>
+      <a class="storefront" href="/outletmall/units/fruity-puppy-merch/" data-unit="fruity-puppy-merch" data-index="7">
+        <img class="storefront__door" src="/outletmall/assets/fruity-puppy-merch.png" alt="Fruity Puppy Merch">
+        <div class="storefront__text">
+          <h2>Fruity Puppy Merch</h2>
+          <p>Tees, hats, and everything else.</p>
+        </div>
+      </a>
+      <a class="storefront" href="/outletmall/units/brobots-retail/" data-unit="brobots-retail" data-index="8">
+        <img class="storefront__door" src="/outletmall/assets/brobots-retail.png" alt="BroBots Space Factory">
+        <div class="storefront__text">
+          <h2>BroBots Space Factory</h2>
+          <p>Imagination builds better humans. Robots for a brighter tomorrow.</p>
+        </div>
+      </a>
+      <a class="storefront" href="/outletmall/units/brobots-multimedia/" data-unit="brobots-multimedia" data-index="9">
+        <img class="storefront__door" src="/outletmall/assets/brobots-multimedia.png" alt="Brobots Multimedia">
+        <div class="storefront__text">
+          <h2>BroBots Multimedia Studios</h2>
+          <p>Content creation, production, and design.</p>
+        </div>
+      </a>
+      <a class="storefront" href="/outletmall/units/thorny-toad/" data-unit="thorny-toad" data-index="10">
+        <img class="storefront__door" src="/outletmall/assets/thorny-toad.png" alt="Thorny Toad">
+        <div class="storefront__text">
+          <h2>Thorny Toad Toner Warehouse</h2>
+          <p>Botanical tonics and desert extracts.</p>
+        </div>
+      </a>
+      <a class="storefront" href="/outletmall/units/lava-guava/" data-unit="lava-guava" data-index="11">
+        <img class="storefront__door" src="/outletmall/assets/lava-guava.png" alt="Lava Guava">
+        <div class="storefront__text">
+          <h2>LavaGuava Bomb Balm</h2>
+          <p>Lava meets guava. Heat meets fruit.</p>
+        </div>
+      </a>
+      <a class="storefront" href="/outletmall/units/fpx-boutique/" data-unit="fpx-boutique" data-index="12">
+        <img class="storefront__door" src="/outletmall/assets/fpx-boutique.png" alt="Fpx Boutique">
+        <div class="storefront__text">
+          <h2>FPX Boutique</h2>
+          <p>Fruity Puppy Extended armor and exclusive gear.</p>
+        </div>
+      </a>
+      <a class="storefront" href="/outletmall/units/seven-eleven/" data-unit="seven-eleven" data-index="13">
+        <img class="storefront__door" src="/outletmall/assets/seven-eleven.png" alt="7-Eleven">
+        <div class="storefront__text">
+          <h2>7-Eleven</h2>
+          <p>Open 24/7. Convenience meets Fruity Puppy.</p>
+        </div>
+      </a>
+      <a class="storefront" href="/outletmall/units/dairy-queen/" data-unit="dairy-queen" data-index="14">
+        <img class="storefront__door" src="/outletmall/assets/dairy-queen.png" alt="Dairy Queen">
+        <div class="storefront__text">
+          <h2>Dairy Queen</h2>
+          <p>Frozen treats meet Fruity Puppy flavors.</p>
+        </div>
+      </a>
+      <a class="storefront" href="/outletmall/units/museum/" data-unit="museum" data-index="15">
+        <img class="storefront__door" src="/outletmall/assets/museum.png" alt="Museum">
+        <div class="storefront__text">
+          <h2>Museum</h2>
+          <p>Natural history, dinosaurs, and discovery.</p>
+        </div>
+      </a>
+      <a class="storefront" href="/outletmall/units/theater/" data-unit="theater" data-index="16">
+        <img class="storefront__door" src="/outletmall/assets/theater.png" alt="Theater">
+        <div class="storefront__text">
+          <h2>Theater</h2>
+          <p>Movies, snacks, and Fruity Puppy now playing.</p>
+        </div>
+      </a>
+      <a class="storefront" href="/outletmall/units/shoe-store/" data-unit="shoe-store" data-index="17">
+        <img class="storefront__door" src="/outletmall/assets/shoe-store.png" alt="Shoe Station">
+        <div class="storefront__text">
+          <h2>Shoe Station</h2>
+          <p>Good shoes, brighter days. Comfort, style, every step.</p>
+        </div>
+      </a>
+      <a class="storefront" href="/outletmall/meadows/" data-unit="meadows" data-index="18">
+        <img class="storefront__door" src="/outletmall/assets/meadows.jpg" alt="Kudoken Meadows">
+        <div class="storefront__text">
+          <h2>Kudoken Meadows</h2>
+          <p>Behind the mall. Open grounds, mostly unfinished.</p>
+        </div>
+      </a>
+    </div>
   </div>
-</div>
-
-<script src="/outletmall/hallway.js" defer></script>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const prev = document.getElementById('nav-prev');
-  const next = document.getElementById('nav-next');
-  const unitId = 'seven-eleven';
-  const prevUnit = window.mallNav.getPrev(unitId);
-  const nextUnit = window.mallNav.getNext(unitId);
-  
-  if (prevUnit) prev.href = prevUnit.path;
-  else prev.style.display = 'none';
-  
-  if (nextUnit) next.href = nextUnit.path;
-  else next.style.display = 'none';
-});
-</script>
+  <script src="/outletmall/hallway.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruity Puppy Merch Store</title>
+    <link rel="stylesheet" href="/outletmall/mall.css">
+    <style>
+body {
+    background: #0f0d0a;
+    color: #efeae0;
+    font-family: system-ui, -apple-system, sans-serif;
+    padding-bottom: 80px;
+}
+
+.merch-store {
+    min-height: 100vh;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.store-entrance {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    border-bottom: 1px solid #241f18;
+}
+
+.store-entrance h1 {
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.store-entrance p {
+    color: #8c826c;
+    font-size: 1rem;
+}
+
+.merch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.merch-card {
+    background: #16130e;
+    border: 1px solid #241f18;
+    padding: 1.5rem;
+    text-align: center;
+    transition: background 180ms cubic-bezier(.22,1,.36,1);
+}
+
+.merch-card:hover {
+    background: #1f1a14;
+}
+
+.merch-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+.merch-card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.merch-card p {
+    color: #9a9184;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+}
+
+.merch-price {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #d4a574;
+}
+
+.featured-section {
+    background: #16130e;
+    border: 1px solid #241f18;
+    padding: 2rem;
+    margin-bottom: 3rem;
+}
+
+.featured-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #efeae0;
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.featured-item {
+    text-align: center;
+}
+
+.featured-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+.shop-link {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: #241f18;
+    color: #efeae0;
+    text-decoration: none;
+    font-size: 0.9rem;
+    border-radius: 2px;
+    transition: background 180ms cubic-bezier(.22,1,.36,1);
+    margin-top: 1rem;
+}
+
+.shop-link:hover {
+    background: #2a251d;
+}
+
+@media (max-width: 768px) {
+    .featured-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .merch-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="merch-store">
+        <div class="store-entrance">
+            <h1>Fruity Puppy Merch</h1>
+            <p>Tees, gear, and everything else</p>
+        </div>
+
+        <div class="featured-section">
+            <h2 class="featured-title">New Drops</h2>
+            <div class="featured-grid">
+                <div class="featured-item">
+                    <img src="https://via.placeholder.com/200x200?text=Tee+1" alt="New tee">
+                    <h3>Limited Edition Tee</h3>
+                    <p>$32</p>
+                    <a href="https://shop.fruitypuppy.com" class="shop-link">View</a>
+                </div>
+                <div class="featured-item">
+                    <img src="https://via.placeholder.com/200x200?text=Tee+2" alt="New tee">
+                    <h3>Classic Logo Tee</h3>
+                    <p>$28</p>
+                    <a href="https://shop.fruitypuppy.com" class="shop-link">View</a>
+                </div>
+                <div class="featured-item">
+                    <img src="https://via.placeholder.com/200x200?text=Hat" alt="Hat">
+                    <h3>Fruity Puppy Cap</h3>
+                    <p>$24</p>
+                    <a href="https://shop.fruitypuppy.com" class="shop-link">View</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="merch-grid">
+            <div class="merch-card">
+                <img src="https://via.placeholder.com/150x150?text=Tee" alt="Tee">
+                <h3>T-Shirt</h3>
+                <p>Classic fit, premium cotton</p>
+                <span class="merch-price">$28+</span>
+            </div>
+            <div class="merch-card">
+                <img src="https://via.placeholder.com/150x150?text=Hat" alt="Hat">
+                <h3>Hat</h3>
+                <p>Structured cap</p>
+                <span class="merch-price">$24</span>
+            </div>
+            <div class="merch-card">
+                <img src="https://via.placeholder.com/150x150?text=Hoodie" alt="Hoodie">
+                <h3>Hoodie</h3>
+                <p>Comfortable fleece</p>
+                <span class="merch-price">$52</span>
+            </div>
+            <div class="merch-card">
+                <img src="https://via.placeholder.com/150x150?text=Sticker" alt="Sticker">
+                <h3>Sticker Pack</h3>
+                <p>Waterproof vinyl</p>
+                <span class="merch-price">$6</span>
+            </div>
+            <div class="merch-card">
+                <img src="https://via.placeholder.com/150x150?text=Tote" alt="Tote">
+                <h3>Tote Bag</h3>
+                <p>Canvas bag</p>
+                <span class="merch-price">$18</span>
+            </div>
+            <div class="merch-card">
+                <img src="https://via.placeholder.com/150x150?text=Mug" alt="Mug">
+                <h3>Coffee Mug</h3>
+                <p>Ceramic 12oz</p>
+                <span class="merch-price">$12</span>
+            </div>
+        </div>
+
+        <a href="https://shop.fruitypuppy.com" class="shop-link" style="margin-top: 2rem;">Shop All Merch</a>
+    </div>
+
+<div class="unit-nav">
+  <a class="unit-nav__back" href="/outletmall/" aria-label="Back to hallway">← Back to hallway</a>
+  <div class="unit-nav__doors">
+    <a class="unit-nav__prev" href="#" id="nav-prev" aria-label="Previous store">&larr; Previous</a>
+    <a class="unit-nav__next" href="#" id="nav-next" aria-label="Next store">Next &rarr;</a>
+  </div>
+</div>
+
+<script src="/outletmall/hallway.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const prev = document.getElementById('nav-prev');
+  const next = document.getElementById('nav-next');
+  const unitId = 'fruity-puppy-merch';
+  const prevUnit = window.mallNav.getPrev(unitId);
+  const nextUnit = window.mallNav.getNext(unitId);
+  
+  if (prevUnit) prev.href = prevUnit.path;
+  else prev.style.display = 'none';
+  
+  if (nextUnit) next.href = nextUnit.path;
+  else next.style.display = 'none';
+});
+</script>
+</body>
+</html>

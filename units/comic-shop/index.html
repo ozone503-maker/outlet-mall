@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Bad Habitats + Good Habits</title>
+<link rel="stylesheet" href="/outletmall/mall.css">
+<link rel="stylesheet" href="/outletmall/units/comic-shop/comic-shop.css">
+</head>
+<body class="habitat">
+
+<header class="approach" id="approach">
+  <div class="approach__band">
+    <p class="approach__eyebrow">Unit 14 &middot; Fruity Puppy Outlet Mall</p>
+    <h1 class="approach__name">Bad Habitats + Good Habits</h1>
+    <a class="approach__enter" href="#inside">Step inside</a>
+  </div>
+</header>
+
+<p class="lede">We don't sell you comics. We point you at the ones already sitting
+out in the open &mdash; public domain vaults, publisher freebies, indie serials.
+Everything linked here is free to read.</p>
+
+<section class="inside" id="inside">
+  <div class="inside__band"><p>Two walls, a case, and a counter. Dru's usually behind it.</p></div>
+</section>
+
+<div class="wrap">
+
+  <section class="block">
+    <div class="label"><h2>The wall</h2><span>New this week</span></div>
+    <div class="split">
+      <div id="wall-shot"></div>
+      <div class="feed" id="feed"></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="label"><h2>The spinner rack</h2><span>Give it a spin</span></div>
+    <div class="rackzone">
+      <div class="rackzone__bg" id="rack-bg"></div>
+      <div class="rackzone__inner">
+        <div class="spinstage">
+          <div class="spin" id="spin"></div>
+          <div class="spinpost"></div>
+          <div class="spinbase"></div>
+        </div>
+        <div class="spinctl">
+          <button type="button" id="spinL">&larr; Spin</button>
+          <button type="button" id="spinR">Spin &rarr;</button>
+        </div>
+        <p class="spinnow" id="spinnow"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="label"><h2>The case</h2><span>Look, don't touch</span></div>
+    <div class="pair" id="pair"></div>
+  </section>
+
+  <section class="block">
+    <div class="label"><h2>Back issue bins</h2><span>Public domain, all of it</span></div>
+    <div id="bin-shot" style="margin-bottom:14px"></div>
+    <div class="bins" id="bins"></div>
+  </section>
+
+  <section class="block">
+    <div class="desk">
+      <div id="dru-shot"></div>
+      <div class="desk__say">
+        <b>Dru &middot; owner</b>
+        <p>Hey, I'm Dru. I learned about comics from my uncle and now I run
+           Bad Habitats + Good Habits here in the Fruity Puppy Outlet Mall.</p>
+        <p id="dru-shelf">Hang out. Read whatever you want &mdash; nobody's rushing you out.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<p class="fine">Every link opens in a new tab. The mall stays where you left it.</p>
+
+<div class="unit-nav">
+  <a class="unit-nav__back" href="/outletmall/" aria-label="Back to hallway">← Back to hallway</a>
+  <div class="unit-nav__doors">
+    <a class="unit-nav__prev" href="#" id="nav-prev" aria-label="Previous store">&larr; Previous</a>
+    <a class="unit-nav__next" href="#" id="nav-next" aria-label="Next store">Next &rarr;</a>
+  </div>
+</div>
+
+<script src="/outletmall/hallway.js" defer></script>
+
+
+<script src="/outletmall/mall.js" defer></script>
+<script src="/outletmall/mall-tickets.js" defer></script>
+<script src="/outletmall/units/comic-shop/comic-shop.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const prev = document.getElementById('nav-prev');
+  const next = document.getElementById('nav-next');
+  const unitId = 'comic-shop';
+  const prevUnit = window.mallNav.getPrev(unitId);
+  const nextUnit = window.mallNav.getNext(unitId);
+  
+  if (prevUnit) prev.href = prevUnit.path;
+  else prev.style.display = 'none';
+  
+  if (nextUnit) next.href = nextUnit.path;
+  else next.style.display = 'none';
+});
+</script>
+</body>
+</html>

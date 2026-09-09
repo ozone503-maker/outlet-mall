@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BroBots Retail</title>
+    <link rel="stylesheet" href="/outletmall/mall.css">
+    <style>
+body {
+    background: #0f0d0a;
+    color: #efeae0;
+    font-family: system-ui, -apple-system, sans-serif;
+    padding-bottom: 80px;
+}
+
+.brobots-store {
+    min-height: 100vh;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.neon-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    border: 2px solid #1d3fa8;
+    background: rgba(29, 63, 168, 0.05);
+}
+
+.neon-header h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.02em;
+}
+
+.neon-header p {
+    color: #8c826c;
+    font-size: 1rem;
+}
+
+.product-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.product-card {
+    background: #16130e;
+    border: 1px solid #241f18;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 180ms cubic-bezier(.22,1,.36,1);
+}
+
+.product-card:hover {
+    background: #1f1a14;
+    border-color: #1d3fa8;
+    box-shadow: 0 0 12px rgba(29, 63, 168, 0.3);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+.product-card h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.product-card p {
+    color: #9a9184;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+}
+
+.product-price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #f2c230;
+}
+
+.featured-section {
+    background: #16130e;
+    border: 2px solid #1d3fa8;
+    padding: 2rem;
+    margin-bottom: 3rem;
+}
+
+.featured-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #f2c230;
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+}
+
+.featured-item {
+    text-align: center;
+    padding: 1.5rem;
+    background: #0f0d0a;
+    border: 1px solid #241f18;
+}
+
+.featured-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+.featured-item h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.shop-btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: #1d3fa8;
+    color: #f2c230;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 2px;
+    transition: all 180ms cubic-bezier(.22,1,.36,1);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 1rem;
+}
+
+.shop-btn:hover {
+    background: #2851d4;
+    box-shadow: 0 0 16px rgba(29, 63, 168, 0.5);
+}
+
+.info-bar {
+    background: #1d3fa8;
+    color: #f2c230;
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+    .featured-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .product-showcase {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 1rem;
+    }
+
+    .neon-header h1 {
+        font-size: 2rem;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="brobots-store">
+        <div class="neon-header">
+            <h1>BROBOTS</h1>
+            <p>Space Factory Retail</p>
+        </div>
+
+        <div class="info-bar">
+            Everything built different. Shop the BroBots collection.
+        </div>
+
+        <div class="featured-section">
+            <h2 class="featured-title">Featured</h2>
+            <div class="featured-grid">
+                <div class="featured-item">
+                    <img src="https://via.placeholder.com/200x180?text=Figure" alt="Figure">
+                    <h3>Limited Figure</h3>
+                    <p style="color: #8c826c; margin-bottom: 0.5rem;">Collectible</p>
+                    <span class="product-price">$89</span>
+                    <a href="https://brobots.space" class="shop-btn">Shop</a>
+                </div>
+                <div class="featured-item">
+                    <img src="https://via.placeholder.com/200x180?text=Merch" alt="Merch">
+                    <h3>Classic Tee</h3>
+                    <p style="color: #8c826c; margin-bottom: 0.5rem;">Black • All Sizes</p>
+                    <span class="product-price">$32</span>
+                    <a href="https://brobots.space" class="shop-btn">Shop</a>
+                </div>
+                <div class="featured-item">
+                    <img src="https://via.placeholder.com/200x180?text=Pin" alt="Pin">
+                    <h3>Enamel Pin</h3>
+                    <p style="color: #8c826c; margin-bottom: 0.5rem;">Limited Edition</p>
+                    <span class="product-price">$12</span>
+                    <a href="https://brobots.space" class="shop-btn">Shop</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-showcase">
+            <div class="product-card">
+                <img src="https://via.placeholder.com/180x180?text=Figure" alt="Figure">
+                <h3>Figure</h3>
+                <p>Collectible series</p>
+                <span class="product-price">$69+</span>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/180x180?text=Tee" alt="Tee">
+                <h3>T-Shirt</h3>
+                <p>Premium cotton</p>
+                <span class="product-price">$32</span>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/180x180?text=Hoodie" alt="Hoodie">
+                <h3>Hoodie</h3>
+                <p>Oversized fit</p>
+                <span class="product-price">$54</span>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/180x180?text=Hat" alt="Hat">
+                <h3>Hat</h3>
+                <p>Structured cap</p>
+                <span class="product-price">$26</span>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/180x180?text=Pin" alt="Pin">
+                <h3>Enamel Pin</h3>
+                <p>Collectible series</p>
+                <span class="product-price">$10+</span>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/180x180?text=Sticker" alt="Sticker">
+                <h3>Sticker Pack</h3>
+                <p>Vinyl set</p>
+                <span class="product-price">$8</span>
+            </div>
+        </div>
+
+        <a href="https://brobots.space" class="shop-btn" style="margin-top: 2rem;">Shop All BroBots</a>
+    </div>
+
+<div class="unit-nav">
+  <a class="unit-nav__back" href="/outletmall/" aria-label="Back to hallway">← Back to hallway</a>
+  <div class="unit-nav__doors">
+    <a class="unit-nav__prev" href="#" id="nav-prev" aria-label="Previous store">&larr; Previous</a>
+    <a class="unit-nav__next" href="#" id="nav-next" aria-label="Next store">Next &rarr;</a>
+  </div>
+</div>
+
+<script src="/outletmall/hallway.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const prev = document.getElementById('nav-prev');
+  const next = document.getElementById('nav-next');
+  const unitId = 'brobots-retail';
+  const prevUnit = window.mallNav.getPrev(unitId);
+  const nextUnit = window.mallNav.getNext(unitId);
+  
+  if (prevUnit) prev.href = prevUnit.path;
+  else prev.style.display = 'none';
+  
+  if (nextUnit) next.href = nextUnit.path;
+  else next.style.display = 'none';
+});
+</script>
+</body>
+</html>

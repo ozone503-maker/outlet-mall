@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Italian Restaurant</title>
+<link rel="stylesheet" href="/outletmall/mall.css">
+<link rel="stylesheet" href="/outletmall/units/restaurant/restaurant.css">
+</head>
+<body class="trattoria">
+
+<header class="approach" id="approach">
+  <div class="approach__band">
+    <p class="approach__eyebrow">Unit 09 &middot; Fruity Puppy Outlet Mall</p>
+    <h1 class="approach__name" id="name">Italian Restaurant</h1>
+    <p class="approach__sub">Lunch &middot; Dinner &middot; Private parties</p>
+    <a class="approach__enter" href="#doors">Step inside</a>
+  </div>
+</header>
+
+<p class="lede">Sconces, wine racks, tufted booths, a bread basket before you order.
+The kind of place that's been in the mall longer than most of the mall.</p>
+
+<section class="doors" id="doors">
+  <div class="doors__band"><p>Two sets of glass doors and a host stand nobody's at.</p></div>
+</section>
+
+<div class="wrap">
+
+  <section class="block">
+    <div class="label"><h2>The dining room</h2><span>Booths and banquettes</span></div>
+    <div class="split">
+      <div id="dining-shot"></div>
+      <div class="menu" id="menu"></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="label"><h2>By the host stand</h2><span></span></div>
+    <div class="host">
+      <div class="frame" id="waiter-shot"></div>
+      <div class="host__say">
+        <b>Staff photograph</b>
+        <p>It's been up since the spring. Nobody moves it, nobody dusts around it
+           in a hurry.</p>
+        <p>He worked Fridays. He was very good at his job and he could do a lot
+           more than carry a tray.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="label"><h2>The back room</h2><span>Reserved</span></div>
+    <div class="table">
+      <div id="table-shot"></div>
+      <p class="table__note">
+        <b>Party of twenty</b>
+        Set every night. Candles lit at five, put out at close. Nobody has asked
+        the kitchen who booked it, and the kitchen hasn't offered.
+      </p>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="label"><h2>On the table</h2><span>Comes with</span></div>
+    <div class="pair" id="pair"></div>
+  </section>
+
+  <section class="block">
+    <div class="label"><h2>Regulars</h2><span>Most weeks</span></div>
+    <div id="regulars-shot"></div>
+  </section>
+
+</div>
+
+<p class="fine">Staff has been through a lot this year. Please be patient with your server.</p>
+
+<div class="unit-nav">
+  <a class="unit-nav__back" href="/outletmall/" aria-label="Back to hallway">← Back to hallway</a>
+  <div class="unit-nav__doors">
+    <a class="unit-nav__prev" href="#" id="nav-prev" aria-label="Previous store">&larr; Previous</a>
+    <a class="unit-nav__next" href="#" id="nav-next" aria-label="Next store">Next &rarr;</a>
+  </div>
+</div>
+
+<script src="/outletmall/hallway.js" defer></script>
+
+
+<script src="/outletmall/mall.js" defer></script>
+<script src="/outletmall/mall-tickets.js" defer></script>
+<script src="/outletmall/units/restaurant/restaurant.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const prev = document.getElementById('nav-prev');
+  const next = document.getElementById('nav-next');
+  const unitId = 'restaurant';
+  const prevUnit = window.mallNav.getPrev(unitId);
+  const nextUnit = window.mallNav.getNext(unitId);
+  
+  if (prevUnit) prev.href = prevUnit.path;
+  else prev.style.display = 'none';
+  
+  if (nextUnit) next.href = nextUnit.path;
+  else next.style.display = 'none';
+});
+</script>
+</body>
+</html>

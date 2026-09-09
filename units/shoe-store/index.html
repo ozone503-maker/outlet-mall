@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Shoe Station</title>
+<link rel="stylesheet" href="/outletmall/mall.css">
+<style>
+body{background:#0B0A08;color:#EFEAE0;padding-bottom:80px}
+.shoes-header{padding:3rem 2rem;text-align:center;border-bottom:1px solid #241F18}
+.shoes-header h1{font-size:2.5rem;font-weight:600;margin-bottom:.5rem}
+.shoes-header p{color:#8C826C;font-size:1rem}
+.shoes-content{max-width:1000px;margin:0 auto;padding:2rem}
+.category{margin:2rem 0;padding:2rem;background:#16130E;border:1px solid #241F18}
+.category h2{font-size:1.5rem;margin-bottom:1rem;color:#D4A574}
+.category p{line-height:1.6;color:#9A9184;margin-bottom:1rem}
+.cta{display:inline-block;padding:.75rem 1.5rem;background:#241F18;color:#EFEAE0;text-decoration:none;border-radius:2px;transition:background 180ms}
+.cta:hover{background:#2A251D}
+</style>
+</head>
+<body>
+  <div class="shoes-header">
+    <p style="font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:#8C826C">Unit · Fruity Puppy Outlet Mall</p>
+    <h1>Shoe Station</h1>
+    <p>Good shoes, brighter days</p>
+  </div>
+  
+  <div class="shoes-content">
+    <div class="category">
+      <h2>Men's</h2>
+      <p>From casual everyday wear to athletic performance, find your perfect fit in our extensive men's collection.</p>
+      <a href="#" class="cta">Shop Men's</a>
+    </div>
+    
+    <div class="category">
+      <h2>Women's</h2>
+      <p>Style meets comfort. Browse our curated selection of women's shoes for every occasion and season.</p>
+      <a href="#" class="cta">Shop Women's</a>
+    </div>
+    
+    <div class="category">
+      <h2>Kids</h2>
+      <p>Growing feet need proper support. Find sizes and styles for every stage of childhood.</p>
+      <a href="#" class="cta">Shop Kids</a>
+    </div>
+  </div>
+
+<div class="unit-nav">
+  <a class="unit-nav__back" href="/outletmall/" aria-label="Back to hallway">← Back to hallway</a>
+  <div class="unit-nav__doors">
+    <a class="unit-nav__prev" href="#" id="nav-prev" aria-label="Previous store">&larr; Previous</a>
+    <a class="unit-nav__next" href="#" id="nav-next" aria-label="Next store">Next &rarr;</a>
+  </div>
+</div>
+
+<script src="/outletmall/hallway.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const prev = document.getElementById('nav-prev');
+  const next = document.getElementById('nav-next');
+  const unitId = 'shoe-store';
+  const prevUnit = window.mallNav.getPrev(unitId);
+  const nextUnit = window.mallNav.getNext(unitId);
+  
+  if (prevUnit) prev.href = prevUnit.path;
+  else prev.style.display = 'none';
+  
+  if (nextUnit) next.href = nextUnit.path;
+  else next.style.display = 'none';
+});
+</script>
+</body>
+</html>

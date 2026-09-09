@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>The Theater</title>
+<link rel="stylesheet" href="/outletmall/mall.css">
+<link rel="stylesheet" href="/outletmall/units/theater/theater.css">
+</head>
+<body class="theater">
+
+<header class="marquee" id="approach">
+  <div class="marquee__box">
+    <p class="marquee__eyebrow">Unit 12 &middot; Fruity Puppy Outlet Mall</p>
+    <h1 class="marquee__name">The Theater</h1>
+    <p class="marquee__now">Now showing <span id="marquee-title">Skin Science, every episode</span></p>
+    <a class="marquee__enter" href="#screen">Take a seat</a>
+  </div>
+</header>
+
+<p class="lede">One screen, every Skin Science episode, in the order they came out.
+Ipo and Erv take a skin mystery, run it down, and explain the biology.
+Nothing is uploaded twice. The screen is YouTube; the room is ours.</p>
+
+<section class="house" id="screen">
+  <div class="house__curtain house__curtain--l"></div>
+  <div class="house__curtain house__curtain--r"></div>
+  <div class="house__screen">
+    <iframe id="player"
+      src="https://www.youtube-nocookie.com/embed/videoseries?list=UUtOyQmEcljP3LcxCEAFcTdA&rel=0&modestbranding=1"
+      title="Fruity Puppy Skin Science"
+      loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+      referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+  <div class="house__seats" aria-hidden="true"></div>
+</section>
+
+<div class="wrap">
+
+  <section class="block" id="showtimes" hidden>
+    <div class="label"><h2>Showtimes</h2><span id="showtimes-note">Newest first</span></div>
+    <div class="posters" id="posters"></div>
+  </section>
+
+  <section class="block">
+    <div class="label"><h2>Box office</h2><span>Nothing to buy here</span></div>
+    <div class="office">
+      <a class="office__row" href="https://www.youtube.com/@fruitypuppyskinscience">
+        <b>Subscribe on YouTube</b>
+        <span>New episodes land on the channel first. The theater picks them up on its own.</span>
+      </a>
+      <a class="office__row" href="https://fruitypuppy.com/ask-ipo">
+        <b>Ask Ipo</b>
+        <span>Got a skin mystery of your own? She takes cases.</span>
+      </a>
+      <a class="office__row" href="https://shop.fruitypuppy.com">
+        <b>Concessions</b>
+        <span>The cream from the movies. Refrigerated, not embalmed.</span>
+      </a>
+    </div>
+  </section>
+
+</div>
+
+<p class="fine">Every link opens in a new tab. The mall stays where you left it.</p>
+
+<div class="unit-nav">
+  <a class="unit-nav__back" href="/outletmall/" aria-label="Back to hallway">← Back to hallway</a>
+  <div class="unit-nav__doors">
+    <a class="unit-nav__prev" href="#" id="nav-prev" aria-label="Previous store">&larr; Previous</a>
+    <a class="unit-nav__next" href="#" id="nav-next" aria-label="Next store">Next &rarr;</a>
+  </div>
+</div>
+
+<script src="/outletmall/mall.js" defer></script>
+<script src="/outletmall/mall-tickets.js" defer></script>
+<script src="/outletmall/units/theater/theater.js" defer></script>
+<script src="/outletmall/corridor.js" defer></script>
+<script src="/outletmall/hallway.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const prev = document.getElementById('nav-prev');
+  const next = document.getElementById('nav-next');
+  const unitId = 'theater';
+  const prevUnit = window.mallNav.getPrev(unitId);
+  const nextUnit = window.mallNav.getNext(unitId);
+  
+  if (prevUnit) prev.href = prevUnit.path;
+  else prev.style.display = 'none';
+  
+  if (nextUnit) next.href = nextUnit.path;
+  else next.style.display = 'none';
+});
+</script>
+</body>
+</html>

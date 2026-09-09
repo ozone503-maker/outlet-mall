@@ -1,0 +1,35 @@
+{
+  "_schema": "KDU pricing. The only place play costs live. No game hardcodes a fee.",
+  "_fields": {
+    "default_play_cost": "KDU per play when a game has no entry of its own",
+    "venues": "operator-owned venues; label only, used for reporting",
+    "games": "per-game cost, and which venue it belongs to",
+    "promotions": "temporary overrides. from/to are ISO dates, both optional. Last match wins."
+  },
+
+  "default_play_cost": 5,
+
+  "venues": {
+    "arcade":   { "name": "The Arcade",     "where": "Outlet Mall" },
+    "carnival": { "name": "The Carnival",   "where": "FlashTown" },
+    "track":    { "name": "The Track",      "where": "Kudoken Meadows" },
+    "store":    { "name": "Stores",         "where": "Mall-wide" }
+  },
+
+  "games": {
+    "skeeball":      { "venue": "arcade",   "play_cost": 5 },
+    "claw":          { "venue": "arcade",   "play_cost": 5 },
+    "hoops":         { "venue": "arcade",   "play_cost": 5 },
+    "monkey-jockey": { "venue": "track",    "play_cost": 5 }
+  },
+
+  "promotions": [
+    {
+      "_comment": "Example, inactive. Copy the shape, set real dates.",
+      "game": "skeeball",
+      "discount_pct": 40,
+      "from": "2000-01-01",
+      "to": "2000-01-02"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "_schema": "Racing dogs — real rescues from FlashTown and Rooster Island. Populated by Jessie + ChatGPT.",
+  "_fields": {
+    "id": "stable slug, never reused",
+    "name": "the dog's real name",
+    "home": "FlashTown | Rooster Island",
+    "photo": "path under /outletmall/meadows/assets/dogs/",
+    "story": "their real story, added when ready",
+    "available": "false hides them from selection without deleting the record"
+  },
+  "_note": "These are real animals. Names and stories are theirs; treat the records as records, not as game entities to be invented around.",
+  "dogs": []
+}

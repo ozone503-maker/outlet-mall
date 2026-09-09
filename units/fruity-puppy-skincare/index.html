@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruity Puppy Skincare Store</title>
+    <link rel="stylesheet" href="/outletmall/mall.css">
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --fp-cream: #faf8f3;
+    --fp-dark: #2d2d2d;
+    --fp-accent: #d4a574;
+    --fp-green: #4a7c5e;
+    --fp-pink: #e8d5d0;
+    --text-primary: #1a1a1a;
+    --text-secondary: #666666;
+    --border-light: #e8e8e8;
+    --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--fp-cream);
+    color: var(--text-primary);
+    padding-bottom: 80px;
+}
+
+.store-container {
+    min-height: 100vh;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.store-header {
+    background: linear-gradient(135deg, var(--fp-cream) 0%, #ffffff 100%);
+    padding: 3rem 2rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border-light);
+    box-shadow: var(--shadow-light);
+}
+
+.header-content h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    color: var(--fp-dark);
+    margin-bottom: 0.5rem;
+}
+
+.tagline {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    letter-spacing: 0.02em;
+}
+
+.store-layout {
+    flex: 1;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.display-wall {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.left-wall {
+    align-items: flex-end;
+}
+
+.right-wall {
+    align-items: flex-start;
+}
+
+.shelf-unit {
+    background: #ffffff;
+    border: 1px solid var(--border-light);
+    border-radius: 2px;
+    padding: 0.5rem;
+    box-shadow: var(--shadow-medium);
+}
+
+.shelf-unit.tall {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.shelf {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 0.5rem;
+    border-bottom: 1px solid #f0f0f0;
+    align-items: center;
+    min-height: 140px;
+}
+
+.shelf:last-child {
+    border-bottom: none;
+}
+
+.product-display {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.product-display:hover {
+    transform: translateY(-2px);
+}
+
+.product-display img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    max-height: 120px;
+}
+
+.product-display.featured img {
+    max-height: 140px;
+}
+
+.product-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--fp-dark);
+}
+
+.price {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--fp-accent);
+}
+
+.glass-case {
+    background: #ffffff;
+    border: 2px solid #e8e8e8;
+    border-radius: 2px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-medium);
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.case-interior {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    width: 100%;
+}
+
+.riser-group {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-end;
+}
+
+.product-riser {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: #f9f9f9;
+    border-radius: 1px;
+}
+
+.product-riser.tall {
+    padding: 1.5rem 1rem;
+}
+
+.product-riser img {
+    width: 90px;
+    height: auto;
+    object-fit: contain;
+}
+
+.center-island {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.island-top {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.product-cluster {
+    flex: 1;
+}
+
+.hero-product {
+    background: #ffffff;
+    border: 1px solid var(--border-light);
+    border-radius: 2px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--shadow-medium);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.hero-product img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    max-height: 280px;
+}
+
+.hero-label h3 {
+    font-size: 1.3rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.5rem;
+}
+
+.hero-label p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.price-large {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--fp-accent);
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.shop-btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background: var(--fp-dark);
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    border-radius: 1px;
+    transition: background 0.3s;
+    cursor: pointer;
+}
+
+.shop-btn:hover {
+    background: var(--fp-green);
+}
+
+.product-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.product-small {
+    background: #ffffff;
+    border: 1px solid var(--border-light);
+    padding: 1rem;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: var(--shadow-light);
+}
+
+.product-small img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    max-height: 100px;
+}
+
+.island-signage {
+    background: var(--fp-cream);
+    padding: 1.5rem;
+    text-align: center;
+    border: 1px solid var(--border-light);
+    border-radius: 2px;
+}
+
+.island-signage h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.5rem;
+}
+
+.island-signage p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.store-footer {
+    background: var(--fp-dark);
+    color: #ffffff;
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-btn {
+    padding: 0.9rem 2rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    border-radius: 1px;
+    transition: all 0.3s;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.cta-btn.primary {
+    background: var(--fp-accent);
+    color: var(--fp-dark);
+}
+
+.cta-btn.primary:hover {
+    background: #e8c086;
+}
+
+.cta-btn.secondary {
+    background: transparent;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+}
+
+.cta-btn.secondary:hover {
+    background: #ffffff;
+    color: var(--fp-dark);
+}
+
+@media (max-width: 1024px) {
+    .store-layout {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .island-top {
+        flex-direction: column;
+    }
+
+    .left-wall,
+    .right-wall {
+        align-items: center;
+    }
+}
+
+@media (max-width: 640px) {
+    .store-header {
+        padding: 2rem 1rem;
+    }
+
+    .header-content h1 {
+        font-size: 2rem;
+    }
+
+    .store-layout {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .shelf {
+        flex-wrap: wrap;
+        min-height: auto;
+    }
+
+    .product-display img {
+        max-height: 80px;
+    }
+
+    .hero-product img {
+        max-height: 200px;
+    }
+
+    .cta-btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.85rem;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="store-container">
+        <div class="store-header">
+            <div class="header-content">
+                <h1>Fruity Puppy</h1>
+                <p class="tagline">Skin eats. Feed it well.</p>
+            </div>
+        </div>
+
+        <div class="store-layout">
+            <section class="display-wall left-wall">
+                <div class="shelf-unit tall">
+                    <div class="shelf">
+                        <div class="product-display featured">
+                            <img src="https://cdn.shopify.com/s/files/1/0553/8949/2514/products/FP-Original-Closed-Front-Angle-800x.jpg?v=1693267200" alt="Fruity Puppy Original">
+                            <div class="product-label">Original</div>
+                        </div>
+                        <div class="product-display">
+                            <img src="https://cdn.shopify.com/s/files/1/0553/8949/2514/products/FP-Original-Closed-Front-Angle-800x.jpg?v=1693267200" alt="Original">
+                            <div class="price">$42</div>
+                        </div>
+                        <div class="product-display">
+                            <img src="https://cdn.shopify.com/s/files/1/0553/8949/2514/products/FP-Original-Closed-Front-Angle-800x.jpg?v=1693267200" alt="Original">
+                            <div class="price">$42</div>
+                        </div>
+                    </div>
+                    <div class="shelf">
+                        <div class="product-display">
+                            <img src="https://cdn.shopify.com/s/files/1/0553/8949/2514/products/FP-Original-Closed-Front-Angle-800x.jpg?v=1693267200" alt="Original">
+                            <div class="price">$42</div>
+                        </div>
+                        <div class="product-display">
+                            <img src="https://cdn.shopify.com/s/files/1/0553/8949/2514/products/FP-Original-Closed-Front-Angle-800x.jpg?v=1693267200" alt="Original">
+                            <div class="price">$42</div>
+                        </div>
+                        <div class="product-display">
+                            <img src="https://cdn.shopify.com/s/files/1/0553/8949/2514/products/FP-Original-Closed-Front-Angle-800x.jpg?v=1693267200" alt="Original">
+                            <div class="price">$42</div>
+                        </div>
+                    </div>
+                    <div class="shelf">
+                        <div class="product-display">
+                            <img src="https://cdn.shopify.com/s/files/1/0553/8949/2514/products/FP-Original-Closed-Front-Angle-800x.jpg?v=1693267200" alt="Original">
+                            <div class="price">$42</div>
+                        </div>
+                        <div class="product-display">
+                            <img src="https://cdn.shopify.com/s/files/1/0553/8949/2514/products/FP-Original-Closed-Front-Angle-800x.jpg?v=1693267200" alt="Original">
+                            <div class="price">$42</div>
+                        </div>
+                        <div class="product-display">
+                            <img src="https://cdn.shopify.com/s/files/1/0553/8949/2514/products/FP-Original-Closed-Front-Angle-800x.jpg?v=1693267200" alt="Original">
+                            <div class="price">$42</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="center-island">
+                <div class="island-top">
+                    <div class="product-cluster">
+                        <div class="hero-product">
+                            <img src="https://cdn.shopify.com/s/files/1/0553/8949/2514/products/FP-Original-Closed-Front-Angle-800x.jpg?v=1693267200" alt="Fruity Puppy Original - Hero">
+                            <div class="hero-label">
+                                <h3>Fruity Puppy Original</h3>
+                                <p>IPO Extract • 45% Fresh Fruit</p>
+                                <span class="price-large">$42</span>
+                                <a href="https://shop.fruitypuppy.com/products/fruity-puppy-original-jar" class="shop-btn">Shop</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-cluster">
+                        <div class="product-stack">
+                            <div class="product-small">
+                                <img src="https://cdn.shopify.com/s/files/1/0553/8949/2514/products/FP-Original-Closed-Front-Angle-800x.jpg?v=1693267200" alt="Product">
+                                <span class="price">$42</span>
+                            </div>
+                            <div class="product-small">
+                                <img src="https://cdn.shopify.com/s/files/1/0553/8949/2514/products/FP-Original-Closed-Front-Angle-800x.jpg?v=1693267200" alt="Product">
+                                <span class="price">$42</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="island-signage">
+                    <h2>Fresh Biological Skincare</h2>
+                    <p>Handmade on Big Island, Hawaii</p>
+                    <p>Refrigerated • Cold-Extracted • Uncompromised</p>
+                </div>
+            </section>
+
+            <section class="display-wall right-wall">
+                <div class="glass-case">
+                    <div class="case-interior">
+                        <div class="riser-group">
+                            <div class="product-riser tall">
+                                <img src="https://cdn.shopify.com/s/files/1/0553/8949/2514/products/FP-Original-Closed-Front-Angle-800x.jpg?v=1693267200" alt="Product">
+                                <div class="price">$42</div>
+                            </div>
+                            <div class="product-riser">
+                                <img src="https://cdn.shopify.com/s/files/1/0553/8949/2514/products/FP-Original-Closed-Front-Angle-800x.jpg?v=1693267200" alt="Product">
+                                <div class="price">$42</div>
+                            </div>
+                            <div class="product-riser">
+                                <img src="https://cdn.shopify.com/s/files/1/0553/8949/2514/products/FP-Original-Closed-Front-Angle-800x.jpg?v=1693267200" alt="Product">
+                                <div class="price">$42</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="shelf-unit">
+                    <div class="shelf">
+                        <div class="product-display">
+                            <img src="https://cdn.shopify.com/s/files/1/0553/8949/2514/products/FP-Original-Closed-Front-Angle-800x.jpg?v=1693267200" alt="Product">
+                            <div class="price">$42</div>
+                        </div>
+                        <div class="product-display">
+                            <img src="https://cdn.shopify.com/s/files/1/0553/8949/2514/products/FP-Original-Closed-Front-Angle-800x.jpg?v=1693267200" alt="Product">
+                            <div class="price">$42</div>
+                        </div>
+                    </div>
+                    <div class="shelf">
+                        <div class="product-display">
+                            <img src="https://cdn.shopify.com/s/files/1/0553/8949/2514/products/FP-Original-Closed-Front-Angle-800x.jpg?v=1693267200" alt="Product">
+                            <div class="price">$42</div>
+                        </div>
+                        <div class="product-display">
+                            <img src="https://cdn.shopify.com/s/files/1/0553/8949/2514/products/FP-Original-Closed-Front-Angle-800x.jpg?v=1693267200" alt="Product">
+                            <div class="price">$42</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="store-footer">
+            <a href="https://shop.fruitypuppy.com" class="cta-btn primary">Browse All Products</a>
+            <a href="/outletmall/" class="cta-btn secondary">Continue to Outlet Mall</a>
+        </div>
+    </div>
+
+<div class="unit-nav">
+  <a class="unit-nav__back" href="/outletmall/" aria-label="Back to hallway">← Back to hallway</a>
+  <div class="unit-nav__doors">
+    <a class="unit-nav__prev" href="#" id="nav-prev" aria-label="Previous store">&larr; Previous</a>
+    <a class="unit-nav__next" href="#" id="nav-next" aria-label="Next store">Next &rarr;</a>
+  </div>
+</div>
+
+<script src="/outletmall/hallway.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const prev = document.getElementById('nav-prev');
+  const next = document.getElementById('nav-next');
+  const unitId = 'fruity-puppy-skincare';
+  const prevUnit = window.mallNav.getPrev(unitId);
+  const nextUnit = window.mallNav.getNext(unitId);
+  
+  if (prevUnit) prev.href = prevUnit.path;
+  else prev.style.display = 'none';
+  
+  if (nextUnit) next.href = nextUnit.path;
+  else next.style.display = 'none';
+});
+</script>
+</body>
+</html>

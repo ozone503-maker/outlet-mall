@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BroBots Multimedia Studios</title>
+    <link rel="stylesheet" href="/outletmall/mall.css">
+    <style>
+body {
+    background: #0f0d0a;
+    color: #efeae0;
+    font-family: system-ui, -apple-system, sans-serif;
+    padding-bottom: 80px;
+}
+
+.studio {
+    min-height: 100vh;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.studio-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    border: 2px solid #1d3fa8;
+    background: rgba(29, 63, 168, 0.05);
+}
+
+.studio-header h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.02em;
+}
+
+.studio-header p {
+    color: #8c826c;
+    font-size: 1rem;
+}
+
+.studio-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.studio-section {
+    background: #16130e;
+    border: 1px solid #241f18;
+    padding: 2rem;
+}
+
+.studio-section h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #f2c230;
+}
+
+.studio-section p {
+    line-height: 1.6;
+    color: #9a9184;
+    margin-bottom: 1rem;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.service-card {
+    background: #0f0d0a;
+    border: 1px solid #241f18;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.service-card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.service-card p {
+    font-size: 0.9rem;
+    color: #8c826c;
+}
+
+.cta-btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: #1d3fa8;
+    color: #f2c230;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 2px;
+    transition: all 180ms;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 1rem;
+}
+
+.cta-btn:hover {
+    background: #2851d4;
+    box-shadow: 0 0 16px rgba(29, 63, 168, 0.5);
+}
+    </style>
+</head>
+<body>
+    <div class="studio">
+        <div class="studio-header">
+            <h1>BroBots Multimedia Studios</h1>
+            <p>Content creation, design, and digital production</p>
+        </div>
+
+        <div class="studio-content">
+            <div class="studio-section">
+                <h2>Recording & Production</h2>
+                <p>State-of-the-art facilities for audio and video production. From concept to final cut, we bring your vision to life.</p>
+                
+                <div class="service-grid">
+                    <div class="service-card">
+                        <h3>Audio Recording</h3>
+                        <p>Professional studio setup</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Video Production</h3>
+                        <p>4K capture and editing</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Design Studio</h3>
+                        <p>Creative visual work</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Editing Suite</h3>
+                        <p>Post-production specialists</p>
+                    </div>
+                </div>
+                
+                <a href="#" class="cta-btn">Book a Session</a>
+            </div>
+
+            <div class="studio-section">
+                <h2>About Us</h2>
+                <p>BroBots Multimedia Studios is where imagination meets technology. We create content that builds better futures.</p>
+                <a href="#" class="cta-btn">Learn More</a>
+            </div>
+        </div>
+    </div>
+
+<div class="unit-nav">
+  <a class="unit-nav__back" href="/outletmall/" aria-label="Back to hallway">← Back to hallway</a>
+  <div class="unit-nav__doors">
+    <a class="unit-nav__prev" href="#" id="nav-prev" aria-label="Previous store">&larr; Previous</a>
+    <a class="unit-nav__next" href="#" id="nav-next" aria-label="Next store">Next &rarr;</a>
+  </div>
+</div>
+
+<script src="/outletmall/hallway.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const prev = document.getElementById('nav-prev');
+  const next = document.getElementById('nav-next');
+  const unitId = 'brobots-multimedia';
+  const prevUnit = window.mallNav.getPrev(unitId);
+  const nextUnit = window.mallNav.getNext(unitId);
+  
+  if (prevUnit) prev.href = prevUnit.path;
+  else prev.style.display = 'none';
+  
+  if (nextUnit) next.href = nextUnit.path;
+  else next.style.display = 'none';
+});
+</script>
+</body>
+</html>

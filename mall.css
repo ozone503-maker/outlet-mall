@@ -1,0 +1,46 @@
+/* Fruity Puppy Outlet Mall — shared shell tokens.
+   Units and halls override the brand layer locally. */
+
+:root{
+  --radius-card:4px;
+  --wood-dark:#4A2F1C; --wood-mid:#6B452A; --wood-light:#8A5C38;
+  --wall:#2A2320; --wall-lit:#3B322C;
+  --paper:#EFE7D6; --box-white:#F2EFE6; --box-shadow:#C9C2B2;
+  --neon:#F2C230; --hot:#C42A2A; --cool:#1D3FA8;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#14100E;color:var(--paper);
+  font-family:system-ui,sans-serif;line-height:1.5;overflow-x:hidden}
+a{color:inherit}
+
+.unit-nav{
+  position:fixed;bottom:0;left:0;right:0;background:#0B0A08;border-top:1px solid #241F18;
+  padding:12px clamp(16px,4vw,48px);display:flex;gap:clamp(16px,4vw,32px);
+  align-items:center;justify-content:space-between;z-index:999;font-size:.9rem
+}
+.unit-nav__back{
+  text-decoration:none;color:#8C826C;transition:color 180ms var(--ease)
+}
+.unit-nav__back:hover{color:#EFEAE0}
+.unit-nav__doors{
+  display:flex;gap:24px
+}
+.unit-nav__prev,.unit-nav__next{
+  text-decoration:none;color:#EFEAE0;padding:8px 12px;background:#16130E;
+  border:1px solid #241F18;border-radius:2px;transition:background 180ms var(--ease)
+}
+.unit-nav__prev:hover,.unit-nav__next:hover{
+  background:#1F1A14
+}
+
+.storefront__door[src]{
+  width:100%;height:100%;object-fit:cover;object-position:center
+}
+
+@media (max-width:680px){
+  .unit-nav{flex-direction:column;gap:8px;font-size:.8rem;padding:8px 12px}
+  .unit-nav__doors{gap:8px;width:100%}
+  .unit-nav__prev,.unit-nav__next{flex:1;text-align:center}
+}

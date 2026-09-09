@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>The Arcade</title>
+<link rel="stylesheet" href="/outletmall/mall.css">
+<link rel="stylesheet" href="/outletmall/units/arcade/arcade.css">
+</head>
+<body class="arcade">
+
+<div class="gate" id="gate">
+  <p class="gate__sub">Fruity Puppy Outlet Mall &middot; Unit 07</p>
+  <h1 class="gate__name">The Arcade</h1>
+  <button class="bigred" id="bigred" type="button" aria-label="Enter the arcade">
+    <span>Press to enter</span>
+  </button>
+</div>
+
+<button class="snd" id="snd" type="button" aria-label="Toggle sound">
+  <i></i><span id="snd-label">Sound on</span>
+</button>
+
+<audio id="tone" loop preload="auto"></audio>
+<audio id="game" loop preload="auto"></audio>
+
+<section class="panel" id="approach">
+  <div class="panel__band">
+    <p class="eyebrow">Unit 07 &middot; Fruity Puppy Outlet Mall</p>
+    <h1 class="title">The Arcade</h1>
+  </div>
+</section>
+
+<section class="panel" id="aisle"></section>
+
+<section class="panel" id="walk"></section>
+
+<section class="panel" id="claw"></section>
+
+<div class="floor">
+  <div class="wrap">
+    <div class="label"><h2>The claw</h2><span>5 tokens</span></div>
+    <div class="claw">
+      <div id="grab-mov"></div>
+    </div>
+
+    <div class="label"><h2>Punch-Out!!</h2><span>Nintendo &middot; 1984</span></div>
+    <div class="featured">
+      <div id="punchout-mov"></div>
+    </div>
+
+    <div class="label"><h2>On the floor</h2><span></span></div>
+    <div class="players" id="players"></div>
+
+    <div class="label"><h2>The machines</h2><span id="rail-count"></span></div>
+    <div class="railnav">
+      <div class="railnav__dots" id="rail-dots"></div>
+      <div class="railnav__btns">
+        <button type="button" id="rail-prev" aria-label="Previous machine">&larr;</button>
+        <button type="button" id="rail-next" aria-label="Next machine">&rarr;</button>
+      </div>
+    </div>
+    <div class="rail">
+      <div class="track" id="wall"></div>
+    </div>
+  </div>
+</div>
+
+<section class="panel" id="pinball"></section>
+
+<div class="floor">
+  <div class="wrap">
+    <div class="card">
+      <div>
+        <h3>Cabinet footage by @brokenarcade</h3>
+        <p>Some of the machine footage here came from Broken Arcade, used with
+          permission.</p>
+      </div>
+      <a class="btn" href="https://www.instagram.com/brokenarcade" target="_blank"
+         rel="noopener">@brokenarcade on Instagram</a>
+    </div>
+  </div>
+</div>
+
+<div class="focus" id="focus" role="dialog" aria-modal="true" aria-label="Machine">
+  <button class="focus__arrow focus__arrow--prev" id="focus-prev" aria-label="Previous">&larr;</button>
+  <div class="focus__stage" id="focus-stage">
+    <button class="focus__x" id="focus-x" aria-label="Close">&times;</button>
+    <span class="focus__no" id="focus-no"></span>
+  </div>
+  <button class="focus__arrow focus__arrow--next" id="focus-next" aria-label="Next">&rarr;</button>
+</div>
+
+<div class="rotate" id="rotate">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <rect x="3" y="7" width="18" height="10" rx="2"/>
+    <path d="M8 3.5A9 9 0 0 1 20 6"/><path d="M17.5 3v3.5H21"/>
+  </svg>
+  Turn sideways
+  <button type="button" id="rotate-x" aria-label="Dismiss">&times;</button>
+</div>
+
+<div class="unit-nav">
+  <a class="unit-nav__back" href="/outletmall/" aria-label="Back to hallway">← Back to hallway</a>
+  <div class="unit-nav__doors">
+    <a class="unit-nav__prev" href="#" id="nav-prev" aria-label="Previous store">&larr; Previous</a>
+    <a class="unit-nav__next" href="#" id="nav-next" aria-label="Next store">Next &rarr;</a>
+  </div>
+</div>
+
+<script src="/outletmall/hallway.js" defer></script>
+<script src="/outletmall/mall.js" defer></script>
+<script src="/outletmall/mall-tickets.js" defer></script>
+<script src="/outletmall/units/arcade/arcade.js" defer></script>
+<script src="/outletmall/video-governor.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const prev = document.getElementById('nav-prev');
+  const next = document.getElementById('nav-next');
+  const unitId = 'arcade';
+  const prevUnit = window.mallNav.getPrev(unitId);
+  const nextUnit = window.mallNav.getNext(unitId);
+  
+  if (prevUnit) prev.href = prevUnit.path;
+  else prev.style.display = 'none';
+  
+  if (nextUnit) next.href = nextUnit.path;
+  else next.style.display = 'none';
+});
+</script>
+</body>
+</html>
