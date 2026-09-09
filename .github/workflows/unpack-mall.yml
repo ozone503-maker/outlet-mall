@@ -27,13 +27,21 @@ jobs:
           unzip -oq outlet-mall-code.zip -d .unpacked
           unzip -oq outlet-mall-assets.zip -d .unpacked
 
-          INDEX_PATH="$(find .unpacked -type f -name index.html | head -n 1)"
-          if [ -z "$INDEX_PATH" ]; then
-            echo "No index.html found after unzipping"
+          SITE_DIR=""
+          while IFS= read -r INDEX_PATH; do
+            CANDIDATE="$(dirname "$INDEX_PATH")"
+            if [ -f "$CANDIDATE/mall.css" ] && [ -f "$CANDIDATE/mall.js" ]; then
+              SITE_DIR="$CANDIDATE"
+              break
+            fi
+          done < <(find .unpacked -type f -name index.html)
+
+          if [ -z "$SITE_DIR" ]; then
+            echo "No mall root found (index.html + mall.css + mall.js)"
+            find .unpacked -maxdepth 4 -type f | head -300
             exit 1
           fi
 
-          SITE_DIR="$(dirname "$INDEX_PATH")"
           echo "Website root: $SITE_DIR"
 
           rsync -a "$SITE_DIR"/ ./ \
@@ -42,7 +50,6 @@ jobs:
             --exclude 'outlet-mall-code.zip' \
             --exclude 'outlet-mall-assets.zip'
 
-          # If the assets archive unpacked into a sibling assets folder, merge it too.
           for ASSET_DIR in $(find .unpacked -type d -name assets); do
             mkdir -p assets
             rsync -a "$ASSET_DIR"/ assets/
@@ -59,6 +66,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "Nothing to commit"
           else
-            git commit -m "Unpack outlet mall for Vercel"
+            git commit -m "Unpack correct Outlet Mall root for Vercel"
             git push
           fi
