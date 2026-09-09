@@ -32,7 +32,7 @@
    is retiring currency. A spend without a venue is recorded as "unattributed"
    and shows up in report() so it can be found and fixed.
 
-   PRICING IS NOT IN THIS FILE. It loads from /outletmall/data/kdu-pricing.json.
+   PRICING IS NOT IN THIS FILE. It loads from /data/kdu-pricing.json.
    No game hardcodes its own entry fee — change the number in one place and
    every venue picks it up.
 
@@ -47,7 +47,7 @@
 
   var KEY    = "fpom.kdu.v1";
   var LOG    = "fpom.kdu.ledger.v1";
-  var CFGURL = "/outletmall/data/kdu-pricing.json";
+  var CFGURL = "/data/kdu-pricing.json";
   var MAXLOG = 200;
 
   var mem  = { bal: null, log: [] };

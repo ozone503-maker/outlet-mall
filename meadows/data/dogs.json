@@ -4,7 +4,7 @@
     "id": "stable slug, never reused",
     "name": "the dog's real name",
     "home": "FlashTown | Rooster Island",
-    "photo": "path under /outletmall/meadows/assets/dogs/",
+    "photo": "path under /meadows/assets/dogs/",
     "story": "their real story, added when ready",
     "available": "false hides them from selection without deleting the record"
   },

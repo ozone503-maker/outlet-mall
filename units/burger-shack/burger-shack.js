@@ -33,7 +33,7 @@ var INLINE = {};
   var PARTNER_NOTE =
     "Results depend on the work you put in. Nothing here is a promise of income.";
 
-  function src(f) { return "/outletmall/units/burger-shack/assets/" + f; }
+  function src(f) { return "/units/burger-shack/assets/" + f; }
 
   function shot(file, alt, eager) {
     var d = document.createElement("div"); d.className = "shot";

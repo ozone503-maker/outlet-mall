@@ -4,7 +4,7 @@
     "id": "stable slug, never reused",
     "name": "display name",
     "origin": "which property they come from",
-    "art": "path under /outletmall/meadows/assets/riders/",
+    "art": "path under /meadows/assets/riders/",
     "canonical": "true for the Monkey Jockey himself — exactly one",
     "available": "false hides them from selection without deleting the record"
   },

@@ -17,7 +17,7 @@ var INLINE = {};
       u: "https://explore.org/livecams/oceans/pearl-reef-cam" }
   ];
 
-  function src(f) { return "/outletmall/units/fish-store/assets/" + f; }
+  function src(f) { return "/units/fish-store/assets/" + f; }
 
   function shot(file, alt, eager) {
     var d = document.createElement("div"); d.className = "shot";

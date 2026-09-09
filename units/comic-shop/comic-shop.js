@@ -32,7 +32,7 @@ var INLINE = {};
     var d = document.createElement("div"); d.className = "shot";
     var i = document.createElement("img");
     i.alt = alt || ""; i.loading = eager ? "eager" : "lazy"; i.decoding = "async";
-    i.src = "/outletmall/units/comic-shop/assets/" + file;
+    i.src = "/units/comic-shop/assets/" + file;
     d.appendChild(i); return d;
   }
 

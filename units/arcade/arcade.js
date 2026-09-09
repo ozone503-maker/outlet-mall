@@ -15,7 +15,7 @@ var INLINE = {};
     { f: "cab09", n: "09", g: "#FFB020" }
   ];
 
-  function src(f) { return "/outletmall/units/arcade/assets/" + f; }
+  function src(f) { return "/units/arcade/assets/" + f; }
 
   /* Phones cap how many videos decode at once. Keep the nearest few running
      and pause the rest, so ten on screen never becomes ten decoding. */

@@ -11,7 +11,7 @@ var INLINE = {};
   var SIGN = { name: "The Rack", line:
     "Four racks, no order to any of it. Six fitting rooms, five that latch." };
 
-  var DIR = "/outletmall/units/fitting-room/assets/";
+  var DIR = "/units/fitting-room/assets/";
   
   /* filename : [role, aspect] — matches SHOTS.md */
   var SHOTS = {

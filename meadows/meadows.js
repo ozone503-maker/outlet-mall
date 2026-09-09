@@ -6,10 +6,10 @@
 
   var LOTS = [
     { id: "monkey-jockey", name: "Monkey Jockey", state: "soon",
-      href: "/outletmall/units/arcade/monkey-jockey/", ico: "flag",
+      href: "/units/arcade/monkey-jockey/", ico: "flag",
       desc: "Brought to you by the Kudoken. The track is graded; the race is not running yet." },
     { id: "gift-shop", name: "Kudoken Gift Shop", state: "open",
-      href: "/outletmall/meadows/gift-shop/", ico: "shop",
+      href: "/meadows/gift-shop/", ico: "shop",
       desc: "Spend arcade tickets. Shelves are still being stocked." },
     { id: "paddock", name: "The Paddock", state: "soon",
       href: "", ico: "paw",

@@ -25,7 +25,7 @@ var INLINE = {};
     var d = document.createElement("div"); d.className = "shot";
     var i = document.createElement("img");
     i.alt = alt || ""; i.loading = eager ? "eager" : "lazy"; i.decoding = "async";
-    i.src = "/outletmall/units/restaurant/assets/" + file;
+    i.src = "/units/restaurant/assets/" + file;
     d.appendChild(i); return d;
   }
 
