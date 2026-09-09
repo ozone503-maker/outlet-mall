@@ -1,5 +1,10 @@
 {
   "buildCommand": "echo 'Static site, no build needed'",
   "outputDirectory": ".",
-  "devCommand": "python3 -m http.server 3000"
+  "devCommand": "python3 -m http.server 3000",
+  "rewrites": [
+    { "source": "/outletmall", "destination": "/" },
+    { "source": "/outletmall/", "destination": "/" },
+    { "source": "/outletmall/:path*", "destination": "/:path*" }
+  ]
 }
