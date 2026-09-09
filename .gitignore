@@ -1,0 +1,17 @@
+# Local/editor clutter
+.DS_Store
+Thumbs.db
+
+# Dependency/build output
+node_modules/
+.vercel/
+dist/
+build/
+
+# Do not commit deploy/archive bundles
+*.zip
+*.tar
+*.tar.gz
+
+# Logs
+*.log
