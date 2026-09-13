@@ -17,5 +17,6 @@
   {"id":"museum","name":"Museum","path":"/units/museum/","image":"/assets/museum.png","description":"Natural history, dinosaurs, and discovery.","district":"entertainment","status":"open"},
   {"id":"theater","name":"Theater","path":"/units/theater/","image":"/assets/theater.png","description":"Movies, snacks, and Fruity Puppy now playing.","district":"entertainment","status":"open"},
   {"id":"shoe-store","name":"Shoe Station","path":"/units/shoe-store/","image":"/assets/shoe-store.png","description":"Good shoes, brighter days. Comfort, style, every step.","district":"retail","status":"open"},
+  {"id":"peter-herres","name":"Peter Herres Field Guide","path":"/units/peter-herres/","image":"/assets/peter-herres.jpg","description":"Pacific Northwest lapidary field notes, stones, and finished work.","district":"retail","status":"open"},
   {"id":"meadows","name":"Kudoken Meadows","path":"/meadows/","image":"/assets/meadows.jpg","description":"Behind the mall. Open grounds, mostly unfinished.","district":"meadows","status":"open"}
 ]
