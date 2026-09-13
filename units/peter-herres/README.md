@@ -1,34 +1,42 @@
-# Peter Herres Field Guide — Unit 15
+# Peter's Rocks — Unit 15
 
-Image-first mall room for Pacific Northwest lapidary field notes, stones, and finished work.
+Physical mall stall room for **Peter's Rocks + Ornate Bolo Emporium** — field stones, ornate bolos, cash box + Venmo, cardboard that says ask him.
 
-**Outbound:** https://peter-herres-field-guide-ozone503-6682.vercel.app/
+**Outbound (Field Guide / take a card):** https://peter-herres-field-guide-ozone503-6682.vercel.app/
+
+## Room beats
+
+1. Approach — `storefront.jpg` (plank sign, open stall)
+2. Under the canopy — `canopy.jpg` (market-day collage / tarp + table)
+3. On the table — `table.jpg` (egg carton, trays, bolo row)
+4. Pick one up — `hand-stone.jpg` (+ secondary `hero.jpg` / `detail-b.jpg`)
+5. Wall of bolos — `bolo-wall.jpg` / `bolo-wall-r.jpg`
+6. The sign — `sign.jpg` (PRICES? ASK ME)
+7. Register — `register.jpg` ($20–$60 · Venmo)
+8. Peter's hello — `#peter-hello` with `peter-hello.mp4` + poster
+9. Outbound — Field Guide link + hallway nav
 
 ## Assets (`assets/`)
 
-| File | Source | Role |
-|------|--------|------|
-| `storefront.jpg` | riverbed.jpg | Approach panel (hallway door) |
-| `entrance.jpg` | peter2.jpg | Entry / field shot |
-| `hero.jpg` | cabochons.jpg | Finished faces hero |
-| `detail-a.jpg` | raw.jpg | Rough material A |
-| `detail-b.jpg` | raw2.jpg | Rough material B |
-| `counter.jpg` | bolo.jpg | Finished bolo work |
-| `bolo2.jpg` | bolo2.jpg | Extra finished work |
-| `wide.jpg` | cliff.jpg | Country / canyon |
-| `staff.jpg` | peter.jpg | About Peter |
-| `map.jpg` | map.png (compressed) | Working field map |
-| `creek.jpg` | creek.jpg | Optional field note |
-| `raw.jpg` | raw.jpg | Kept for process reuse |
-| `wood-texture.jpg` | wood-texture.jpg | Outbound panel texture |
-| `field-motion-*-poster.jpg` | posters | Optional motion posters |
+| File | Role |
+|------|------|
+| `storefront.jpg` | Approach / hallway door |
+| `canopy.jpg` | Under the canopy / market day |
+| `table.jpg` | Merchandise beat |
+| `hand-stone.jpg` | Hands-on pick-up |
+| `bolo-wall.jpg` / `bolo-wall-r.jpg` | Bolo walls |
+| `sign.jpg` | Personality / desk beat |
+| `register.jpg` | Cash box + Venmo |
+| `peter-hello-poster.jpg` | Video poster (frame @ 1s) |
+| `peter-hello.mp4` | Peter's ~10s hello (640×360, audio) |
+| `hero.jpg` / `detail-a.jpg` / `detail-b.jpg` | Secondary tray detail |
 
 Hallway thumb: `/assets/peter-herres.jpg` (from storefront).
 
 ## Files
 
-- `index.html` — panels: approach, entry, process, details, country, map, finished work, about/quote, outbound
-- `peter-herres.css` — forest/moss/paper/gold Field Guide tones
-- `peter-herres.js` — `mallNav` UNIT_ID = `peter-herres`
+- `index.html` — shop room (not brochure)
+- `peter-herres.css` — hunter green / wood / canvas / burlap
+- `peter-herres.js` — `mallNav` UNIT_ID `peter-herres`
 
-Registered in `data/stores.json` as `open` / district `retail`.
+Registered in `data/stores.json` as `Peter's Rocks` / `open` / district `retail`.
