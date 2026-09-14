@@ -90,6 +90,15 @@
     "status": "open"
   },
   {
+    "id": "metal-dicks-robot-lounge",
+    "name": "Metal Dick's Robot Lounge",
+    "path": "/units/metal-dicks-robot-lounge/",
+    "image": "/assets/metal-dicks-robot-lounge.jpg",
+    "description": "Robot comedy, rap, and live bands. No humans allowed.",
+    "district": "entertainment",
+    "status": "open"
+  },
+  {
     "id": "thorny-toad",
     "name": "Thorny Toad Toner Warehouse",
     "path": "/units/thorny-toad/",
