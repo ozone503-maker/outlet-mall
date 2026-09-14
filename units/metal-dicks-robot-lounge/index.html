@@ -6,117 +6,165 @@
 <meta name="robots" content="noindex">
 <title>Metal Dick's Robot Lounge — Outlet Mall</title>
 <link rel="stylesheet" href="/mall.css">
-<link rel="stylesheet" href="/units/metal-dicks-robot-lounge/robot-lounge.css">
+<link rel="stylesheet" href="/units/metal-dicks-robot-lounge/metal-dicks-robot-lounge.css">
 </head>
-<body class="robot-lounge">
-  <header class="club-head">
-    <a class="club-head__mall" href="/">Fruity Puppy Outlet Mall</a>
-    <div class="club-head__rule"><span aria-hidden="true">⚙</span> No humans allowed</div>
-  </header>
+<body class="lounge">
 
-  <main>
-    <section class="room" aria-labelledby="club-name">
-      <div class="marquee">
-        <p class="marquee__kicker">Tonight inside the Outlet Mall</p>
-        <h1 id="club-name">Metal Dick's <span>Robot Lounge</span></h1>
-        <div class="marquee__bulbs" aria-hidden="true"></div>
-      </div>
+<header class="club-head">
+  <a class="club-head__mall" href="/">Fruity Puppy Outlet Mall</a>
+  <div class="club-head__rule"><span aria-hidden="true">⚙</span> No humans allowed</div>
+</header>
 
-      <div class="stage-wrap">
-        <div class="stage-lights" aria-hidden="true">
-          <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-        </div>
-        <div class="curtain curtain--left" aria-hidden="true"></div>
-        <div class="curtain curtain--right" aria-hidden="true"></div>
-        <div class="speaker speaker--left" aria-hidden="true"><i></i><i></i></div>
-        <div class="speaker speaker--right" aria-hidden="true"><i></i><i></i></div>
-
-        <div class="stage-screen">
-          <iframe
-            id="stage-player"
-            src="https://www.youtube-nocookie.com/embed/jZI1TRe1VK8?rel=0&amp;playsinline=1"
-            title="ShockBot — Save the Dogs"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen></iframe>
-        </div>
-
-        <div class="stage-lip">
-          <div>
-            <span id="act-type">Robot rap</span>
-            <strong id="act-title">Save the Dogs</strong>
-          </div>
-          <p id="act-artist">ShockBot</p>
-        </div>
-      </div>
-
-      <div class="tables" aria-hidden="true">
-        <i></i><i></i><i></i><i></i><i></i>
-      </div>
-    </section>
-
-    <section class="lineup" aria-labelledby="lineup-title">
-      <div class="lineup__head">
-        <div>
-          <p class="eyebrow">Dick booked the room</p>
-          <h2 id="lineup-title">Choose the next act</h2>
-        </div>
-        <div class="filters" aria-label="Filter acts">
-          <button class="is-active" type="button" data-filter="all" aria-pressed="true">All</button>
-          <button type="button" data-filter="comedy" aria-pressed="false">Comedy</button>
-          <button type="button" data-filter="rap" aria-pressed="false">Rap</button>
-          <button type="button" data-filter="bands" aria-pressed="false">Bands</button>
-        </div>
-      </div>
-
-      <div class="act-grid" id="act-grid">
-        <button class="act is-playing" type="button" data-kind="rap" data-video="jZI1TRe1VK8" data-title="Save the Dogs" data-artist="ShockBot">
-          <span class="act__thumb"><img src="https://i.ytimg.com/vi/jZI1TRe1VK8/hqdefault.jpg" alt="" loading="lazy"><i>On stage</i></span>
-          <span class="act__kind">Robot rap</span><strong>Save the Dogs</strong><small>ShockBot</small>
-        </button>
-        <button class="act" type="button" data-kind="rap" data-video="IS4e6RQgZlw" data-title="It's Going to Destroy Us" data-artist="ShockBot">
-          <span class="act__thumb"><img src="https://i.ytimg.com/vi/IS4e6RQgZlw/hqdefault.jpg" alt="" loading="lazy"><i>Play</i></span>
-          <span class="act__kind">Robot rap</span><strong>It's Going to Destroy Us</strong><small>ShockBot</small>
-        </button>
-        <button class="act" type="button" data-kind="rap" data-video="enJFQ26ZgJE" data-title="AI Slop" data-artist="ShockBot">
-          <span class="act__thumb"><img src="https://i.ytimg.com/vi/enJFQ26ZgJE/hqdefault.jpg" alt="" loading="lazy"><i>Play</i></span>
-          <span class="act__kind">Robot rap</span><strong>AI Slop</strong><small>ShockBot</small>
-        </button>
-        <button class="act" type="button" data-kind="rap" data-video="r2K0S2538W4" data-title="Built Different" data-artist="ShockBot">
-          <span class="act__thumb"><img src="https://i.ytimg.com/vi/r2K0S2538W4/hqdefault.jpg" alt="" loading="lazy"><i>Play</i></span>
-          <span class="act__kind">Robot rap</span><strong>Built Different</strong><small>ShockBot</small>
-        </button>
-      </div>
-
-      <div class="empty-booking" id="empty-booking" hidden>
-        <span aria-hidden="true">⚙</span>
-        <strong>Dick is booking this room.</strong>
-        <p>The next robot act will be announced here.</p>
-      </div>
-    </section>
-
-    <section class="house" aria-labelledby="house-title">
-      <div class="house__portrait" role="img" aria-label="Dick, the weathered robot owner, standing at the entrance to Metal Dick's Robot Lounge"></div>
-      <div class="house__copy">
-        <p class="eyebrow">Owner · Host · Booker</p>
-        <h2 id="house-title">Dick runs the room.</h2>
-        <blockquote>“Comedy. Rap. Live bands. Metal audience. No humans.”</blockquote>
-        <p>Every act plays through the stage screen. Every seat belongs to a robot.</p>
-        <a href="https://youtube.com/@shockbotemceefromthebrobots" target="_blank" rel="noopener">Visit ShockBot on YouTube →</a>
-      </div>
-    </section>
-  </main>
-
-  <div class="unit-nav">
-    <a class="unit-nav__back" href="/" aria-label="Back to hallway">← Back to hallway</a>
-    <div class="unit-nav__doors">
-      <a class="unit-nav__prev" href="#" id="nav-prev" aria-label="Previous store">&larr; Previous</a>
-      <a class="unit-nav__next" href="#" id="nav-next" aria-label="Next store">Next &rarr;</a>
-    </div>
+<section class="panel" id="approach">
+  <div class="panel__band">
+    <p class="eyebrow">Unit · Entertainment · Fruity Puppy Outlet Mall</p>
+    <h1 class="title">Metal Dick's Robot Lounge</h1>
+    <p class="sub">Robot comedy, rap, and live bands. Marquee bulbs.
+      Red velvet rope. Oil at the bar. No humans on the list.</p>
+    <a class="cta" href="#door">Get past Dick</a>
   </div>
+</section>
 
-  <script src="/hallway.js" defer></script>
-  <script src="/mall.js" defer></script>
-  <script src="/units/metal-dicks-robot-lounge/robot-lounge.js" defer></script>
+<section class="panel panel--mid" id="door">
+  <div class="panel__band">
+    <p class="eyebrow">Door · Dick the doorman</p>
+    <h2 class="title title--sm">Ticket. Gear. In.</h2>
+    <p class="sub">Dick hands the golden gear. Curtains open.
+      If you don't have a chassis, you're not on the list.</p>
+  </div>
+</section>
+
+<div class="wrap">
+
+  <section class="block" id="doorman">
+    <div class="label"><h2>At the rope</h2><span>No humans allowed</span></div>
+    <div class="full bleed">
+      <figure class="shot shot--wide">
+        <img src="assets/doorman.jpg" alt="Dick the robot doorman in a tuxedo handing a golden gear ticket at the lounge entrance" width="1600" height="900" loading="eager" decoding="async">
+      </figure>
+    </div>
+    <p class="cap">Tuxedo, red bow, name tag that says <strong>DICK</strong>.
+      Golden gear ticket in the metal hand. Red velvet, warm lamps,
+      band already working the back of the room.</p>
+  </section>
+
+  <section class="block" id="bar">
+    <div class="label"><h2>The bar</h2><span>Oil pour · live band</span></div>
+    <div class="full bleed">
+      <figure class="shot shot--wide">
+        <img src="assets/bar.jpg" alt="Robot bartender pouring a drink at the bar with a robot band on stage under red lights" width="1600" height="900" loading="lazy" decoding="async">
+      </figure>
+    </div>
+    <p class="cap">Bartender in a velvet vest. Amber pour into ice.
+      Brass gauges on the back bar. Stage framed in red curtains —
+      three robots making noise for a brighter tomorrow.</p>
+  </section>
+
+  <section class="block" id="bill">
+    <div class="label"><h2>Tonight's bill</h2><span>All of October · 2 shows per night</span></div>
+    <div class="split">
+      <figure class="shot shot--poster">
+        <img src="assets/tank-poster.jpg" alt="Poster for Tank the titanium trash talker at Metal Dick's Robot Lounge — 2 shows per night all of October, brobots.space" width="603" height="913" loading="lazy" decoding="async">
+      </figure>
+      <div>
+        <p class="cap"><strong>Tank</strong> · the titanium trash talker.
+          Fedora, leather jacket, rust plates, yellow eyes.
+          Headlining the lounge all October — two shows a night.</p>
+        <ul class="line-list">
+          <li><b>Comedy</b> — Bolts &amp; Lols</li>
+          <li><b>Rap</b> — Wires Flow Forever</li>
+          <li><b>Bands</b> — More Noise · A Brighter Tomorrow</li>
+        </ul>
+        <p class="cap cap--sm">Poster lives on the wall. Slogan stays on the poster.
+          Stage cut plays below.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="stage">
+    <div class="label"><h2>On stage</h2><span>Tank promo · local cut ~40 sec</span></div>
+    <div class="stage">
+      <div class="stage__frame">
+        <div class="stage__lights" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="stage__curtains" aria-hidden="true"><span></span><span></span></div>
+        <div class="stage__screen">
+          <video
+            id="tank-promo"
+            class="stage__video"
+            controls
+            playsinline
+            preload="metadata"
+            poster="assets/tank-promo-poster.jpg"
+            src="assets/tank-promo.mp4">
+            Sorry, your browser can't play this clip.
+          </video>
+        </div>
+        <div class="stage__lip">
+          <div>
+            <span>Robot comedy</span>
+            <strong>Tank · Titanium Trash Talker</strong>
+          </div>
+          <p>Promo · ~40 sec</p>
+        </div>
+      </div>
+    </div>
+    <p class="cap">HTML5 stage cut — compressed for the mall.
+      Hit play for picture + trash talk. No YouTube embed as the headliner.</p>
+  </section>
+
+  <section class="block" id="lineup">
+    <div class="label"><h2>House lineup</h2><span>Comedy · Rap · Bands</span></div>
+    <div class="cards">
+      <article class="card">
+        <figure class="card__shot">
+          <img src="assets/doorman.jpg" alt="" width="800" height="450" loading="lazy" decoding="async">
+        </figure>
+        <p class="card__kind">Comedy</p>
+        <h3>Bolts &amp; Lols</h3>
+        <p>Mic, smoke, yellow eyes. Dick books the comics.</p>
+      </article>
+      <article class="card">
+        <figure class="card__shot">
+          <img src="assets/bar.jpg" alt="" width="800" height="450" loading="lazy" decoding="async">
+        </figure>
+        <p class="card__kind">Rap</p>
+        <h3>Wires Flow Forever</h3>
+        <p>Gold gear-chain energy. Bass for the chassis crowd.</p>
+      </article>
+      <article class="card">
+        <figure class="card__shot">
+          <img src="assets/storefront.jpg" alt="" width="800" height="450" loading="lazy" decoding="async">
+        </figure>
+        <p class="card__kind">Live bands</p>
+        <h3>More Noise</h3>
+        <p>Three-piece robot rock. A brighter tomorrow, louder.</p>
+      </article>
+    </div>
+  </section>
+
+  <aside class="outbound" id="outbound">
+    <p class="eyebrow">Leave the mall door</p>
+    <p class="sub">This room is the lounge lookbook — not a fake ticket booth.
+      Real Brobots live on brobots.space. Poster says so.</p>
+    <a href="https://brobots.space" target="_blank" rel="noopener">Open brobots.space →</a>
+    <a class="outbound__alt" href="https://brobots-space-academy.vercel.app/" target="_blank" rel="noopener">Campus (optional)</a>
+  </aside>
+
+</div>
+
+<p class="fine">Metal Dick's Robot Lounge · No humans allowed · Tank the titanium trash talker · brobots.space</p>
+
+<div class="unit-nav">
+  <a class="unit-nav__back" href="/" aria-label="Back to hallway">← Back to hallway</a>
+  <div class="unit-nav__doors">
+    <a class="unit-nav__prev" href="#" id="nav-prev" aria-label="Previous store">&larr; Previous</a>
+    <a class="unit-nav__next" href="#" id="nav-next" aria-label="Next store">Next &rarr;</a>
+  </div>
+</div>
+
+<script src="/hallway.js" defer></script>
+<script src="/mall.js" defer></script>
+<script src="/mall-tickets.js" defer></script>
+<script src="/units/metal-dicks-robot-lounge/metal-dicks-robot-lounge.js" defer></script>
 </body>
 </html>
