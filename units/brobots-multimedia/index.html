@@ -1,157 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BroBots Multimedia Studios</title>
-    <link rel="stylesheet" href="/mall.css">
-    <style>
-body {
-    background: #0f0d0a;
-    color: #efeae0;
-    font-family: system-ui, -apple-system, sans-serif;
-    padding-bottom: 80px;
-}
-
-.studio {
-    min-height: 100vh;
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.studio-header {
-    text-align: center;
-    margin-bottom: 3rem;
-    padding: 2rem;
-    border: 2px solid #1d3fa8;
-    background: rgba(29, 63, 168, 0.05);
-}
-
-.studio-header h1 {
-    font-size: 2.8rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    letter-spacing: 0.02em;
-}
-
-.studio-header p {
-    color: #8c826c;
-    font-size: 1rem;
-}
-
-.studio-content {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.studio-section {
-    background: #16130e;
-    border: 1px solid #241f18;
-    padding: 2rem;
-}
-
-.studio-section h2 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: #f2c230;
-}
-
-.studio-section p {
-    line-height: 1.6;
-    color: #9a9184;
-    margin-bottom: 1rem;
-}
-
-.service-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1.5rem;
-}
-
-.service-card {
-    background: #0f0d0a;
-    border: 1px solid #241f18;
-    padding: 1.5rem;
-    text-align: center;
-}
-
-.service-card h3 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-}
-
-.service-card p {
-    font-size: 0.9rem;
-    color: #8c826c;
-}
-
-.cta-btn {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background: #1d3fa8;
-    color: #f2c230;
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 600;
-    border-radius: 2px;
-    transition: all 180ms;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-top: 1rem;
-}
-
-.cta-btn:hover {
-    background: #2851d4;
-    box-shadow: 0 0 16px rgba(29, 63, 168, 0.5);
-}
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Brobots Space Factory Multimedia Studios — Outlet Mall</title>
+<link rel="stylesheet" href="/mall.css">
+<link rel="stylesheet" href="/units/brobots-multimedia/brobots-multimedia.css">
 </head>
-<body>
-    <div class="studio">
-        <div class="studio-header">
-            <h1>BroBots Multimedia Studios</h1>
-            <p>Content creation, design, and digital production</p>
-        </div>
+<body class="studio">
 
-        <div class="studio-content">
-            <div class="studio-section">
-                <h2>Recording & Production</h2>
-                <p>State-of-the-art facilities for audio and video production. From concept to final cut, we bring your vision to life.</p>
-                
-                <div class="service-grid">
-                    <div class="service-card">
-                        <h3>Audio Recording</h3>
-                        <p>Professional studio setup</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>Video Production</h3>
-                        <p>4K capture and editing</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>Design Studio</h3>
-                        <p>Creative visual work</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>Editing Suite</h3>
-                        <p>Post-production specialists</p>
-                    </div>
-                </div>
-                
-                <a href="#" class="cta-btn">Book a Session</a>
-            </div>
+<!-- Sticky ambient mute — default muted (autoplay policy) -->
+<button type="button" class="snd is-muted" id="snd" aria-pressed="true" aria-label="Sound is muted. Click for studio sound.">
+  <i aria-hidden="true"></i>
+  <span id="snd-label">Muted</span>
+</button>
 
-            <div class="studio-section">
-                <h2>About Us</h2>
-                <p>BroBots Multimedia Studios is where imagination meets technology. We create content that builds better futures.</p>
-                <a href="#" class="cta-btn">Learn More</a>
-            </div>
-        </div>
+<!-- Hidden ambient bed — mall anthem audio loop -->
+<audio id="ambient" loop preload="auto" src="assets/ambient.m4a"></audio>
+
+<section class="panel" id="approach">
+  <div class="panel__band">
+    <p class="eyebrow">Unit · Entertainment · Fruity Puppy Outlet Mall</p>
+    <h1 class="title">Brobots Space Factory Multimedia Studios</h1>
+    <p class="sub">A people agency run by robots. Handmade stories.
+      Record · Mix · Master · Edit · Color · Sound · Deliver —
+      ideas, robots, stories, worlds together.</p>
+    <a class="cta" href="#stage">Step onto the stage</a>
+  </div>
+</section>
+
+<section class="panel panel--mid" id="stage">
+  <div class="panel__band">
+    <p class="eyebrow">LED volume · Scene 042</p>
+    <h2 class="title title--sm">A Brighter Tomorrow</h2>
+    <p class="sub">Gunmetal chassis, cyan neon, clapper on take one.
+      The hero robot points at you — roll camera.</p>
+  </div>
+</section>
+
+<div class="wrap">
+
+  <section class="block" id="foley">
+    <div class="label"><h2>Foley</h2><span>Sound builds better worlds</span></div>
+    <div class="full bleed">
+      <figure class="shot shot--wide">
+        <img src="assets/foley.jpg" alt="Foley robots: one monitors headphones while another presses a boot into gravel under a boom mic" width="1600" height="900" loading="eager" decoding="async">
+      </figure>
     </div>
+    <p class="cap">Boot in gravel. Boom overhead. Waveforms on the chest deck.
+      Sound Foley builds better worlds — the worn-in robots mean it.</p>
+  </section>
+
+  <section class="block" id="edit">
+    <div class="label"><h2>Edit bay</h2><span>Color · Cut · Lunar cam</span></div>
+    <div class="full bleed">
+      <figure class="shot shot--wide">
+        <img src="assets/edit.jpg" alt="Robot editor at dual monitors with NLE timeline and lunar playback marked CAM A SC D010 TAKE 3" width="1600" height="900" loading="lazy" decoding="async">
+      </figure>
+    </div>
+    <p class="cap">Dual monitors, jog dial, Brobots mug. Timeline on the left,
+      lunar plate on the right. Notebook says Edit · Color · Sound —
+      and <strong>A Brighter Tomorrow</strong>.</p>
+  </section>
+
+  <section class="block" id="mix">
+    <div class="label"><h2>Mix + booth</h2><span>Record · Mix · Master</span></div>
+    <div class="split">
+      <figure class="shot">
+        <img src="assets/mix.jpg" alt="Mix room with robots at console and booth; red-eye vocalist at the mic" width="1600" height="900" loading="lazy" decoding="async">
+      </figure>
+      <div>
+        <p class="cap">Analog board lit cyan. White-blue editor on waveforms.
+          Red-eye vocalist in the glass booth — stories to a brighter tomorrow.</p>
+        <ul class="pipeline">
+          <li><b>Record</b> — booth + stage</li>
+          <li><b>Mix</b> — consoles that glow</li>
+          <li><b>Master</b> — deliver the cut</li>
+          <li><b>Edit / Color / Sound</b> — post bay</li>
+        </ul>
+        <p class="cap cap--sm">Fuel ideas. Render. Repeat.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="anthem">
+    <div class="label"><h2>Studio anthem</h2><span>Mall anthem · Meet me at the mall</span></div>
+    <div class="hello">
+      <video
+        id="anthem-video"
+        class="hello__video"
+        controls
+        playsinline
+        preload="metadata"
+        poster="assets/anthem-poster.jpg"
+        src="assets/anthem.mp4">
+        Sorry, your browser can't play this clip.
+      </video>
+    </div>
+    <p class="cap">Gold mustache robot tours the Fruity Puppy Outlet Mall and ends on
+      <strong>hit the studio</strong>. Hit play for picture + vocal.
+      Sticky Sound on loops the ambient bed when this isn't playing.</p>
+  </section>
+
+  <aside class="outbound" id="outbound">
+    <p class="eyebrow">Leave the mall door</p>
+    <p class="sub">This room is the hallway lookbook — not a fake checkout.
+      Real Multimedia Center lives on the Brobots Space Academy campus.</p>
+    <a href="https://brobots-space-academy.vercel.app/multimedia.html" target="_blank" rel="noopener">Open Multimedia Center →</a>
+    <a class="outbound__alt" href="https://brobots.space" target="_blank" rel="noopener">brobots.space</a>
+  </aside>
+
+</div>
+
+<p class="fine">Brobots Space Factory Multimedia Studios · Ideas robots stories worlds together · A Brighter Tomorrow</p>
 
 <div class="unit-nav">
   <a class="unit-nav__back" href="/" aria-label="Back to hallway">← Back to hallway</a>
@@ -162,20 +124,8 @@ body {
 </div>
 
 <script src="/hallway.js" defer></script>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const prev = document.getElementById('nav-prev');
-  const next = document.getElementById('nav-next');
-  const unitId = 'brobots-multimedia';
-  const prevUnit = window.mallNav.getPrev(unitId);
-  const nextUnit = window.mallNav.getNext(unitId);
-  
-  if (prevUnit) prev.href = prevUnit.path;
-  else prev.style.display = 'none';
-  
-  if (nextUnit) next.href = nextUnit.path;
-  else next.style.display = 'none';
-});
-</script>
+<script src="/mall.js" defer></script>
+<script src="/mall-tickets.js" defer></script>
+<script src="/units/brobots-multimedia/brobots-multimedia.js" defer></script>
 </body>
 </html>
