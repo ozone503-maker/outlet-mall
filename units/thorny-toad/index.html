@@ -1,157 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thorny Toad Toner Warehouse</title>
-    <link rel="stylesheet" href="/mall.css">
-    <style>
-body {
-    background: #0f0d0a;
-    color: #efeae0;
-    font-family: system-ui, -apple-system, sans-serif;
-    padding-bottom: 80px;
-}
-
-.warehouse {
-    min-height: 100vh;
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.warehouse-header {
-    text-align: center;
-    margin-bottom: 3rem;
-    padding: 2rem;
-    border: 2px solid #d4a574;
-    background: rgba(212, 165, 116, 0.05);
-}
-
-.warehouse-header h1 {
-    font-size: 2.8rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    letter-spacing: 0.02em;
-    color: #d4a574;
-}
-
-.warehouse-header p {
-    color: #8c826c;
-    font-size: 1rem;
-}
-
-.warehouse-content {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.warehouse-section {
-    background: #16130e;
-    border: 1px solid #241f18;
-    padding: 2rem;
-}
-
-.warehouse-section h2 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: #d4a574;
-}
-
-.warehouse-section p {
-    line-height: 1.6;
-    color: #9a9184;
-    margin-bottom: 1rem;
-}
-
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1.5rem;
-}
-
-.product-card {
-    background: #0f0d0a;
-    border: 1px solid #241f18;
-    padding: 1.5rem;
-    text-align: center;
-}
-
-.product-card h3 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-}
-
-.product-card p {
-    font-size: 0.9rem;
-    color: #8c826c;
-}
-
-.cta-btn {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background: #241f18;
-    color: #efeae0;
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 600;
-    border-radius: 2px;
-    transition: all 180ms;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-top: 1rem;
-}
-
-.cta-btn:hover {
-    background: #2a251d;
-}
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Thorny Toad Toner Warehouse — Face Juice</title>
+<link rel="stylesheet" href="/mall.css">
+<link rel="stylesheet" href="/units/thorny-toad/thorny-toad.css">
 </head>
-<body>
-    <div class="warehouse">
-        <div class="warehouse-header">
-            <h1>Thorny Toad Face Juice</h1>
-            <p>Botanical toner warehouse</p>
-        </div>
+<body class="toad">
 
-        <div class="warehouse-content">
-            <div class="warehouse-section">
-                <h2>Toners & Tonics</h2>
-                <p>Desert-sourced botanical extracts and face tonics. Prickly pear, cactus flower, and more from the Thorny Toad collection.</p>
-                
-                <div class="product-grid">
-                    <div class="product-card">
-                        <h3>Desert Squirt</h3>
-                        <p>Prickly pear toner</p>
-                    </div>
-                    <div class="product-card">
-                        <h3>Cactus Bloom</h3>
-                        <p>Flower extract</p>
-                    </div>
-                    <div class="product-card">
-                        <h3>Arid Refresh</h3>
-                        <p>Mineral tonic</p>
-                    </div>
-                    <div class="product-card">
-                        <h3>Spice Serum</h3>
-                        <p>Botanical blend</p>
-                    </div>
-                </div>
-                
-                <a href="#" class="cta-btn">Shop Toners</a>
-            </div>
+<!-- Sticky ambient mute — default muted (autoplay policy) -->
+<button type="button" class="snd is-muted" id="snd" aria-pressed="true" aria-label="Sound is muted. Click for ambient sound.">
+  <i aria-hidden="true"></i>
+  <span id="snd-label">Muted</span>
+</button>
 
-            <div class="warehouse-section">
-                <h2>Bulk Orders</h2>
-                <p>Wholesale and bulk purchasing available for retailers and professionals. Contact us for wholesale pricing.</p>
-                <a href="#" class="cta-btn">Wholesale Inquiries</a>
-            </div>
-        </div>
+<!-- Hidden ambient bed — audio only (Sir Mix-A-Lot Goretex screen-rec; no picture) -->
+<audio id="ambient" loop preload="auto" src="assets/ambient.m4a"></audio>
+
+<section class="panel" id="approach">
+  <div class="panel__band">
+    <p class="eyebrow">Unit · Fruity Puppy Outlet Mall</p>
+    <h1 class="title">Thorny Toad Toner Warehouse</h1>
+    <p class="sub">Face Juice — small-batch Hawaiʻi botanical facial toner.
+      Stickerbush cane, green tea, guava leaf, lemon peel, jungle mint.
+      Neon toad energy. Handmade, not AI-slop.</p>
+    <a class="cta" href="#inside">Step inside</a>
+  </div>
+</section>
+
+<section class="panel panel--mid" id="inside">
+  <div class="panel__band">
+    <p class="eyebrow">Inside</p>
+    <h2 class="title title--sm">FACE JUICE</h2>
+    <p class="sub">Neon on black wood. Amber bottles on the shelves.
+      Mucilage · Acid · Tannins · Catalyst. Simple plants. Real results.</p>
+  </div>
+</section>
+
+<div class="wrap">
+
+  <section class="block" id="juice">
+    <div class="label"><h2>The juice</h2><span>2 fl oz facial toner</span></div>
+    <div class="full bleed">
+      <figure class="shot shot--tall">
+        <img src="assets/product.jpg" alt="Amber glass Face Juice spray bottle with neon Thorny Toad logo behind it" width="1600" height="1067" loading="eager" decoding="async">
+      </figure>
     </div>
+    <p class="cap">Amber glass, black spray, circular toad label.
+      Small batch · Product of Hawaiʻi. Mucilage, acid, tannins, catalyst —
+      four principles on the block next to the bottle.</p>
+  </section>
+
+  <section class="block" id="botanicals">
+    <div class="label"><h2>Five botanicals</h2><span>The whole formula</span></div>
+    <div class="full bleed">
+      <figure class="shot shot--wide">
+        <img src="assets/ingredients.jpg" alt="Five wood trays of stickerbush cane, green tea, guava leaf, lemon peel, and jungle mint" width="1600" height="1067" loading="lazy" decoding="async">
+      </figure>
+    </div>
+    <ul class="plants">
+      <li><b>Stickerbush cane</b> — mucilage</li>
+      <li><b>Green tea</b> — tannins</li>
+      <li><b>Guava leaf</b> — acid</li>
+      <li><b>Lemon peel</b> — catalyst</li>
+      <li><b>Jungle mint</b> — bright finish</li>
+    </ul>
+    <p class="cap">No aloe filler. Fresh small-batch facial toner —
+      plants, people, brighter skin.</p>
+  </section>
+
+  <section class="block" id="shelves">
+    <div class="label"><h2>The shelves</h2><span>Warehouse stock</span></div>
+    <div class="split">
+      <figure class="shot">
+        <img src="assets/shelves.jpg" alt="Apothecary jars of botanicals and amber Face Juice bottles under neon" width="1600" height="1067" loading="lazy" decoding="async">
+      </figure>
+      <div>
+        <p class="cap">Jars of the five plants on the middle shelf.
+          Crates stamped Thorny Toad Face Juice — Small Batch · Product of Hawaiʻi.
+          Pendant lamps, monstera, cyan neon.</p>
+        <p class="cap cap--sm">Same plants. A brighter you.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="batch">
+    <div class="label"><h2>Small batch</h2><span>Lab pour</span></div>
+    <div class="full bleed">
+      <figure class="shot shot--wide">
+        <img src="assets/lab-pour.jpg" alt="Golden-amber Face Juice poured through a strainer into a beaker beside labeled botanicals" width="1600" height="1067" loading="lazy" decoding="async">
+      </figure>
+    </div>
+    <p class="cap">Pour day in the warehouse lab. Honey-amber liquid through the mesh.
+      Stickerbush, tea, guava, lemon, mint on the board — labeled, not guessed.</p>
+  </section>
+
+  <section class="block" id="hello">
+    <div class="label"><h2>Auntie hello</h2><span>~9 seconds · Face Juice</span></div>
+    <div class="hello">
+      <video
+        id="toad-hello-video"
+        class="hello__video"
+        controls
+        playsinline
+        preload="metadata"
+        poster="assets/toad-hello-poster.jpg"
+        src="assets/toad-hello.mp4">
+        Sorry, your browser can't play this clip.
+      </video>
+    </div>
+    <p class="cap">Shopkeeper hello from the Face Juice crew —
+      auntie with the spray bottle, Rooster Island energy. Hit play; there's audio.
+      Ambient bed pauses while this plays.</p>
+  </section>
+
+  <aside class="outbound" id="outbound">
+    <p class="eyebrow">Leave the mall door</p>
+    <p class="sub">This room is the hallway warehouse lookbook.
+      Real Face Juice lives on Fruity Puppy — Hawaiʻi small-batch, same five plants.</p>
+    <a href="https://shop.fruitypuppy.com/products/thorny-toad-face-juice" target="_blank" rel="noopener">Shop Face Juice →</a>
+    <a class="outbound__alt" href="https://fruitypuppy.com/thorny-toad" target="_blank" rel="noopener">Brand page</a>
+  </aside>
+
+</div>
+
+<p class="fine">Thorny Toad Toner Warehouse · Face Juice · Small batch · Product of Hawaiʻi · Simple plants. Real results.</p>
 
 <div class="unit-nav">
   <a class="unit-nav__back" href="/" aria-label="Back to hallway">← Back to hallway</a>
@@ -162,20 +137,8 @@ body {
 </div>
 
 <script src="/hallway.js" defer></script>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const prev = document.getElementById('nav-prev');
-  const next = document.getElementById('nav-next');
-  const unitId = 'thorny-toad';
-  const prevUnit = window.mallNav.getPrev(unitId);
-  const nextUnit = window.mallNav.getNext(unitId);
-  
-  if (prevUnit) prev.href = prevUnit.path;
-  else prev.style.display = 'none';
-  
-  if (nextUnit) next.href = nextUnit.path;
-  else next.style.display = 'none';
-});
-</script>
+<script src="/mall.js" defer></script>
+<script src="/mall-tickets.js" defer></script>
+<script src="/units/thorny-toad/thorny-toad.js" defer></script>
 </body>
 </html>

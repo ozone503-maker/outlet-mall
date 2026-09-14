@@ -93,8 +93,8 @@
     "id": "thorny-toad",
     "name": "Thorny Toad Toner Warehouse",
     "path": "/units/thorny-toad/",
-    "image": "/assets/thorny-toad.png",
-    "description": "Botanical tonics and desert extracts.",
+    "image": "/assets/thorny-toad.jpg",
+    "description": "Face Juice \u2014 Hawai\u02bbi small-batch botanical facial toner. Five plants, four principles.",
     "district": "main",
     "status": "open"
   },
