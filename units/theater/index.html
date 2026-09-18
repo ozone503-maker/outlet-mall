@@ -4,96 +4,129 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex">
-<title>The Theater</title>
+<title>The Theater - Skin Science</title>
 <link rel="stylesheet" href="/mall.css">
 <link rel="stylesheet" href="/units/theater/theater.css">
 </head>
 <body class="theater">
 
-<header class="marquee" id="approach">
-  <div class="marquee__box">
-    <p class="marquee__eyebrow">Unit 12 &middot; Fruity Puppy Outlet Mall</p>
-    <h1 class="marquee__name">The Theater</h1>
-    <p class="marquee__now">Now showing <span id="marquee-title">Skin Science, every episode</span></p>
-    <a class="marquee__enter" href="#screen">Take a seat</a>
-  </div>
-</header>
+<section class="panel" id="approach">
+ <div class="panel__band">
+ <p class="eyebrow">Unit · Entertainment · Fruity Puppy Outlet Mall</p>
+ <h1 class="title">The Theater</h1>
+ <p class="sub">One screen. Every Skin Science episode, in the order they came out.
+ Ipo and Erv take a skin mystery, run it down, and explain the biology.</p>
+ <a class="cta" href="#screen">Take a seat</a>
+ </div>
+</section>
 
-<p class="lede">One screen, every Skin Science episode, in the order they came out.
-Ipo and Erv take a skin mystery, run it down, and explain the biology.
-Nothing is uploaded twice. The screen is YouTube; the room is ours.</p>
+<section class="panel panel--mid" id="lobby">
+ <div class="panel__band">
+ <p class="eyebrow">Lobby</p>
+ <h2 class="title title--sm">Tickets on the left. Concessions on the right.</h2>
+ <p class="sub">Red carpet, wood wainscot, empty poster frames waiting for the next run.
+ The house is quiet until the screen lights up.</p>
+ </div>
+</section>
 
 <section class="house" id="screen">
-  <div class="house__curtain house__curtain--l"></div>
-  <div class="house__curtain house__curtain--r"></div>
-  <div class="house__screen">
-    <iframe id="player"
-      src="https://www.youtube-nocookie.com/embed/videoseries?list=UUtOyQmEcljP3LcxCEAFcTdA&rel=0&modestbranding=1"
-      title="Fruity Puppy Skin Science"
-      loading="lazy"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowfullscreen
-      referrerpolicy="strict-origin-when-cross-origin"></iframe>
-  </div>
-  <div class="house__seats" aria-hidden="true"></div>
+ <div class="house__screen">
+ <iframe id="player"
+ src="https://www.youtube-nocookie.com/embed/videoseries?list=UUtOyQmEcljP3LcxCEAFcTdA&rel=0&modestbranding=1"
+ title="Fruity Puppy Skin Science"
+ loading="lazy"
+ allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+ allowfullscreen
+ referrerpolicy="strict-origin-when-cross-origin"></iframe>
+ </div>
+ <p class="house__note">Uploads playlist from the Skin Science channel. New episodes appear here on their own.</p>
 </section>
 
 <div class="wrap">
 
-  <section class="block" id="showtimes" hidden>
-    <div class="label"><h2>Showtimes</h2><span id="showtimes-note">Newest first</span></div>
-    <div class="posters" id="posters"></div>
-  </section>
+ <section class="block" id="auditorium">
+ <div class="label"><h2>House</h2><span>Rows facing the glass</span></div>
+ <div class="full bleed">
+ <figure class="shot shot--wide">
+ <img src="assets/auditorium.jpg" alt="Dark auditorium seats facing a lit screen" width="1280" height="720" loading="lazy" decoding="async">
+ </figure>
+ </div>
+ <p class="cap">Seats face forward. Lights stay low. The playlist runs until you leave.</p>
+ </section>
 
-  <section class="block">
-    <div class="label"><h2>Box office</h2><span>Nothing to buy here</span></div>
-    <div class="office">
-      <a class="office__row" href="https://www.youtube.com/@fruitypuppyskinscience">
-        <b>Subscribe on YouTube</b>
-        <span>New episodes land on the channel first. The theater picks them up on its own.</span>
-      </a>
-      <a class="office__row" href="https://fruitypuppy.com/ask-ipo">
-        <b>Ask Ipo</b>
-        <span>Got a skin mystery of your own? She takes cases.</span>
-      </a>
-      <a class="office__row" href="https://shop.fruitypuppy.com">
-        <b>Concessions</b>
-        <span>The cream from the movies. Refrigerated, not embalmed.</span>
-      </a>
-    </div>
-  </section>
+ <section class="block" id="showtimes" hidden>
+ <div class="label"><h2>Showtimes</h2><span id="showtimes-note">Newest first</span></div>
+ <div class="posters" id="posters"></div>
+ </section>
+
+ <section class="block" id="wall">
+ <div class="label"><h2>Poster wall</h2><span>Lobby frames</span></div>
+ <div class="full bleed">
+ <figure class="shot shot--wide">
+ <img src="assets/posters.jpg" alt="Theater poster frames along the lobby wall" width="1280" height="720" loading="lazy" decoding="async">
+ </figure>
+ </div>
+ <p class="cap">Frames line the corridor between the box office and the house doors.</p>
+ </section>
+
+ <section class="block" id="concessions">
+ <div class="label"><h2>Concessions</h2><span>Counter and jars</span></div>
+ <div class="split">
+ <figure class="shot shot--wide">
+ <img src="assets/concessions-counter.jpg" alt="Concession counter with candy case under pendant lights" width="1280" height="720" loading="lazy" decoding="async">
+ </figure>
+ <div>
+ <figure class="shot shot--sq">
+ <img src="assets/concessions-jars.jpg" alt="Glass jars on the concessions shelf" width="1065" height="910" loading="lazy" decoding="async">
+ </figure>
+ <p class="cap">Candy under glass. Jars on the shelf. The board lists what is stocked today.</p>
+ </div>
+ </div>
+ <div class="pair" style="margin-top:clamp(10px,1.6vw,20px)">
+ <figure class="shot shot--sq" style="margin:0">
+ <img src="assets/concessions-sample.jpg" alt="Concession sample display" width="1079" height="813" loading="lazy" decoding="async">
+ </figure>
+ <figure class="shot shot--sq" style="margin:0">
+ <img src="assets/concessions-batch.jpg" alt="Concession batch trays" width="418" height="418" loading="lazy" decoding="async">
+ </figure>
+ <figure class="shot shot--sq" style="margin:0">
+ <img src="assets/concessions.jpg" alt="Concessions detail" width="410" height="410" loading="lazy" decoding="async">
+ </figure>
+ <figure class="shot shot--sq" style="margin:0">
+ <img src="assets/extras.jpg" alt="Theater extras and lobby details" width="1280" height="720" loading="lazy" decoding="async">
+ </figure>
+ </div>
+ </section>
+
+ <section class="block">
+ <div class="label"><h2>Box office</h2><span>Outside the mall door</span></div>
+ <div class="office">
+ <a class="office__row" href="https://www.youtube.com/@fruitypuppyskinscience" target="_blank" rel="noopener">
+ <b>Skin Science on YouTube</b>
+ <span>Episodes land on the channel first. The theater picks them up from the uploads playlist.</span>
+ </a>
+ <a class="office__row" href="https://fruitypuppy.com/ask-ipo" target="_blank" rel="noopener">
+ <b>Ask Ipo</b>
+ <span>Skin mysteries go to her case file.</span>
+ </a>
+ </div>
+ </section>
 
 </div>
 
-<p class="fine">Every link opens in a new tab. The mall stays where you left it.</p>
+<p class="fine">The Theater · Skin Science · Fruity Puppy Outlet Mall · Every link opens in a new tab</p>
 
 <div class="unit-nav">
-  <a class="unit-nav__back" href="/" aria-label="Back to hallway">← Back to hallway</a>
-  <div class="unit-nav__doors">
-    <a class="unit-nav__prev" href="#" id="nav-prev" aria-label="Previous store">&larr; Previous</a>
-    <a class="unit-nav__next" href="#" id="nav-next" aria-label="Next store">Next &rarr;</a>
-  </div>
+ <a class="unit-nav__back" href="/" aria-label="Back to hallway">← Back to hallway</a>
+ <div class="unit-nav__doors">
+ <a class="unit-nav__prev" href="#" id="nav-prev" aria-label="Previous store">&larr; Previous</a>
+ <a class="unit-nav__next" href="#" id="nav-next" aria-label="Next store">Next &rarr;</a>
+ </div>
 </div>
 
+<script src="/hallway.js" defer></script>
 <script src="/mall.js" defer></script>
 <script src="/mall-tickets.js" defer></script>
 <script src="/units/theater/theater.js" defer></script>
-<script src="/corridor.js" defer></script>
-<script src="/hallway.js" defer></script>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const prev = document.getElementById('nav-prev');
-  const next = document.getElementById('nav-next');
-  const unitId = 'theater';
-  const prevUnit = window.mallNav.getPrev(unitId);
-  const nextUnit = window.mallNav.getNext(unitId);
-  
-  if (prevUnit) prev.href = prevUnit.path;
-  else prev.style.display = 'none';
-  
-  if (nextUnit) next.href = nextUnit.path;
-  else next.style.display = 'none';
-});
-</script>
 </body>
 </html>

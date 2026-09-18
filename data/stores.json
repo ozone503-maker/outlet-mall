@@ -15,7 +15,7 @@
     "image": "/assets/fruity-puppy-skincare.png",
     "description": "Handmade biological skin cream, cold-extracted and refrigerated.",
     "district": "main",
-    "status": "open"
+    "status": "construction"
   },
   {
     "id": "fish-store",
@@ -69,7 +69,7 @@
     "image": "/assets/fruity-puppy-merch.png",
     "description": "Tees, hats, and everything else.",
     "district": "main",
-    "status": "open"
+    "status": "construction"
   },
   {
     "id": "brobots-retail",
@@ -78,14 +78,14 @@
     "image": "/assets/brobots-retail.png",
     "description": "Imagination builds better humans. Robots for a brighter tomorrow.",
     "district": "main",
-    "status": "open"
+    "status": "construction"
   },
   {
     "id": "brobots-multimedia",
     "name": "BroBots Multimedia Studios",
     "path": "/units/brobots-multimedia/",
     "image": "/assets/brobots-multimedia.png",
-    "description": "Record, mix, master \u2014 robots putting bass on the track.",
+    "description": "Record, mix, master — robots putting bass on the track.",
     "district": "entertainment",
     "status": "open"
   },
@@ -103,7 +103,7 @@
     "name": "Thorny Toad Toner Warehouse",
     "path": "/units/thorny-toad/",
     "image": "/assets/thorny-toad.jpg",
-    "description": "Face Juice \u2014 Hawai\u02bbi small-batch botanical facial toner. Five plants, four principles.",
+    "description": "Face Juice — Hawaiʻi small-batch botanical facial toner. Five plants, four principles.",
     "district": "main",
     "status": "open"
   },
@@ -114,7 +114,7 @@
     "image": "/assets/lava-guava.png",
     "description": "Lava meets guava. Heat meets fruit.",
     "district": "main",
-    "status": "open"
+    "status": "construction"
   },
   {
     "id": "fpx-boutique",
@@ -123,7 +123,7 @@
     "image": "/assets/fpx-boutique.png",
     "description": "Fruity Puppy Extended armor and exclusive gear.",
     "district": "main",
-    "status": "open"
+    "status": "construction"
   },
   {
     "id": "seven-eleven",
@@ -132,7 +132,7 @@
     "image": "/assets/seven-eleven.png",
     "description": "Open 24/7. Convenience meets Fruity Puppy.",
     "district": "retail",
-    "status": "open"
+    "status": "construction"
   },
   {
     "id": "dairy-queen",
@@ -141,7 +141,7 @@
     "image": "/assets/dairy-queen.png",
     "description": "Frozen treats meet Fruity Puppy flavors.",
     "district": "food",
-    "status": "open"
+    "status": "construction"
   },
   {
     "id": "museum",
@@ -168,7 +168,7 @@
     "image": "/assets/shoe-store.png",
     "description": "Good shoes, brighter days. Comfort, style, every step.",
     "district": "retail",
-    "status": "open"
+    "status": "construction"
   },
   {
     "id": "peter-herres",
@@ -186,6 +186,6 @@
     "image": "/assets/meadows.jpg",
     "description": "Behind the mall. Open grounds, mostly unfinished.",
     "district": "meadows",
-    "status": "open"
+    "status": "construction"
   }
 ]
