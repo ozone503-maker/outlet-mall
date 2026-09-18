@@ -6,48 +6,90 @@
 <meta name="robots" content="noindex">
 <title>Shoe Station</title>
 <link rel="stylesheet" href="/mall.css">
-<style>
-body{background:#0B0A08;color:#EFEAE0;padding-bottom:80px}
-.shoes-header{padding:3rem 2rem;text-align:center;border-bottom:1px solid #241F18}
-.shoes-header h1{font-size:2.5rem;font-weight:600;margin-bottom:.5rem}
-.shoes-header p{color:#8C826C;font-size:1rem}
-.shoes-content{max-width:1000px;margin:0 auto;padding:2rem}
-.category{margin:2rem 0;padding:2rem;background:#16130E;border:1px solid #241F18}
-.category h2{font-size:1.5rem;margin-bottom:1rem;color:#D4A574}
-.category p{line-height:1.6;color:#9A9184;margin-bottom:1rem}
-.cta{display:inline-block;padding:.75rem 1.5rem;background:#241F18;color:#EFEAE0;text-decoration:none;border-radius:2px;transition:background 180ms}
-.cta:hover{background:#2A251D}
-</style>
+<link rel="stylesheet" href="/units/shoe-store/shoe-store.css">
 </head>
-<body>
-  <div class="shoes-header">
-    <p style="font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:#8C826C">Unit · Fruity Puppy Outlet Mall</p>
-    <h1>Shoe Station</h1>
-    <p>Good shoes, brighter days</p>
+<body class="shoes">
+
+<section class="panel" id="approach">
+  <div class="panel__band">
+    <p class="eyebrow">Unit 19 &middot; Retail &middot; Fruity Puppy Outlet Mall</p>
+    <h1 class="title">Shoe Station</h1>
+    <p class="sub">Dropship sneakers, foam clogs, and a try-on bench.
+      Al Bundy owns the brand. The Projectionist built the room.</p>
+    <a class="cta" href="#floor">Step inside</a>
   </div>
-  
-  <div class="shoes-content">
-    <div class="category">
-      <h2>Men's</h2>
-      <p>From casual everyday wear to athletic performance, find your perfect fit in our extensive men's collection.</p>
-      <a href="#" class="cta">Shop Men's</a>
-    </div>
-    
-    <div class="category">
-      <h2>Women's</h2>
-      <p>Style meets comfort. Browse our curated selection of women's shoes for every occasion and season.</p>
-      <a href="#" class="cta">Shop Women's</a>
-    </div>
-    
-    <div class="category">
-      <h2>Kids</h2>
-      <p>Growing feet need proper support. Find sizes and styles for every stage of childhood.</p>
-      <a href="#" class="cta">Shop Kids</a>
-    </div>
+</section>
+
+<section class="panel panel--mid" id="inside">
+  <div class="panel__band">
+    <p class="eyebrow">Inside</p>
+    <h2 class="title title--sm">Walls of pairs. Boxes under every table.</h2>
+    <p class="sub">Men's on the left. Women's on the right. Kids wherever the boxes fit.
+      The slogan on the back wall still says brighter days.</p>
   </div>
+</section>
+
+<div class="wrap">
+
+  <section class="block" id="floor">
+    <div class="label"><h2>The floor</h2><span>Display tables</span></div>
+    <div class="full bleed">
+      <figure class="shot shot--wide">
+        <img src="assets/floor.jpg" alt="Shoe Station sales floor with sneaker walls and display tables" width="1280" height="720" loading="lazy" decoding="async">
+      </figure>
+    </div>
+    <p class="cap">Wood tables in the middle. Shelves on both sides. A brown bench if you actually try something on.</p>
+  </section>
+
+  <section class="block" id="wall">
+    <div class="label"><h2>The wall</h2><span>Sneakers and foam</span></div>
+    <div class="split">
+      <figure class="shot shot--wide">
+        <img src="assets/boxes.jpg" alt="Men's wall with sneakers and stacked shoe boxes" width="1280" height="720" loading="lazy" decoding="async">
+      </figure>
+      <div>
+        <figure class="shot shot--sq">
+          <img src="assets/bench.jpg" alt="Try-on bench beside the women's wall" width="1280" height="720" loading="lazy" decoding="async">
+        </figure>
+        <p class="cap">Dropship runners, bright foam clogs, and whatever landed in the last carton. Not a boutique.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="counter">
+    <div class="label"><h2>Counter</h2><span>Register and boxes</span></div>
+    <div class="split">
+      <figure class="shot shot--wide">
+        <img src="assets/counter.jpg" alt="Checkout counter at the back of Shoe Station" width="1280" height="720" loading="lazy" decoding="async">
+      </figure>
+      <figure class="shot shot--wide">
+        <img src="assets/neon.jpg" alt="Shoe Station sign and lightbox posters above the entrance" width="1280" height="720" loading="lazy" decoding="async">
+      </figure>
+    </div>
+    <p class="cap">Register under the back-wall slogan. Boxes stacked where they fit. The hallway sign is blue and white with a sneaker icon.</p>
+  </section>
+
+  <section class="block" id="desk">
+    <div class="label"><h2>Posted at the register</h2><span>House note</span></div>
+    <div class="desk">
+      <figure class="shot shot--wide" style="margin:0">
+        <img src="assets/approach.jpg" alt="Corridor view into Shoe Station" width="1280" height="720" loading="lazy" decoding="async">
+      </figure>
+      <div class="desk__say">
+        <b>Posted at the register</b>
+        <p>Al Bundy owns Shoe Station. He does not work the floor. If someone in a striped shirt starts talking about touchdowns, that is not staff.</p>
+        <p>Sizes are on the box. If the pair on the wall is the last one, ask at the counter before you lace it.</p>
+        <p>No second checkout in the mall. Look around here. Buy wherever the brand ships from when that door opens.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<p class="fine">Shoe Station &middot; Fruity Puppy Outlet Mall &middot; Corridor back-link below</p>
 
 <div class="unit-nav">
-  <a class="unit-nav__back" href="/" aria-label="Back to hallway">← Back to hallway</a>
+  <a class="unit-nav__back" href="/" aria-label="Back to hallway">&larr; Back to hallway</a>
   <div class="unit-nav__doors">
     <a class="unit-nav__prev" href="#" id="nav-prev" aria-label="Previous store">&larr; Previous</a>
     <a class="unit-nav__next" href="#" id="nav-next" aria-label="Next store">Next &rarr;</a>
@@ -55,20 +97,8 @@ body{background:#0B0A08;color:#EFEAE0;padding-bottom:80px}
 </div>
 
 <script src="/hallway.js" defer></script>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const prev = document.getElementById('nav-prev');
-  const next = document.getElementById('nav-next');
-  const unitId = 'shoe-store';
-  const prevUnit = window.mallNav.getPrev(unitId);
-  const nextUnit = window.mallNav.getNext(unitId);
-  
-  if (prevUnit) prev.href = prevUnit.path;
-  else prev.style.display = 'none';
-  
-  if (nextUnit) next.href = nextUnit.path;
-  else next.style.display = 'none';
-});
-</script>
+<script src="/mall.js" defer></script>
+<script src="/mall-tickets.js" defer></script>
+<script src="/units/shoe-store/shoe-store.js" defer></script>
 </body>
 </html>
