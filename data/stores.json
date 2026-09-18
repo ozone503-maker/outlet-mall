@@ -85,7 +85,7 @@
     "name": "BroBots Multimedia Studios",
     "path": "/units/brobots-multimedia/",
     "image": "/assets/brobots-multimedia.png",
-    "description": "Record, mix, master — robots putting bass on the track.",
+    "description": "Record, mix, master \u2014 robots putting bass on the track.",
     "district": "entertainment",
     "status": "open"
   },
@@ -103,7 +103,7 @@
     "name": "Thorny Toad Toner Warehouse",
     "path": "/units/thorny-toad/",
     "image": "/assets/thorny-toad.jpg",
-    "description": "Face Juice — Hawaiʻi small-batch botanical facial toner. Five plants, four principles.",
+    "description": "Face Juice \u2014 Hawai\u02bbi small-batch botanical facial toner. Five plants, four principles.",
     "district": "main",
     "status": "open"
   },
@@ -165,10 +165,10 @@
     "id": "shoe-store",
     "name": "Shoe Station",
     "path": "/units/shoe-store/",
-    "image": "/assets/shoe-store.png",
-    "description": "Good shoes, brighter days. Comfort, style, every step.",
+    "image": "/assets/shoe-store.jpg",
+    "description": "Dropship sneakers, foam clogs, and a try-on bench.",
     "district": "retail",
-    "status": "construction"
+    "status": "open"
   },
   {
     "id": "peter-herres",
