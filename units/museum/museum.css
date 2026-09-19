@@ -167,3 +167,66 @@ body.museum{
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+
+/* Featured Amber Flynn wing: large sign, hero panel above the four outbound wings */
+.panel--featured{
+ background-image:
+ linear-gradient(180deg,rgba(11,10,8,.18),rgba(11,10,8,.62) 72%),
+ url("assets/wing-amber-flynn.jpg");
+ height:88svh;
+ min-height:440px;
+}
+.panel__band--sign{padding-top:clamp(56px,14vh,140px)}
+.title--sign{
+ font-size:clamp(1.55rem,5.4vmin,3.6rem);
+ letter-spacing:.02em;
+ line-height:1.05;
+ text-transform:uppercase;
+ max-width:18ch;
+}
+.sign-heading{
+ margin:0 0 clamp(14px,2.2vh,22px);
+ color:#fffaf3;
+ font-weight:650;
+ font-size:clamp(1.35rem,3.8vmin,2.4rem);
+ letter-spacing:.02em;
+ line-height:1.1;
+ text-transform:uppercase;
+}
+.featured-wing__grid{
+ display:grid;
+ gap:clamp(14px,2vw,28px);
+ grid-template-columns:1.35fr .9fr;
+ align-items:start;
+}
+.featured-wing__shot{margin:0}
+.featured-wing__copy{
+ border:1px solid var(--rule);
+ background:var(--panel);
+ padding:clamp(16px,2.2vw,26px);
+}
+.featured-wing__eyebrow{margin:0 0 .8em}
+.featured-wing__copy p{
+ margin:0 0 .85em;
+ font-size:clamp(.84rem,1.55vmin,.98rem);
+ color:var(--ink-2);
+ line-height:1.55;
+ max-width:46ch;
+}
+.featured-wing__copy p:last-of-type{margin-bottom:1.2em}
+.cta--inline{margin-top:.2em}
+.featured-wing__detail{margin:clamp(14px,2.2vh,24px) 0 0}
+.featured-wing__detail figcaption{
+ padding-top:9px;
+ font-size:clamp(.66rem,1.2vmin,.76rem);
+ color:var(--ink-3);
+}
+@media (max-width:900px){
+ .featured-wing__grid{grid-template-columns:1fr}
+ .title--sign{max-width:none}
+}
+@media (min-aspect-ratio:13/9){
+ .panel--featured{height:100svh;min-height:0}
+ .title--sign{font-size:clamp(2rem,6.2vmin,4.2rem)}
+}
