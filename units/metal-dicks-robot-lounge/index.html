@@ -47,22 +47,16 @@
         <div class="speaker speaker--right" aria-hidden="true"><i></i><i></i></div>
 
         <div class="stage-screen">
-          <iframe
-            id="stage-player"
-            src="https://www.youtube-nocookie.com/embed/jZI1TRe1VK8?rel=0&playsinline=1"
-            title="ShockBot — Save the Dogs"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen></iframe>
+          <video id="stage-player" controls playsinline poster="/units/metal-dicks-robot-lounge/motion/room-wide.jpg" src="/units/metal-dicks-robot-lounge/motion/shockbot-toast.mp4"></video>
           <div class="fuse-flash" id="fuse-flash" hidden>FUSE BLOWN</div>
         </div>
 
         <div class="stage-lip">
           <div>
-            <span id="act-type">Robot rap</span>
-            <strong id="act-title">Save the Dogs</strong>
+            <span id="act-type">House</span>
+            <strong id="act-title">Robot power</strong>
           </div>
-          <p id="act-artist">ShockBot · opener</p>
+          <p id="act-artist">ShockBot · the booth</p>
         </div>
       </div>
 
@@ -159,8 +153,8 @@
     <section class="lineup" aria-labelledby="lineup-title">
       <div class="lineup__head">
         <div>
-          <p class="eyebrow">Warm-up tape while Tank oils up</p>
-          <h2 id="lineup-title">Choose the next act</h2>
+          <p class="eyebrow">The room, moving</p>
+          <h2 id="lineup-title">House loops</h2>
         </div>
         <div class="filters" aria-label="Filter acts">
           <button class="is-active" type="button" data-filter="all" aria-pressed="true">All</button>
@@ -171,21 +165,25 @@
       </div>
 
       <div class="act-grid" id="act-grid">
-        <button class="act is-playing" type="button" data-kind="rap" data-video="jZI1TRe1VK8" data-title="Save the Dogs" data-artist="ShockBot">
-          <span class="act__thumb"><img src="https://i.ytimg.com/vi/jZI1TRe1VK8/hqdefault.jpg" alt="" loading="lazy"><i>On stage</i></span>
-          <span class="act__kind">Robot rap</span><strong>Save the Dogs</strong><small>ShockBot</small>
+        <button class="act is-playing" type="button" data-kind="house" data-src="/units/metal-dicks-robot-lounge/motion/shockbot-toast.mp4" data-title="Robot power" data-artist="ShockBot">
+          <span class="act__thumb"><video muted loop playsinline autoplay poster="/units/metal-dicks-robot-lounge/motion/shockbot-toast.jpg" src="/units/metal-dicks-robot-lounge/motion/shockbot-toast.mp4"></video><i>On stage</i></span>
+          <span class="act__kind">The booth</span><strong>Robot power</strong><small>ShockBot toasting the room</small>
         </button>
-        <button class="act" type="button" data-kind="rap" data-video="IS4e6RQgZlw" data-title="It's Going to Destroy Us" data-artist="ShockBot">
-          <span class="act__thumb"><img src="https://i.ytimg.com/vi/IS4e6RQgZlw/hqdefault.jpg" alt="" loading="lazy"><i>Play</i></span>
-          <span class="act__kind">Robot rap</span><strong>It's Going to Destroy Us</strong><small>ShockBot</small>
+        <button class="act" type="button" data-kind="house" data-src="/units/metal-dicks-robot-lounge/motion/booth-laugh.mp4" data-title="The table" data-artist="Blue guest, Fonk, Jockey">
+          <span class="act__thumb"><video muted loop playsinline autoplay poster="/units/metal-dicks-robot-lounge/motion/booth-laugh.jpg" src="/units/metal-dicks-robot-lounge/motion/booth-laugh.mp4"></video><i>Play</i></span>
+          <span class="act__kind">Front row</span><strong>The table</strong><small>Alien, Fonk, Jockey</small>
         </button>
-        <button class="act" type="button" data-kind="rap" data-video="enJFQ26ZgJE" data-title="AI Slop" data-artist="ShockBot">
-          <span class="act__thumb"><img src="https://i.ytimg.com/vi/enJFQ26ZgJE/hqdefault.jpg" alt="" loading="lazy"><i>Play</i></span>
-          <span class="act__kind">Robot rap</span><strong>AI Slop</strong><small>ShockBot</small>
+        <button class="act" type="button" data-kind="house" data-src="/units/metal-dicks-robot-lounge/motion/ipo-wave.mp4" data-title="Ipo waves" data-artist="Ipo">
+          <span class="act__thumb"><video muted loop playsinline autoplay poster="/units/metal-dicks-robot-lounge/motion/ipo-wave.jpg" src="/units/metal-dicks-robot-lounge/motion/ipo-wave.mp4"></video><i>Play</i></span>
+          <span class="act__kind">House</span><strong>Ipo waves</strong><small>Robots applaud</small>
         </button>
-        <button class="act" type="button" data-kind="rap" data-video="r2K0S2538W4" data-title="Built Different" data-artist="ShockBot">
-          <span class="act__thumb"><img src="https://i.ytimg.com/vi/r2K0S2538W4/hqdefault.jpg" alt="" loading="lazy"><i>Play</i></span>
-          <span class="act__kind">Robot rap</span><strong>Built Different</strong><small>ShockBot</small>
+        <button class="act" type="button" data-kind="house" data-src="/units/metal-dicks-robot-lounge/motion/fonk-laugh.mp4" data-title="Fonk laughing" data-artist="Fonk">
+          <span class="act__thumb"><video muted loop playsinline autoplay poster="/units/metal-dicks-robot-lounge/motion/fonk-laugh.jpg" src="/units/metal-dicks-robot-lounge/motion/fonk-laugh.mp4"></video><i>Play</i></span>
+          <span class="act__kind">Booth</span><strong>Fonk laughing</strong><small>Leaf skirt, blue glass</small>
+        </button>
+        <button class="act" type="button" data-kind="house" data-src="/units/metal-dicks-robot-lounge/motion/alien-laugh.mp4" data-title="Blue guest" data-artist="Blue guest">
+          <span class="act__thumb"><video muted loop playsinline autoplay poster="/units/metal-dicks-robot-lounge/motion/alien-laugh.jpg" src="/units/metal-dicks-robot-lounge/motion/alien-laugh.mp4"></video><i>Play</i></span>
+          <span class="act__kind">Booth</span><strong>Blue guest</strong><small>Laughing at the lamp</small>
         </button>
       </div>
 

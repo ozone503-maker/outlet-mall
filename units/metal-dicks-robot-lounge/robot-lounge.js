@@ -15,14 +15,18 @@
 
   function playAct(button) {
     if (!button || !player) return;
+    var src = button.getAttribute("data-src");
     var video = button.getAttribute("data-video");
-    if (!/^[A-Za-z0-9_-]{11}$/.test(video || "")) return;
-
-    player.src = "https://www.youtube-nocookie.com/embed/" + video + "?autoplay=1&rel=0&playsinline=1";
+    if (src) {
+      player.src = src;
+      try { player.play(); } catch (e) {}
+    } else if (/^[A-Za-z0-9_-]{11}$/.test(video || "")) {
+      return;
+    } else return;
     player.title = (button.getAttribute("data-artist") || "Robot act") + " — " + (button.getAttribute("data-title") || "On stage");
     title.textContent = button.getAttribute("data-title") || "On stage";
     artist.textContent = button.getAttribute("data-artist") || "Robot act";
-    type.textContent = button.getAttribute("data-kind") === "rap" ? "Robot rap" : button.getAttribute("data-kind");
+    type.textContent = button.getAttribute("data-kind") || "House";
 
     acts.forEach(function (act) {
       var playing = act === button;
