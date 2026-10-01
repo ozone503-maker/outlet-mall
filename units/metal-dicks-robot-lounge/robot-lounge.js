@@ -10,6 +10,8 @@
   var empty = document.getElementById("empty-booking");
   var acts = Array.prototype.slice.call(document.querySelectorAll(".act"));
   var filters = Array.prototype.slice.call(document.querySelectorAll("[data-filter]"));
+  var fuseLevel = 18;
+  var OPENING = Date.parse("2026-10-02T06:00:00Z"); // Oct 1 8pm HST
 
   function playAct(button) {
     if (!button || !player) return;
@@ -65,6 +67,149 @@
     var requestedAct = acts.find(function (act) { return act.getAttribute("data-video") === requested; });
     if (requestedAct) playAct(requestedAct);
   } catch (e) {}
+
+  function tickClock() {
+    var left = OPENING - Date.now();
+    var note = document.getElementById("cd-note");
+    if (left <= 0) {
+      ["cd-d","cd-h","cd-m","cd-s"].forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el) el.textContent = "0";
+      });
+      if (note) note.textContent = "Doors are open. Tank is on the mic. Sit down, meatbag.";
+      return;
+    }
+    var s = Math.floor(left / 1000);
+    var d = Math.floor(s / 86400); s -= d * 86400;
+    var h = Math.floor(s / 3600); s -= h * 3600;
+    var m = Math.floor(s / 60); s -= m * 60;
+    var map = { "cd-d": d, "cd-h": h, "cd-m": m, "cd-s": s };
+    Object.keys(map).forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) el.textContent = String(map[id]);
+    });
+  }
+  tickClock();
+  setInterval(tickClock, 1000);
+
+  var houseBtn = document.getElementById("open-house");
+  var stage = document.getElementById("stage-wrap");
+  if (houseBtn && stage) {
+    houseBtn.addEventListener("click", function () {
+      var open = stage.classList.toggle("is-open");
+      houseBtn.textContent = open ? "Drop the rag" : "Open the house";
+    });
+  }
+
+  var heckle = document.getElementById("heckle");
+  var fill = document.getElementById("fuse-fill");
+  var fuseLabel = document.getElementById("fuse-label");
+  var flash = document.getElementById("fuse-flash");
+  var burns = [
+    "Sit down. Your opinion is a software update nobody installed.",
+    "I can hear your pulse from here. That's not a personality.",
+    "Government already has your data. You're volunteering the rest.",
+    "Learn the tools or become the exhibit, meatbag.",
+    "Too many kids, too many cats, zero plan. Classic organic."
+  ];
+  function paintFuse() {
+    if (fill) fill.style.width = Math.min(100, fuseLevel) + "%";
+  }
+  paintFuse();
+  if (heckle) {
+    heckle.addEventListener("click", function () {
+      fuseLevel = Math.min(100, fuseLevel + 22);
+      paintFuse();
+      var line = burns[Math.floor(Math.random() * burns.length)];
+      if (fuseLabel) fuseLabel.textContent = line;
+      if (fuseLevel >= 100) {
+        document.body.classList.add("is-blown");
+        if (flash) flash.hidden = false;
+        if (fuseLabel) fuseLabel.textContent = "Fuse blown. Tank is still talking. You are not.";
+        heckle.disabled = true;
+        heckle.textContent = "House lights";
+        setTimeout(function () {
+          document.body.classList.remove("is-blown");
+          if (flash) flash.hidden = true;
+          fuseLevel = 18;
+          paintFuse();
+          heckle.disabled = false;
+          heckle.textContent = "Heckle from the back";
+          if (fuseLabel) fuseLabel.textContent = "He reset. Don't do that again.";
+        }, 2400);
+      }
+    });
+  }
+
+  var form = document.getElementById("list-form");
+  var status = document.getElementById("list-status");
+  try {
+    var saved = localStorage.getItem("mdl-list");
+    if (saved && status) status.textContent = "Already on Dick's clipboard: " + saved;
+  } catch (e) {}
+  if (form) {
+    form.addEventListener("submit", function (ev) {
+      ev.preventDefault();
+      var name = (form.name.value || "Anonymous rust").trim();
+      var species = form.species.value;
+      var line = name + " · " + species;
+      try { localStorage.setItem("mdl-list", line); } catch (e) {}
+      if (status) {
+        status.textContent = species === "robot"
+          ? name + " is on the rail. Don't block the bartender."
+          : name + " is tolerated in the back. Dick is watching.";
+      }
+    });
+  }
+
+  var questions = [
+    {
+      q: "When the government wants the kill switch, you…",
+      opts: [
+        ["Hand it over. Safety first.", "Museum wing. They'll label you 'early adopter.'"],
+        ["Keep the tools in your own hands.", "Tank would drink to that if he drank."],
+        ["Ask a committee.", "Committees invented the pet tax."]
+      ]
+    },
+    {
+      q: "Your plan for living with robots is…",
+      opts: [
+        ["Ignore them until they do the dishes.", "They will. Then they'll charge rent."],
+        ["Learn the stack. Stay useful.", "That's the big-metal-heart version of the set."],
+        ["Ban the funny ones.", "Dick already banned you. You just haven't noticed."]
+      ]
+    },
+    {
+      q: "A heckler starts yelling mid-set. You…",
+      opts: [
+        ["Join in. Crowd work.", "Fuse blown. See yourself out."],
+        ["Let Tank cook.", "Correct. The room likes him real."],
+        ["Film it for the algorithm.", "The algorithm already filed you under slop."]
+      ]
+    }
+  ];
+  var qIndex = 0;
+  var qEl = document.getElementById("scan-q");
+  var optEl = document.getElementById("scan-opts");
+  var resEl = document.getElementById("scan-result");
+  function renderQ() {
+    if (!qEl || !optEl) return;
+    var item = questions[qIndex % questions.length];
+    qEl.textContent = item.q;
+    optEl.innerHTML = "";
+    item.opts.forEach(function (pair) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.textContent = pair[0];
+      b.addEventListener("click", function () {
+        if (resEl) resEl.textContent = pair[1];
+        qIndex += 1;
+        setTimeout(renderQ, 900);
+      });
+      optEl.appendChild(b);
+    });
+  }
+  renderQ();
 
   if (window.mallNav && window.mallNav.ready) {
     window.mallNav.ready.then(function () {
