@@ -19,7 +19,7 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
     var(--black);
   font-family:Arial,Helvetica,sans-serif;
   line-height:1.45;
-  overflow-x:hidden;
+  overflow-x:clip;
 }
 .robot-lounge button,.robot-lounge a,.robot-lounge input,.robot-lounge select{font:inherit}
 .robot-lounge a{color:inherit}
@@ -116,24 +116,22 @@ body.is-blown{animation:blow .35s linear 3}
 @media(max-width:900px){.booths__grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:620px){.booths__grid{grid-template-columns:1fr 1fr}}
 
-.rails{max-width:none;margin:10px 0 8px;display:flex;flex-direction:column;gap:22px}
-.rail__head{max-width:1260px;margin:0 auto;padding:0 4px 8px;display:flex;align-items:baseline;justify-content:space-between;gap:16px}
+.rails{max-width:1260px;margin:18px auto 8px;display:flex;flex-direction:column;gap:22px;width:100%}
+.rail__head{padding:0 2px 8px;display:flex;align-items:baseline;justify-content:space-between;gap:16px}
 .rail__head p:last-child{margin:0;color:var(--muted);font-size:.85rem}
 .rail__track{
-  display:flex;gap:14px;overflow-x:auto;overflow-y:hidden;
+  display:flex;gap:12px;overflow-x:auto;overflow-y:hidden;
   scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
-  padding:0 0 14px;margin:0 calc(50% - 50vw);padding-left:max(12px, calc(50vw - 630px));
-  padding-right:max(24px, calc(50vw - 400px));
+  padding:0 0 16px;
   scrollbar-color:#d6a849 #120f0c;
 }
 .rail__track::-webkit-scrollbar{height:8px}
 .rail__track::-webkit-scrollbar-thumb{background:#d6a849}
-.rail__shot{position:relative;margin:0;flex:0 0 min(86vw,920px);scroll-snap-align:start}
-.rail__shot img{display:block;width:100%;height:min(62vw,520px);object-fit:cover;border:1px solid #453625;box-shadow:0 18px 40px #000}
+.rail__shot{position:relative;margin:0;flex:0 0 min(78%,720px);scroll-snap-align:start;background:#0a0807}
+.rail__shot img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;border:1px solid #453625;box-shadow:0 18px 40px #000}
 .rail__shot span{position:absolute;left:14px;bottom:14px;padding:6px 10px;background:rgba(9,8,6,.78);border:1px solid #6d5633;text-transform:uppercase;letter-spacing:.16em;font-size:.68rem;font-weight:800;color:#ffd7a0}
 @media(max-width:620px){
-  .rail__shot{flex-basis:88vw}
-  .rail__shot img{height:58vw}
+  .rail__shot{flex:0 0 86%}
 }
 @media(max-width:900px){.act-grid,.board,.interact{grid-template-columns:1fr}.house{grid-template-columns:1fr}.house__portrait{min-height:360px;background-image:linear-gradient(0deg,#120f0c,transparent 35%),url("/assets/metal-dicks-robot-lounge.jpg")}.lineup__head{align-items:flex-start;flex-direction:column}.filters{justify-content:flex-start}}
 @media(max-width:620px){.club-head__mall{max-width:42vw}.room{padding-left:8px;padding-right:8px}.stage-wrap{padding-left:27px;padding-right:27px}.curtain{width:30px}.speaker{display:none}.stage-screen{border-width:5px}.stage-lip{padding:11px 17px}.stage-lip div{display:block}.stage-lip span{display:block}.stage-lip p{font-size:.64rem}.act-grid{grid-template-columns:1fr}.tables{height:48px}.tables i:nth-child(even){display:none}.house__portrait{min-height:280px}}
