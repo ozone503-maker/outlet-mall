@@ -92,15 +92,6 @@
   tickClock();
   setInterval(tickClock, 1000);
 
-  var houseBtn = document.getElementById("open-house");
-  var stage = document.getElementById("stage-wrap");
-  if (houseBtn && stage) {
-    houseBtn.addEventListener("click", function () {
-      var open = stage.classList.toggle("is-open");
-      houseBtn.textContent = open ? "Drop the rag" : "Open the house";
-    });
-  }
-
   var heckle = document.getElementById("heckle");
   var fill = document.getElementById("fuse-fill");
   var fuseLabel = document.getElementById("fuse-label");
