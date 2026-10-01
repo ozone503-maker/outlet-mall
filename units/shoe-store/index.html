@@ -6,48 +6,69 @@
 <meta name="robots" content="noindex">
 <title>Shoe Station</title>
 <link rel="stylesheet" href="/mall.css">
-<style>
-body{background:#0B0A08;color:#EFEAE0;padding-bottom:80px}
-.shoes-header{padding:3rem 2rem;text-align:center;border-bottom:1px solid #241F18}
-.shoes-header h1{font-size:2.5rem;font-weight:600;margin-bottom:.5rem}
-.shoes-header p{color:#8C826C;font-size:1rem}
-.shoes-content{max-width:1000px;margin:0 auto;padding:2rem}
-.category{margin:2rem 0;padding:2rem;background:#16130E;border:1px solid #241F18}
-.category h2{font-size:1.5rem;margin-bottom:1rem;color:#D4A574}
-.category p{line-height:1.6;color:#9A9184;margin-bottom:1rem}
-.cta{display:inline-block;padding:.75rem 1.5rem;background:#241F18;color:#EFEAE0;text-decoration:none;border-radius:2px;transition:background 180ms}
-.cta:hover{background:#2A251D}
-</style>
+<link rel="stylesheet" href="/units/shoe-store/shoe-store.css">
 </head>
-<body>
-  <div class="shoes-header">
-    <p style="font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:#8C826C">Unit · Fruity Puppy Outlet Mall</p>
-    <h1>Shoe Station</h1>
-    <p>Good shoes, brighter days</p>
+<body class="shoes">
+
+<header class="approach" id="approach">
+  <div class="shot shot--hero"><img src="/units/shoe-store/assets/storefront.png" alt="Shoe Station storefront" loading="eager" decoding="async"></div>
+  <div class="approach__band">
+    <p class="approach__eyebrow">Retail &middot; Fruity Puppy Outlet Mall</p>
+    <h1 class="approach__name">Shoe Station</h1>
+    <a class="approach__enter" href="#inside">Step inside</a>
   </div>
-  
-  <div class="shoes-content">
-    <div class="category">
-      <h2>Men's</h2>
-      <p>From casual everyday wear to athletic performance, find your perfect fit in our extensive men's collection.</p>
-      <a href="#" class="cta">Shop Men's</a>
-    </div>
-    
-    <div class="category">
-      <h2>Women's</h2>
-      <p>Style meets comfort. Browse our curated selection of women's shoes for every occasion and season.</p>
-      <a href="#" class="cta">Shop Women's</a>
-    </div>
-    
-    <div class="category">
-      <h2>Kids</h2>
-      <p>Growing feet need proper support. Find sizes and styles for every stage of childhood.</p>
-      <a href="#" class="cta">Shop Kids</a>
-    </div>
-  </div>
+</header>
+
+<p class="lede">Good shoes, brighter days. Comfort, style, every step. Eleven feet
+of wall, one bench, and a strict try-the-other-foot policy.</p>
+
+<section class="inside" id="inside">
+  <div class="shot shot--hero"><img src="/units/shoe-store/assets/hero.jpg" alt="The fitting, in progress" loading="lazy" decoding="async"></div>
+  <div class="inside__band"><p>The bench is for trying. Not napping.</p></div>
+</section>
+
+<div class="wrap">
+
+  <section class="block">
+    <div class="label"><h2>The fitting</h2><span>Take a seat</span></div>
+    <div class="shot"><img src="/units/shoe-store/assets/hero.jpg" alt="Ipo being fitted while Erv waits in flip-flops" loading="lazy" decoding="async"></div>
+    <p class="caption">The fitting. Ipo takes a seven. Erv refuses to remove his flip-flops. We respect it.</p>
+  </section>
+
+  <section class="block">
+    <div class="label"><h2>The floor</h2><span>Mopped nightly</span></div>
+    <div class="shot"><img src="/units/shoe-store/assets/floor.jpg" alt="The shop floor" loading="lazy" decoding="async"></div>
+    <p class="caption">The floor. Mopped nightly. The shine is load-bearing.</p>
+  </section>
+
+  <section class="block">
+    <div class="label"><h2>House rules</h2><span>Posted by the bench</span></div>
+    <ul class="rules">
+      <li>Try the other foot.</li>
+      <li>The bench seats two.</li>
+      <li>If it squeaks, it stays.</li>
+      <li>No outside shoes on the carpet square.</li>
+    </ul>
+  </section>
+
+  <section class="block">
+    <div class="label"><h2>The hallway</h2><span>Eleven feet of wall</span></div>
+    <div class="shot"><img src="/units/shoe-store/assets/hallway.jpg" alt="The mall hallway outside Shoe Station" loading="lazy" decoding="async"></div>
+    <p class="caption">The hallway outside. The shoes are inside. That is how walls work.</p>
+  </section>
+
+  <aside class="outbound">
+    <h2>While you're here</h2>
+    <p>No shoes there. Just the good cream, from the same farm, by the same people:</p>
+    <p><a href="https://fruitypuppy.com" target="_blank" rel="noopener">fruitypuppy.com</a></p>
+  </aside>
+
+</div>
+
+<p class="fine">Every link opens in a new tab. The mall stays where you left it.</p>
 
 <div class="unit-nav">
-  <a class="unit-nav__back" href="/" aria-label="Back to hallway">← Back to hallway</a>
+  <a class="unit-nav__back" href="/" aria-label="Back to hallway">&larr; Back to hallway</a>
   <div class="unit-nav__doors">
     <a class="unit-nav__prev" href="#" id="nav-prev" aria-label="Previous store">&larr; Previous</a>
     <a class="unit-nav__next" href="#" id="nav-next" aria-label="Next store">Next &rarr;</a>
@@ -55,6 +76,8 @@ body{background:#0B0A08;color:#EFEAE0;padding-bottom:80px}
 </div>
 
 <script src="/hallway.js" defer></script>
+<script src="/mall.js" defer></script>
+<script src="/units/shoe-store/shoe-store.js" defer></script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const prev = document.getElementById('nav-prev');
@@ -62,10 +85,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const unitId = 'shoe-store';
   const prevUnit = window.mallNav.getPrev(unitId);
   const nextUnit = window.mallNav.getNext(unitId);
-  
+
   if (prevUnit) prev.href = prevUnit.path;
   else prev.style.display = 'none';
-  
+
   if (nextUnit) next.href = nextUnit.path;
   else next.style.display = 'none';
 });

@@ -1,157 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FPX Boutique</title>
-    <link rel="stylesheet" href="/mall.css">
-    <style>
-body {
-    background: #0f0d0a;
-    color: #efeae0;
-    font-family: system-ui, -apple-system, sans-serif;
-    padding-bottom: 80px;
-}
-
-.fpx-boutique {
-    min-height: 100vh;
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.fpx-header {
-    text-align: center;
-    margin-bottom: 3rem;
-    padding: 2rem;
-    border: 2px solid #d4a574;
-    background: rgba(212, 165, 116, 0.05);
-}
-
-.fpx-header h1 {
-    font-size: 2.8rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    letter-spacing: 0.02em;
-    color: #d4a574;
-}
-
-.fpx-header p {
-    color: #8c826c;
-    font-size: 1rem;
-}
-
-.fpx-content {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.fpx-section {
-    background: #16130e;
-    border: 1px solid #241f18;
-    padding: 2rem;
-}
-
-.fpx-section h2 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: #d4a574;
-}
-
-.fpx-section p {
-    line-height: 1.6;
-    color: #9a9184;
-    margin-bottom: 1rem;
-}
-
-.item-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1.5rem;
-}
-
-.item-card {
-    background: #0f0d0a;
-    border: 1px solid #241f18;
-    padding: 1.5rem;
-    text-align: center;
-}
-
-.item-card h3 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-}
-
-.item-card p {
-    font-size: 0.9rem;
-    color: #8c826c;
-}
-
-.cta-btn {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background: #241f18;
-    color: #efeae0;
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 600;
-    border-radius: 2px;
-    transition: all 180ms;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-top: 1rem;
-}
-
-.cta-btn:hover {
-    background: #2a251d;
-}
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>FPX Boutique</title>
+<link rel="stylesheet" href="/mall.css">
+<link rel="stylesheet" href="/units/fpx-boutique/fpx-boutique.css">
 </head>
-<body>
-    <div class="fpx-boutique">
-        <div class="fpx-header">
-            <h1>FPX Boutique</h1>
-            <p>Fruity Puppy Exclusive armor and gear</p>
-        </div>
+<body class="fpx">
 
-        <div class="fpx-content">
-            <div class="fpx-section">
-                <h2>FPX Armor Collection</h2>
-                <p>Exclusive armor and gear from the Fruity Puppy Extended universe. Build your defense, embrace your legend.</p>
-                
-                <div class="item-grid">
-                    <div class="item-card">
-                        <h3>Starfruit Armor</h3>
-                        <p>Legendary protection</p>
-                    </div>
-                    <div class="item-card">
-                        <h3>Berry Guard</h3>
-                        <p>Tactical gear</p>
-                    </div>
-                    <div class="item-card">
-                        <h3>Tropical Shield</h3>
-                        <p>Advanced defense</p>
-                    </div>
-                    <div class="item-card">
-                        <h3>Quest Gear</h3>
-                        <p>Adventure essential</p>
-                    </div>
-                </div>
-                
-                <a href="#" class="cta-btn">Shop FPX</a>
-            </div>
+<header class="approach" id="approach">
+  <div class="approach__shot"><img src="/units/fpx-boutique/assets/hero.jpg" alt="FPX Fruity Puppy Extreme label: robot puppy with starfruit at sunset"></div>
+  <div class="approach__band">
+    <p class="approach__eyebrow">Unit 04 &middot; Fruity Puppy Outlet Mall</p>
+    <h1 class="approach__name">FPX Boutique</h1>
+    <a class="approach__enter" href="#inside">Step inside</a>
+  </div>
+</header>
 
-            <div class="fpx-section">
-                <h2>Limited Editions</h2>
-                <p>Exclusive, limited-run armor pieces from the Saga franchise. Collect them all.</p>
-                <a href="#" class="cta-btn">View Limited</a>
-            </div>
-        </div>
-    </div>
+<p class="lede">Fruity Puppy Extended. Armor and exclusive gear for skin that can
+take a joke and dish one back. The badge says it plainly: not for sensitive
+skin.</p>
+
+<section class="inside" id="inside">
+  <div class="inside__shot"><img src="/units/fpx-boutique/assets/ipo.png" alt="Ipo, the tall pink humanoid dog, brand mascot"></div>
+  <div class="inside__band"><p>Low light, high thread count. This is the extreme shelf.</p></div>
+</section>
+
+<div class="wrap">
+
+  <section class="block">
+    <div class="label"><h2>The mark</h2><span>With starfruit</span></div>
+    <figure class="shot">
+      <img src="/units/fpx-boutique/assets/hero.jpg" alt="FPX Fruity Puppy Extreme label art with robot puppy and starfruit">
+      <figcaption>FPX. Fruity Puppy Extreme, with starfruit. The robot puppy on the badge has seen things.</figcaption>
+    </figure>
+  </section>
+
+  <section class="block">
+    <div class="label"><h2>The mascot</h2><span>Runs the floor</span></div>
+    <figure class="shot">
+      <img src="/units/fpx-boutique/assets/ipo.png" alt="Ipo, the tall pink humanoid dog">
+      <figcaption>Ipo runs the boutique floor. Tall, pink, and unbothered. Ask her anything; she has opinions about all of it.</figcaption>
+    </figure>
+  </section>
+
+  <section class="block">
+    <div class="label"><h2>The classic</h2><span>Where it started</span></div>
+    <figure class="shot">
+      <img src="/units/fpx-boutique/assets/mark.jpg" alt="Original pink Fruity Puppy skin cream label with the pink dog on a papaya">
+      <figcaption>The original pink label. Small batch, made with real fruit, product of Hawai'i. The one that started the mall.</figcaption>
+    </figure>
+  </section>
+
+  <aside class="outbound">
+    <h2>The velvet rope</h2>
+    <p>Exclusive gear drops through here when it drops:</p>
+    <a href="https://shop.fruitypuppy.com" target="_blank" rel="noopener">shop.fruitypuppy.com</a>
+  </aside>
+
+</div>
+
+<p class="fine">The outbound link opens in a new tab. The mall stays where you left it.</p>
 
 <div class="unit-nav">
   <a class="unit-nav__back" href="/" aria-label="Back to hallway">← Back to hallway</a>
@@ -162,6 +73,8 @@ body {
 </div>
 
 <script src="/hallway.js" defer></script>
+<script src="/mall.js" defer></script>
+<script src="/units/fpx-boutique/fpx-boutique.js" defer></script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const prev = document.getElementById('nav-prev');
@@ -169,10 +82,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const unitId = 'fpx-boutique';
   const prevUnit = window.mallNav.getPrev(unitId);
   const nextUnit = window.mallNav.getNext(unitId);
-  
+
   if (prevUnit) prev.href = prevUnit.path;
   else prev.style.display = 'none';
-  
+
   if (nextUnit) next.href = nextUnit.path;
   else next.style.display = 'none';
 });

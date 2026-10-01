@@ -1,157 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LavaGuava Bomb Balm Store</title>
-    <link rel="stylesheet" href="/mall.css">
-    <style>
-body {
-    background: #0f0d0a;
-    color: #efeae0;
-    font-family: system-ui, -apple-system, sans-serif;
-    padding-bottom: 80px;
-}
-
-.balm-store {
-    min-height: 100vh;
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.balm-header {
-    text-align: center;
-    margin-bottom: 3rem;
-    padding: 2rem;
-    border: 2px solid #c42a2a;
-    background: rgba(196, 42, 42, 0.05);
-}
-
-.balm-header h1 {
-    font-size: 2.8rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    letter-spacing: 0.02em;
-    color: #f2c230;
-}
-
-.balm-header p {
-    color: #8c826c;
-    font-size: 1rem;
-}
-
-.balm-content {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.balm-section {
-    background: #16130e;
-    border: 1px solid #241f18;
-    padding: 2rem;
-}
-
-.balm-section h2 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: #f2c230;
-}
-
-.balm-section p {
-    line-height: 1.6;
-    color: #9a9184;
-    margin-bottom: 1rem;
-}
-
-.flavor-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1.5rem;
-}
-
-.flavor-card {
-    background: #0f0d0a;
-    border: 1px solid #241f18;
-    padding: 1.5rem;
-    text-align: center;
-}
-
-.flavor-card h3 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-}
-
-.flavor-card p {
-    font-size: 0.9rem;
-    color: #8c826c;
-}
-
-.cta-btn {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background: #241f18;
-    color: #efeae0;
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 600;
-    border-radius: 2px;
-    transition: all 180ms;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-top: 1rem;
-}
-
-.cta-btn:hover {
-    background: #2a251d;
-}
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>LavaGuava Bomb Balm</title>
+<link rel="stylesheet" href="/mall.css">
+<link rel="stylesheet" href="/units/lava-guava/lava-guava.css">
 </head>
-<body>
-    <div class="balm-store">
-        <div class="balm-header">
-            <h1>LavaGuava Bomb Balm</h1>
-            <p>Lava meets guava. Heat meets fruit.</p>
-        </div>
+<body class="lavaguava">
 
-        <div class="balm-content">
-            <div class="balm-section">
-                <h2>Lip Balm Collection</h2>
-                <p>Tropical guava blended with volcanic heat. Each balm packs flavor, moisture, and a burst of island energy.</p>
-                
-                <div class="flavor-grid">
-                    <div class="flavor-card">
-                        <h3>LavaGuava Original</h3>
-                        <p>Classic heat & fruit blend</p>
-                    </div>
-                    <div class="flavor-card">
-                        <h3>Guava Burst</h3>
-                        <p>Pure tropical flavor</p>
-                    </div>
-                    <div class="flavor-card">
-                        <h3>Spice Island</h3>
-                        <p>Guava with kick</p>
-                    </div>
-                    <div class="flavor-card">
-                        <h3>Cream Dream</h3>
-                        <p>Smoothed & creamy</p>
-                    </div>
-                </div>
-                
-                <a href="#" class="cta-btn">Shop Balms</a>
-            </div>
+<header class="approach" id="approach">
+  <div class="approach__shot"><img src="/units/lava-guava/assets/hero.jpg" alt="LavaGuava Bomb Balm label: a lava creature holding half a guava in front of an erupting volcano"></div>
+  <div class="approach__band">
+    <p class="approach__eyebrow">Unit 03 &middot; Fruity Puppy Outlet Mall</p>
+    <h1 class="approach__name">LavaGuava Bomb Balm</h1>
+    <a class="approach__enter" href="#inside">Step inside</a>
+  </div>
+</header>
 
-            <div class="balm-section">
-                <h2>Why LavaGuava?</h2>
-                <p>We started with an idea: what if lava could taste like fruit? Now we're here, stocked up, and ready to make your lips sing.</p>
-                <a href="#" class="cta-btn">Our Story</a>
-            </div>
-        </div>
-    </div>
+<p class="lede">The loud one. Lava meets guava. Heat meets fruit. This is the
+combat cream of the Fruity Puppy line: guava up front, volcano in the back,
+and a label that grins about it.</p>
+
+<section class="inside" id="inside">
+  <div class="inside__shot"><img src="/units/lava-guava/assets/lilikoi.jpg" alt="Close-up of a cut lilikoi, seeds and golden pulp"></div>
+  <div class="inside__band"><p>It smells like a fruit stand next to an eruption. You will know it before you see it.</p></div>
+</section>
+
+<div class="wrap">
+
+  <section class="block">
+    <div class="label"><h2>The label</h2><span>Product of Hawai'i</span></div>
+    <figure class="shot">
+      <img src="/units/lava-guava/assets/hero.jpg" alt="LavaGuava Bomb Balm label with the lava creature and guava">
+      <figcaption>A lava creature holds half a guava and grins about it. Combat cream, says the badge. Product of Hawai'i, says the other badge.</figcaption>
+    </figure>
+  </section>
+
+  <section class="block">
+    <div class="label"><h2>The fruit</h2><span>Cut it open</span></div>
+    <figure class="shot">
+      <img src="/units/lava-guava/assets/lilikoi.jpg" alt="A halved lilikoi showing golden pulp and seeds">
+      <figcaption>Sweet, seedy, slightly feral. In this building it goes on skin, not in smoothies.</figcaption>
+    </figure>
+  </section>
+
+  <section class="block">
+    <div class="label"><h2>The attitude</h2><span>Quality control</span></div>
+    <figure class="shot">
+      <img src="/units/lava-guava/assets/erv.png" alt="Erv, the cane toad scientist, sunglasses down over his eyes">
+      <figcaption>Erv does not moisturize. He sprays. LavaGuava is the one product he will not argue about in public.</figcaption>
+    </figure>
+  </section>
+
+  <aside class="outbound">
+    <h2>Join the arsenal</h2>
+    <p>Find it with the rest of the lineup through here:</p>
+    <a href="https://shop.fruitypuppy.com" target="_blank" rel="noopener">shop.fruitypuppy.com</a>
+  </aside>
+
+</div>
+
+<p class="fine">The outbound link opens in a new tab. The mall stays where you left it.</p>
 
 <div class="unit-nav">
   <a class="unit-nav__back" href="/" aria-label="Back to hallway">← Back to hallway</a>
@@ -162,6 +73,8 @@ body {
 </div>
 
 <script src="/hallway.js" defer></script>
+<script src="/mall.js" defer></script>
+<script src="/units/lava-guava/lava-guava.js" defer></script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const prev = document.getElementById('nav-prev');
@@ -169,10 +82,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const unitId = 'lava-guava';
   const prevUnit = window.mallNav.getPrev(unitId);
   const nextUnit = window.mallNav.getNext(unitId);
-  
+
   if (prevUnit) prev.href = prevUnit.path;
   else prev.style.display = 'none';
-  
+
   if (nextUnit) next.href = nextUnit.path;
   else next.style.display = 'none';
 });

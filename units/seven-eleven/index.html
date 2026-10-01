@@ -1,160 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>7-Eleven</title>
-    <link rel="stylesheet" href="/mall.css">
-    <style>
-body {
-    background: #0f0d0a;
-    color: #efeae0;
-    font-family: system-ui, -apple-system, sans-serif;
-    padding-bottom: 80px;
-}
-
-.seven-eleven {
-    min-height: 100vh;
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.seven-header {
-    text-align: center;
-    margin-bottom: 3rem;
-    padding: 2rem;
-    border: 2px solid #c42a2a;
-    background: rgba(196, 42, 42, 0.05);
-}
-
-.seven-header h1 {
-    font-size: 2.8rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    letter-spacing: 0.02em;
-    color: #f2c230;
-}
-
-.seven-header p {
-    color: #8c826c;
-    font-size: 1rem;
-}
-
-.seven-content {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.seven-section {
-    background: #16130e;
-    border: 1px solid #241f18;
-    padding: 2rem;
-}
-
-.seven-section h2 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: #f2c230;
-}
-
-.seven-section p {
-    line-height: 1.6;
-    color: #9a9184;
-    margin-bottom: 1rem;
-}
-
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1.5rem;
-}
-
-.product-card {
-    background: #0f0d0a;
-    border: 1px solid #241f18;
-    padding: 1.5rem;
-    text-align: center;
-}
-
-.product-card h3 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-}
-
-.product-card p {
-    font-size: 0.9rem;
-    color: #8c826c;
-}
-
-.cta-btn {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background: #241f18;
-    color: #efeae0;
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 600;
-    border-radius: 2px;
-    transition: all 180ms;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-top: 1rem;
-}
-
-.cta-btn:hover {
-    background: #2a251d;
-}
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>7-Eleven</title>
+<link rel="stylesheet" href="/mall.css">
+<link rel="stylesheet" href="/units/seven-eleven/seven-eleven.css">
 </head>
-<body>
-    <div class="seven-eleven">
-        <div class="seven-header">
-            <h1>7-Eleven</h1>
-            <p>Open 24/7 at the Outlet Mall</p>
-        </div>
+<body class="seven">
 
-        <div class="seven-content">
-            <div class="seven-section">
-                <h2>Grab & Go</h2>
-                <p>Convenience meets quality. Shop Fruity Puppy products, snacks, drinks, and everything you need for on-the-go.</p>
-                
-                <div class="product-grid">
-                    <div class="product-card">
-                        <h3>Big Gulp</h3>
-                        <p>Signature drinks</p>
-                    </div>
-                    <div class="product-card">
-                        <h3>Fresh Food</h3>
-                        <p>Hot & ready</p>
-                    </div>
-                    <div class="product-card">
-                        <h3>Snacks</h3>
-                        <p>All your favorites</p>
-                    </div>
-                    <div class="product-card">
-                        <h3>Fruity Puppy</h3>
-                        <p>Exclusive line</p>
-                    </div>
-                </div>
-                
-                <a href="#" class="cta-btn">Shop Now</a>
-            </div>
+<header class="approach" id="approach">
+  <div class="shot shot--hero"><img src="/units/seven-eleven/assets/storefront.png" alt="7-Eleven storefront" loading="eager" decoding="async"></div>
+  <div class="approach__band">
+    <p class="approach__eyebrow">Retail &middot; Fruity Puppy Outlet Mall</p>
+    <h1 class="approach__name">7-Eleven</h1>
+    <a class="approach__enter" href="#inside">Step inside</a>
+  </div>
+</header>
 
-            <div class="seven-section">
-                <h2>24/7 Availability</h2>
-                <p>Always open. Always stocked. Always convenient.</p>
-                <a href="#" class="cta-btn">Find a Store</a>
-            </div>
-        </div>
+<p class="lede">Open 24/7. Convenience meets Fruity Puppy. The Slurpee machine has
+three new flavors and none of them existed last month. The mall closes.
+We do not.</p>
+
+<section class="inside" id="inside">
+  <div class="shot shot--hero"><img src="/units/seven-eleven/assets/hero.jpg" alt="The counter, attendant on duty" loading="lazy" decoding="async"></div>
+  <div class="inside__band"><p>Fluorescent since forever. The farm flavors are new.</p></div>
+</section>
+
+<div class="wrap">
+
+  <section class="block">
+    <div class="label"><h2>The flavor lab</h2><span>Flavor research</span></div>
+    <div class="flavors">
+      <div>
+        <div class="shot"><img src="/units/seven-eleven/assets/flavor-lilikoi.jpg" alt="Lilikoi in hand on the farm" loading="lazy" decoding="async"></div>
+        <p class="caption">Lilikoi, picked on Jessie's farm. It became a Slurpee flavor within the week.</p>
+      </div>
+      <div>
+        <div class="shot"><img src="/units/seven-eleven/assets/flavor-lilikoi-halves.jpg" alt="Lilikoi halves" loading="lazy" decoding="async"></div>
+        <p class="caption">Cut open, scooped out, frozen. The pipeline is not complicated.</p>
+      </div>
+      <div>
+        <div class="shot"><img src="/units/seven-eleven/assets/flavor-hibiscus.jpg" alt="Hibiscus on the farm" loading="lazy" decoding="async"></div>
+        <p class="caption">Hibiscus. The red one. It tastes like it looks, which is the point.</p>
+      </div>
     </div>
+  </section>
+
+  <section class="block">
+    <div class="label"><h2>The counter</h2><span>The human part</span></div>
+    <div class="shot"><img src="/units/seven-eleven/assets/hero.jpg" alt="Attendant behind the counter" loading="lazy" decoding="async"></div>
+    <p class="caption">The counter. He has worked here since the flavors arrived. He has opinions about all three.</p>
+  </section>
+
+  <section class="block">
+    <div class="label"><h2>The rollers</h2><span>Still turning</span></div>
+    <p class="rollers">The hot dog rollers have not stopped since 1987. Nobody
+    remembers who started them. Nobody dares stop them. The taquitos rotate
+    past like a tiny delicious solar system.</p>
+  </section>
+
+  <section class="block">
+    <div class="label"><h2>The 3am walk</h2><span>Rush hour</span></div>
+    <div class="shot"><img src="/units/seven-eleven/assets/night-walk.jpg" alt="The mall hallway late at night" loading="lazy" decoding="async"></div>
+    <p class="caption">The hallway at 3am. This is rush hour.</p>
+  </section>
+
+  <aside class="outbound">
+    <h2>The farm behind the flavors</h2>
+    <p>The Slurpees are a mall exclusive. The fruit, the cream, and the whole operation live here:</p>
+    <p><a href="https://fruitypuppy.com" target="_blank" rel="noopener">fruitypuppy.com</a></p>
+  </aside>
+
+</div>
+
+<p class="fine">Every link opens in a new tab. The mall stays where you left it.</p>
 
 <div class="unit-nav">
-  <a class="unit-nav__back" href="/" aria-label="Back to hallway">← Back to hallway</a>
+  <a class="unit-nav__back" href="/" aria-label="Back to hallway">&larr; Back to hallway</a>
   <div class="unit-nav__doors">
     <a class="unit-nav__prev" href="#" id="nav-prev" aria-label="Previous store">&larr; Previous</a>
     <a class="unit-nav__next" href="#" id="nav-next" aria-label="Next store">Next &rarr;</a>
@@ -162,6 +86,8 @@ body {
 </div>
 
 <script src="/hallway.js" defer></script>
+<script src="/mall.js" defer></script>
+<script src="/units/seven-eleven/seven-eleven.js" defer></script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const prev = document.getElementById('nav-prev');
@@ -169,10 +95,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const unitId = 'seven-eleven';
   const prevUnit = window.mallNav.getPrev(unitId);
   const nextUnit = window.mallNav.getNext(unitId);
-  
+
   if (prevUnit) prev.href = prevUnit.path;
   else prev.style.display = 'none';
-  
+
   if (nextUnit) next.href = nextUnit.path;
   else next.style.display = 'none';
 });
