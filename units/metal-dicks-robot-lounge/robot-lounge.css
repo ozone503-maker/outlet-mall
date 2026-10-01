@@ -127,6 +127,7 @@ body.is-blown{animation:blow .35s linear 3}
 }
 .rail__track::-webkit-scrollbar{height:8px}
 .rail__track::-webkit-scrollbar-thumb{background:#d6a849}
+.rail__shot--wide{width:min(520px,88vw)}
 .rail__shot{position:relative;margin:0;flex:0 0 auto;width:min(320px,78vw);scroll-snap-align:start;background:#070605}
 .rail__shot img{
   display:block;width:100%;height:auto;max-height:72vh;
