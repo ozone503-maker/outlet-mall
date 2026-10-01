@@ -1,5 +1,25 @@
 (function () {
   "use strict";
+  var house = document.getElementById("house-loop");
+  var soundBtn = document.getElementById("house-sound");
+  if (house && soundBtn) {
+    house.volume = 0.55;
+    soundBtn.addEventListener("click", function () {
+      if (house.paused || house.muted) {
+        house.muted = false;
+        var play = house.play();
+        if (play && play.catch) play.catch(function () {});
+        soundBtn.classList.add("is-on");
+        soundBtn.setAttribute("aria-pressed", "true");
+        soundBtn.textContent = "Sound on";
+      } else {
+        house.pause();
+        soundBtn.classList.remove("is-on");
+        soundBtn.setAttribute("aria-pressed", "false");
+        soundBtn.textContent = "Sound off";
+      }
+    });
+  }
 
   var UNIT_ID = "metal-dicks-robot-lounge";
   var player = document.getElementById("stage-player");
