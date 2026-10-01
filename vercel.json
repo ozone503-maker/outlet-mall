@@ -1,0 +1,15 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "metaldicks.outletmall.space"
+        }
+      ],
+      "destination": "/units/metal-dicks-robot-lounge/"
+    }
+  ]
+}
