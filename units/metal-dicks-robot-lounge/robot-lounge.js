@@ -37,11 +37,10 @@
     if (!button || !player) return;
     var src = button.getAttribute("data-src");
     var video = button.getAttribute("data-video");
+    if (player.tagName === "IFRAME") return;
     if (src) {
       player.src = src;
       try { player.play(); } catch (e) {}
-    } else if (/^[A-Za-z0-9_-]{11}$/.test(video || "")) {
-      return;
     } else return;
     player.title = (button.getAttribute("data-artist") || "Robot act") + " — " + (button.getAttribute("data-title") || "On stage");
     title.textContent = button.getAttribute("data-title") || "On stage";
