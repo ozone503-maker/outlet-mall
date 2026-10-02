@@ -1,145 +1,145 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "rewrites": [
+  "routes": [
     {
-      "source": "/",
+      "src": "^/$",
       "has": [
         {
           "type": "host",
           "value": "metaldicks.outletmall.space"
         }
       ],
-      "destination": "/units/metal-dicks-robot-lounge/"
+      "dest": "/units/metal-dicks-robot-lounge/index.html"
     },
     {
-      "source": "/",
+      "src": "^/$",
       "has": [
         {
           "type": "host",
           "value": "fruitypuppy.outletmall.space"
         }
       ],
-      "destination": "/units/fruity-puppy-skincare/"
+      "dest": "/units/fruity-puppy-skincare/index.html"
     },
     {
-      "source": "/",
+      "src": "^/$",
       "has": [
         {
           "type": "host",
           "value": "skincare.outletmall.space"
         }
       ],
-      "destination": "/units/fruity-puppy-skincare/"
+      "dest": "/units/fruity-puppy-skincare/index.html"
     },
     {
-      "source": "/",
+      "src": "^/$",
       "has": [
         {
           "type": "host",
           "value": "merch.outletmall.space"
         }
       ],
-      "destination": "/units/fruity-puppy-merch/"
+      "dest": "/units/fruity-puppy-merch/index.html"
     },
     {
-      "source": "/",
+      "src": "^/$",
       "has": [
         {
           "type": "host",
           "value": "fpx.outletmall.space"
         }
       ],
-      "destination": "/units/fpx-boutique/"
+      "dest": "/units/fpx-boutique/index.html"
     },
     {
-      "source": "/",
+      "src": "^/$",
       "has": [
         {
           "type": "host",
           "value": "spacefactory.outletmall.space"
         }
       ],
-      "destination": "/units/brobots-retail/"
+      "dest": "/units/brobots-retail/index.html"
     },
     {
-      "source": "/",
+      "src": "^/$",
       "has": [
         {
           "type": "host",
           "value": "multimedia.outletmall.space"
         }
       ],
-      "destination": "/units/brobots-multimedia/"
+      "dest": "/units/brobots-multimedia/index.html"
     },
     {
-      "source": "/",
+      "src": "^/$",
       "has": [
         {
           "type": "host",
           "value": "thornytoad.outletmall.space"
         }
       ],
-      "destination": "/units/thorny-toad/"
+      "dest": "/units/thorny-toad/index.html"
     },
     {
-      "source": "/",
+      "src": "^/$",
       "has": [
         {
           "type": "host",
           "value": "lavaguava.outletmall.space"
         }
       ],
-      "destination": "/units/lava-guava/"
+      "dest": "/units/lava-guava/index.html"
     },
     {
-      "source": "/",
+      "src": "^/$",
       "has": [
         {
           "type": "host",
           "value": "petersrocks.outletmall.space"
         }
       ],
-      "destination": "/units/peter-herres/"
+      "dest": "/units/peter-herres/index.html"
     },
     {
-      "source": "/",
+      "src": "^/$",
       "has": [
         {
           "type": "host",
           "value": "badhabitats.outletmall.space"
         }
       ],
-      "destination": "/units/comic-shop/"
+      "dest": "/units/comic-shop/index.html"
     },
     {
-      "source": "/",
+      "src": "^/$",
       "has": [
         {
           "type": "host",
           "value": "wetpets.outletmall.space"
         }
       ],
-      "destination": "/units/fish-store/"
+      "dest": "/units/fish-store/index.html"
     },
     {
-      "source": "/",
+      "src": "^/$",
       "has": [
         {
           "type": "host",
           "value": "shoestation.outletmall.space"
         }
       ],
-      "destination": "/units/shoe-store/"
+      "dest": "/units/shoe-store/index.html"
     },
     {
-      "source": "/",
+      "src": "^/$",
       "has": [
         {
           "type": "host",
           "value": "kudoken.outletmall.space"
         }
       ],
-      "destination": "/meadows/"
+      "dest": "/meadows/index.html"
     }
   ]
 }
