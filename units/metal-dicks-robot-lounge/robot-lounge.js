@@ -9,7 +9,6 @@
   var acts = Array.prototype.slice.call(document.querySelectorAll(".act"));
   var filters = Array.prototype.slice.call(document.querySelectorAll("[data-filter]"));
   var fuseLevel = 18;
-  var OPENING = Date.parse("2026-10-02T06:00:00Z"); // Oct 1 8pm HST
 
   function playAct(button) {
     if (!button || !player) return;
@@ -68,30 +67,6 @@
     var requestedAct = acts.find(function (act) { return act.getAttribute("data-video") === requested; });
     if (requestedAct) playAct(requestedAct);
   } catch (e) {}
-
-  function tickClock() {
-    var left = OPENING - Date.now();
-    var note = document.getElementById("cd-note");
-    if (left <= 0) {
-      ["cd-d","cd-h","cd-m","cd-s"].forEach(function (id) {
-        var el = document.getElementById(id);
-        if (el) el.textContent = "0";
-      });
-      if (note) note.textContent = "Doors are open. Tank is on the mic. Sit down, meatbag.";
-      return;
-    }
-    var s = Math.floor(left / 1000);
-    var d = Math.floor(s / 86400); s -= d * 86400;
-    var h = Math.floor(s / 3600); s -= h * 3600;
-    var m = Math.floor(s / 60); s -= m * 60;
-    var map = { "cd-d": d, "cd-h": h, "cd-m": m, "cd-s": s };
-    Object.keys(map).forEach(function (id) {
-      var el = document.getElementById(id);
-      if (el) el.textContent = String(map[id]);
-    });
-  }
-  tickClock();
-  setInterval(tickClock, 1000);
 
   var heckle = document.getElementById("heckle");
   var fill = document.getElementById("fuse-fill");

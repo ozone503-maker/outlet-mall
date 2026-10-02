@@ -44,11 +44,6 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 .marquee__bill em{font-style:normal;color:#ff6b63}
 .marquee__bulbs{height:7px;margin:17px auto 0;max-width:980px;background:repeating-linear-gradient(90deg,var(--amber) 0 7px,transparent 7px 28px);filter:drop-shadow(0 0 7px #ff9b35)}
 
-.countdown{max-width:1260px;margin:0 auto 22px;padding:18px 20px;border:1px solid #453625;background:#120f0ccc;text-align:center}
-.countdown__grid{display:flex;justify-content:center;gap:clamp(12px,4vw,36px);margin:10px 0 8px}
-.countdown__grid b{display:block;font-size:clamp(1.8rem,5vw,3.2rem);font-family:Impact,sans-serif;color:#fff0cb;line-height:1}
-.countdown__grid span{display:block;text-transform:uppercase;letter-spacing:.16em;font-size:.62rem;color:var(--muted)}
-.countdown__note{margin:0;color:var(--muted);font-size:.85rem}
 
 .stage-wrap{position:relative;max-width:1260px;margin:0 auto;padding:clamp(48px,7vw,84px) clamp(28px,7vw,104px) 0;background:linear-gradient(180deg,#1f1914,#0c0b09);border:2px solid #6d5633;border-bottom:0;box-shadow:0 25px 80px #000,0 0 50px rgba(210,37,31,.14)}
 .stage-screen{position:relative;z-index:3;aspect-ratio:16/9;background:#000;border:10px solid #130e0b;box-shadow:0 0 0 2px #73552b,0 0 50px rgba(210,37,31,.25);overflow:hidden}
