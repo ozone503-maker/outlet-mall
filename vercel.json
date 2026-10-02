@@ -10,6 +10,136 @@
         }
       ],
       "destination": "/units/metal-dicks-robot-lounge/"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "fruitypuppy.outletmall.space"
+        }
+      ],
+      "destination": "/units/fruity-puppy-skincare/"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "skincare.outletmall.space"
+        }
+      ],
+      "destination": "/units/fruity-puppy-skincare/"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "merch.outletmall.space"
+        }
+      ],
+      "destination": "/units/fruity-puppy-merch/"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "fpx.outletmall.space"
+        }
+      ],
+      "destination": "/units/fpx-boutique/"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "spacefactory.outletmall.space"
+        }
+      ],
+      "destination": "/units/brobots-retail/"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "multimedia.outletmall.space"
+        }
+      ],
+      "destination": "/units/brobots-multimedia/"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "thornytoad.outletmall.space"
+        }
+      ],
+      "destination": "/units/thorny-toad/"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "lavaguava.outletmall.space"
+        }
+      ],
+      "destination": "/units/lava-guava/"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "petersrocks.outletmall.space"
+        }
+      ],
+      "destination": "/units/peter-herres/"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "badhabitats.outletmall.space"
+        }
+      ],
+      "destination": "/units/comic-shop/"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "wetpets.outletmall.space"
+        }
+      ],
+      "destination": "/units/fish-store/"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "shoestation.outletmall.space"
+        }
+      ],
+      "destination": "/units/shoe-store/"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "kudoken.outletmall.space"
+        }
+      ],
+      "destination": "/meadows/"
     }
   ]
 }

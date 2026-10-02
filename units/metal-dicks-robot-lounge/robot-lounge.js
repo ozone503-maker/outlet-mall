@@ -1,5 +1,6 @@
 (function () {
   "use strict";
+  var UNIT_ID = "metal-dicks-robot-lounge";
   var player = document.getElementById("stage-player");
   var title = document.getElementById("act-title");
   var artist = document.getElementById("act-artist");

@@ -11,7 +11,7 @@ Display/lookbook only.
 - `assets/`: 4 images (copies, originals untouched)
 
 ## Art sources
-- `storefront.png`: copy of `/assets/shoe-store.png` (hallway card art)
+- `storefront.png`: copy of `/assets/shoe-store.jpg` (hallway card art)
 - `hero.jpg`: copy of `/assets/desk-attendant.jpg` (Ipo being fitted, Erv in
   flip-flops refusing to remove them; captioned as the fitting scene)
 - `floor.jpg`: copy of `/assets/hero-floor.jpg` (captioned as the shop floor;

@@ -11,7 +11,7 @@ only outbound path is fruitypuppy.com.
 - `assets/`: 6 images (copies, originals untouched)
 
 ## Art sources
-- `storefront.png`: copy of `/assets/seven-eleven.png` (hallway card art)
+- `storefront.png`: copy of `/assets/seven-eleven.jpg` (hallway card art)
 - `hero.jpg`: copy of `/assets/counter.jpg` (in-universe attendant art; the cap
   and menu boards already say Fruity Puppy, captioned as the counter)
 - `flavor-lilikoi.jpg` (`b2-176`), `flavor-lilikoi-halves.jpg` (`b2-066`),

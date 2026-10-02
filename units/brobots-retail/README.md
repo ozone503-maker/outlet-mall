@@ -10,7 +10,7 @@ transaction path is the outbound link to the real site.
 - `assets/`: 6 images (copies, originals untouched)
 
 ## Art sources
-- `storefront.png`: copy of `/assets/brobots-retail.png` (hallway card art)
+- `storefront.png`: copy of `/assets/brobots-retail.jpg` (hallway card art)
 - `hero.jpg`, `roster-stage.jpg`, `roster-street.jpg`: ShockBot stills from
   `~/workspace/user/files/` (canon: black mustache, Hawaiian shirt,
   leopard-print hat, sunglasses, headphones, turquoise necklace, vintage mic;
