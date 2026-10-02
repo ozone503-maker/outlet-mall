@@ -132,5 +132,3 @@ body.is-blown{animation:blow .35s linear 3}
 @media(max-width:620px){.club-head__mall{max-width:42vw}.room{padding-left:8px;padding-right:8px}.stage-wrap{padding-left:27px;padding-right:27px}.speaker{display:none}.stage-screen{border-width:5px}.stage-lip{padding:11px 17px}.stage-lip div{display:block}.stage-lip span{display:block}.stage-lip p{font-size:.64rem}.act-grid{grid-template-columns:1fr}.tables{height:48px}.tables i:nth-child(even){display:none}.house__portrait{min-height:280px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
 
-.house-sound{position:static;display:inline-block;margin-left:10px;vertical-align:middle;z-index:2;border:1px solid #6d5633;background:#120f0ce6;color:#ffd7a0;padding:6px 10px;text-transform:uppercase;letter-spacing:.14em;font-size:.62rem;font-weight:800;cursor:pointer}
-.house-sound.is-on{background:#d2251f;border-color:#d2251f;color:#fff}
