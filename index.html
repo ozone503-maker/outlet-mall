@@ -24,6 +24,14 @@ body{margin:0;background:#0B0A08;color:#EFEAE0;
 .storefront__text h2{margin:0;font-size:clamp(1.2rem,3vw,2rem);font-weight:600;line-height:1.1}
 .storefront__text p{margin:.6em 0 0;font-size:.95rem;color:#9A9184;line-height:1.5}
 .storefront.under-construction .storefront__door{background:#0F0D0A;color:#5A5248;font-size:1.2rem}
+.exits{margin:0 auto clamp(40px,8vh,80px);max-width:1100px;text-align:center}
+.exits__label{margin:0 0 14px;font-size:.6rem;letter-spacing:.32em;text-transform:uppercase;color:#8C826C}
+.exits__list{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.exits__list a,.exits__list span{display:inline-flex;align-items:baseline;gap:.5em;padding:.6em 1em;border:1px solid #2A251D;border-radius:2px;background:#0F0D0A;color:#EFEAE0;font-size:.85rem;text-decoration:none;transition:background 180ms cubic-bezier(.22,1,.36,1),border-color 180ms}
+.exits__list a:hover,.exits__list a:focus-visible{background:#16130E;border-color:#4A4233}
+.exits__list a::after{content:"\2197";color:#8C826C;font-size:.8em}
+.exits__list span{color:#6E665A;border-style:dashed}
+.exits__list small{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#5A5248}
 @media (max-width:680px){
   .storefront{grid-template-columns:1fr;gap:16px}
   .storefront:nth-child(even) .storefront__text{order:unset}
@@ -38,6 +46,16 @@ body{margin:0;background:#0B0A08;color:#EFEAE0;
       <p>Enter through any door</p>
       <h1>Fruity Puppy Outlet Mall</h1>
     </div>
+    <nav class="exits" aria-label="Exits to our other stores">
+      <p class="exits__label">Exits</p>
+      <ul class="exits__list">
+        <li><a href="https://brobots.space" target="_blank" rel="noopener">BroBots Space Factory</a></li>
+        <li><a href="https://shop.fruitypuppy.com" target="_blank" rel="noopener">Fruity Puppy Shop</a></li>
+        <li><a href="https://fruitypuppy.com" target="_blank" rel="noopener">FruityPuppy.com</a></li>
+        <li><span>Plant store <small>Coming soon</small></span></li>
+        <li><span>Kudoken <small>Coming soon</small></span></li>
+      </ul>
+    </nav>
     <div class="storefronts" aria-live="polite"></div>
     <noscript><p>The Outlet Mall directory needs JavaScript enabled.</p></noscript>
   </div>

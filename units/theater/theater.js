@@ -1,5 +1,5 @@
 /* The Theater - Skin Science house.
- Screen is the channel uploads playlist. Showtimes wall is optional (/api/marquee).
+ Screen is the channel uploads playlist. Showtimes wall reads units/theater/marquee.json (static snapshot of the uploads feed).
 */
 (function () {
  "use strict";
@@ -79,7 +79,7 @@
  wall.hidden = false;
  }
 
- fetch("/api/marquee", { cache: "no-store" })
+ fetch("/units/theater/marquee.json", { cache: "no-cache" })
  .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
  .then(function (data) {
  if (data && data.videos && data.videos.length) render(data.videos);

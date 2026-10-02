@@ -12,7 +12,7 @@ path is fruitypuppy.com.
 - `assets/`: 6 images + 1 short video (copies, originals untouched)
 
 ## Art sources
-- `storefront.png`: copy of `/assets/dairy-queen.png` (hallway card art)
+- `storefront.png`: copy of `/assets/dairy-queen.jpg` (hallway card art)
 - `hero.jpg`: copy of `/assets/softserve-poster.jpg` (in-universe soft serve
   crew art; the uniform already says Fruity Puppy)
 - `loop.mp4`: copy of `/assets/softserve.mp4` (94KB ambient pour loop, plays
