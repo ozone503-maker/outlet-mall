@@ -1,4 +1,4 @@
-// Fruity Puppy Outlet Mall — data-driven hallway + navigation
+// Fruity Puppy Outlet Mall: data-driven hallway + navigation
 (() => {
   const STORE_DATA_URL = '/data/stores.json';
 

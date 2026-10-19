@@ -137,3 +137,19 @@ Approximate sizes (healthy): gold units ~0.5–1.6MB; arcade ~5MB; Peter’s Roc
 ## Peter’s Rocks fit check
 
 **Fits the system.** Unit 15 (`units/peter-herres/`): registered in `stores.json`, root `/mall.css` + `/mall.js` + `/hallway.js` + `mallNav` prev/next, image-first stall beats, outbound Field Guide (no fake cart), external assets only. Custom shot names (`canopy`, `table`, `register`) are fine — story > rigid filenames. Keep compressing large stills/video when iterating; don’t reintroduce brochure-only or base64 patterns.
+
+---
+
+## Prerendered hallway
+
+The homepage directory is written into `index.html` as plain HTML so readers without JavaScript, crawlers, and link previews see every door. `hallway.js` still fetches `data/stores.json` and replaces the container contents, so the two stay identical.
+
+After editing `data/stores.json`, run:
+
+```
+node scripts/prerender-directory.mjs
+```
+
+and commit the updated `index.html` with it. The script only rewrites what sits between the `prerender:storefronts` marker comments. Update the door count in the homepage meta description if it changed.
+
+No `buildCommand` in `vercel.json` on purpose: the site deploys as static files and the host routes there are left alone.
