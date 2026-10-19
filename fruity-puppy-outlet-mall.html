@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fruity Puppy Outlet Mall</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f5efe6;
+      --tile: #ffffff;
+      --ink: #1a1410;
+      --muted: #6b5c4f;
+      --accent: #e85d4c;
+      --pink: #f4a5c0;
+      --shadow: 0 14px 44px rgba(28, 20, 16, 0.11);
+      --shadow-hover: 0 22px 55px rgba(28, 20, 16, 0.16);
+      --radius: 20px;
+      --gap: 16px;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Space Grotesk", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      min-height: 100vh;
+      line-height: 1.45;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(90deg, rgba(0,0,0,0.018) 1px, transparent 1px),
+        linear-gradient(rgba(0,0,0,0.018) 1px, transparent 1px);
+      background-size: 52px 52px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* TOPBAR */
+    .topbar {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(245, 239, 230, 0.9);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(28,20,16,0.07);
+      padding: 11px 18px;
+    }
+    .topbar-inner {
+      max-width: 1440px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 14px; flex-wrap: wrap;
+    }
+    .logo {
+      font-family: "Instrument Serif", serif;
+      font-size: 1.28rem; font-weight: 400;
+      letter-spacing: -0.02em; color: var(--ink);
+      text-decoration: none; display: flex; align-items: baseline; gap: 6px;
+    }
+    .logo span { color: var(--accent); }
+    .exits { display: flex; gap: 7px; flex-wrap: wrap; align-items: center; }
+    .exit {
+      font-size: 0.76rem; font-weight: 500;
+      padding: 6px 12px; border-radius: 999px;
+      background: var(--tile); border: 1px solid rgba(28,20,16,0.09);
+      color: var(--ink); text-decoration: none; transition: all 0.15s ease;
+    }
+    .exit:hover { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+    .exit.soon { opacity: 0.42; pointer-events: none; }
+    .view-toggle {
+      display: flex; background: rgba(28,20,16,0.06);
+      border-radius: 999px; padding: 3px; margin-left: 6px;
+    }
+    .view-btn {
+      font-family: inherit; font-size: 0.74rem; font-weight: 600;
+      padding: 5px 12px; border: none; border-radius: 999px;
+      background: transparent; color: var(--muted); cursor: pointer; transition: all 0.15s;
+    }
+    .view-btn.active {
+      background: var(--tile); color: var(--ink);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+
+    /* HERO */
+    .hero {
+      position: relative; z-index: 1;
+      max-width: 1440px; margin: 0 auto;
+      padding: 44px 20px 28px; text-align: center;
+    }
+    .hero-kicker {
+      font-size: 0.78rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 10px;
+    }
+    .hero h1 {
+      font-family: "Instrument Serif", serif;
+      font-size: clamp(2.5rem, 6.5vw, 4.4rem);
+      font-weight: 400; letter-spacing: -0.03em; line-height: 1.02; margin-bottom: 12px;
+    }
+    .hero p {
+      font-size: 1.05rem; color: var(--muted);
+      max-width: 440px; margin: 0 auto 26px;
+    }
+    .hero-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+    .directory-toggle, .map-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 11px 20px; border-radius: 999px;
+      font-family: inherit; font-size: 0.9rem; font-weight: 600;
+      cursor: pointer; transition: transform 0.15s ease, background 0.15s; border: none;
+    }
+    .directory-toggle { background: var(--ink); color: var(--bg); }
+    .directory-toggle:hover { transform: translateY(-1px); background: #2a211c; }
+    .map-cta {
+      background: var(--tile); color: var(--ink);
+      border: 1px solid rgba(28,20,16,0.12);
+    }
+    .map-cta:hover { background: #faf7f2; }
+
+    /* DIRECTORY */
+    .directory {
+      position: fixed; inset: 0; z-index: 100;
+      background: rgba(26,20,16,0.52); backdrop-filter: blur(7px);
+      display: grid; place-items: center;
+      opacity: 0; pointer-events: none; transition: opacity 0.25s ease;
+    }
+    .directory.open { opacity: 1; pointer-events: auto; }
+    .directory-panel {
+      background: var(--bg); width: min(940px, 93vw); max-height: 84vh;
+      border-radius: 26px; padding: 28px; box-shadow: var(--shadow);
+      overflow-y: auto; transform: translateY(18px) scale(0.98);
+      transition: transform 0.28s var(--ease);
+    }
+    .directory.open .directory-panel { transform: translateY(0) scale(1); }
+    .directory-header {
+      display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px;
+    }
+    .directory-header h2 {
+      font-family: "Instrument Serif", serif; font-size: 1.65rem; font-weight: 400;
+    }
+    .close-dir {
+      width: 38px; height: 38px; border-radius: 50%;
+      border: 1px solid rgba(28,20,16,0.12); background: var(--tile);
+      font-size: 1.25rem; cursor: pointer; display: grid; place-items: center;
+    }
+    .close-dir:hover { background: #f0ebe3; }
+    .dir-search {
+      width: 100%; padding: 11px 16px; border-radius: 12px;
+      border: 1px solid rgba(28,20,16,0.1); background: var(--tile);
+      font-family: inherit; font-size: 0.95rem; margin-bottom: 16px; outline: none;
+    }
+    .dir-search:focus { border-color: var(--accent); }
+    .dir-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(195px, 1fr)); gap: 9px;
+    }
+    .dir-item {
+      display: block; padding: 13px 15px; background: var(--tile);
+      border: 1px solid rgba(28,20,16,0.07); border-radius: 13px;
+      text-decoration: none; color: var(--ink); font-weight: 500; font-size: 0.9rem;
+      transition: all 0.15s ease;
+    }
+    .dir-item:hover {
+      border-color: var(--accent); background: #fff7f4; transform: translateY(-2px);
+    }
+    .dir-item small {
+      display: block; font-weight: 400; font-size: 0.73rem; color: var(--muted); margin-top: 2px;
+    }
+    .dir-item.hidden { display: none; }
+
+    /* MALL */
+    .mall {
+      position: relative; z-index: 1;
+      max-width: 1440px; margin: 0 auto; padding: 0 18px 90px;
+    }
+    .floor-label {
+      font-size: 0.73rem; letter-spacing: 0.17em; text-transform: uppercase;
+      color: var(--muted); margin: 34px 0 13px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .floor-label::after {
+      content: ""; flex: 1; height: 1px; background: rgba(28,20,16,0.09);
+    }
+    .store-grid {
+      display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--gap);
+    }
+
+    /* MAP */
+    .mall.map-mode .store-grid,
+    .mall.map-mode .floor-label { display: none; }
+    .map-board {
+      display: none; background: var(--tile); border-radius: 24px;
+      border: 1px solid rgba(28,20,16,0.08); box-shadow: var(--shadow);
+      padding: 28px; margin-top: 12px; min-height: 520px;
+    }
+    .mall.map-mode .map-board { display: block; }
+    .map-title { font-family: "Instrument Serif", serif; font-size: 1.4rem; margin-bottom: 6px; }
+    .map-sub { font-size: 0.85rem; color: var(--muted); margin-bottom: 22px; }
+    .map-canvas {
+      position: relative; width: 100%; aspect-ratio: 16 / 9;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px),
+        linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px);
+      background-size: 40px 40px; border-radius: 16px;
+      border: 1px dashed rgba(28,20,16,0.12); overflow: hidden;
+    }
+    .map-pin {
+      position: absolute; transform: translate(-50%, -50%);
+      cursor: pointer; transition: transform 0.18s var(--ease); z-index: 2;
+    }
+    .map-pin:hover { transform: translate(-50%, -50%) scale(1.12); z-index: 5; }
+    .map-pin .pin-dot {
+      width: 14px; height: 14px; border-radius: 50%;
+      background: var(--accent); border: 2px solid #fff;
+      box-shadow: 0 2px 8px rgba(232,93,76,0.4); margin: 0 auto 4px;
+    }
+    .map-pin .pin-label {
+      background: var(--ink); color: #fff; font-size: 0.68rem; font-weight: 600;
+      padding: 4px 8px; border-radius: 6px; white-space: nowrap;
+      opacity: 0; transform: translateY(4px); transition: all 0.15s; pointer-events: none;
+    }
+    .map-pin:hover .pin-label { opacity: 1; transform: translateY(0); }
+    .map-corridor {
+      position: absolute; background: rgba(28,20,16,0.04); border-radius: 8px;
+    }
+
+    /* STORE CARDS */
+    .store {
+      background: var(--tile); border-radius: var(--radius); overflow: hidden;
+      box-shadow: var(--shadow); border: 1px solid rgba(28,20,16,0.055);
+      display: flex; flex-direction: column;
+      transition: transform 0.22s var(--ease), box-shadow 0.22s ease;
+      cursor: pointer; position: relative;
+    }
+    .store:hover {
+      transform: translateY(-7px) scale(1.012); box-shadow: var(--shadow-hover);
+    }
+    .store:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+    .store.span-3 { grid-column: span 3; }
+    .store.span-4 { grid-column: span 4; }
+    .store.span-5 { grid-column: span 5; }
+    .store.span-6 { grid-column: span 6; }
+    .store.span-7 { grid-column: span 7; }
+    .store.span-8 { grid-column: span 8; }
+    @media (max-width: 980px) {
+      .store.span-3, .store.span-4, .store.span-5,
+      .store.span-6, .store.span-7, .store.span-8 { grid-column: span 12; }
+    }
+    .store-visual {
+      aspect-ratio: 16 / 10; position: relative; overflow: hidden; background: #ddd;
+    }
+    .store-visual img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform 0.45s var(--ease);
+    }
+    .store:hover .store-visual img { transform: scale(1.05); }
+    .store-badge {
+      position: absolute; top: 12px; left: 12px;
+      background: rgba(255,255,255,0.93); backdrop-filter: blur(8px);
+      font-size: 0.66rem; font-weight: 700; letter-spacing: 0.07em;
+      text-transform: uppercase; padding: 5px 10px; border-radius: 999px;
+      color: var(--ink); z-index: 2;
+    }
+    .store-body {
+      padding: 16px 18px 18px; flex: 1; display: flex; flex-direction: column;
+    }
+    .store-body h3 {
+      font-size: 1.12rem; font-weight: 600; margin-bottom: 5px; letter-spacing: -0.015em;
+    }
+    .store-body p { font-size: 0.88rem; color: var(--muted); flex: 1; }
+    .enter {
+      margin-top: 12px; font-size: 0.8rem; font-weight: 600; color: var(--accent);
+      display: inline-flex; align-items: center; gap: 5px;
+    }
+    .enter::after { content: "→"; transition: transform 0.15s ease; }
+    .store:hover .enter::after { transform: translateX(3px); }
+
+    /* DRAWER */
+    .drawer-backdrop {
+      position: fixed; inset: 0; background: rgba(26,20,16,0.42);
+      z-index: 80; opacity: 0; pointer-events: none; transition: opacity 0.25s ease;
+    }
+    .drawer-backdrop.open { opacity: 1; pointer-events: auto; }
+    .drawer {
+      position: fixed; top: 0; right: 0; width: min(460px, 100vw); height: 100%;
+      background: var(--bg); z-index: 90;
+      box-shadow: -24px 0 70px rgba(0,0,0,0.14);
+      transform: translateX(105%); transition: transform 0.32s var(--ease);
+      display: flex; flex-direction: column;
+    }
+    .drawer.open { transform: translateX(0); }
+    .drawer-header { padding: 22px 22px 0; display: flex; justify-content: flex-end; }
+    .drawer-close {
+      width: 40px; height: 40px; border-radius: 50%;
+      border: 1px solid rgba(28,20,16,0.1); background: var(--tile);
+      font-size: 1.3rem; cursor: pointer; display: grid; place-items: center;
+    }
+    .drawer-close:hover { background: #f0ebe3; }
+    .drawer-visual {
+      margin: 12px 22px 0; border-radius: 18px; aspect-ratio: 16/10; overflow: hidden;
+      background: #ddd;
+    }
+    .drawer-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .drawer-content { padding: 22px; overflow-y: auto; flex: 1; }
+    .drawer-content .tag {
+      display: inline-block; font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.09em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px;
+    }
+    .drawer-content h2 {
+      font-family: "Instrument Serif", serif; font-size: 1.95rem;
+      font-weight: 400; margin-bottom: 10px; line-height: 1.15;
+    }
+    .drawer-content p { color: var(--muted); font-size: 1rem; margin-bottom: 18px; }
+    .drawer-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
+    .btn {
+      padding: 12px 20px; border-radius: 999px; font-family: inherit;
+      font-size: 0.9rem; font-weight: 600; border: none; cursor: pointer; transition: all 0.15s;
+    }
+    .btn-primary { background: var(--ink); color: var(--bg); }
+    .btn-primary:hover { background: #2a211c; }
+    .btn-ghost {
+      background: transparent; border: 1px solid rgba(28,20,16,0.13); color: var(--ink);
+    }
+    .btn-ghost:hover { background: rgba(28,20,16,0.04); }
+
+    /* INTERACTION BLOCKS */
+    .interact {
+      margin: 16px 0 8px; padding: 16px; border-radius: 14px;
+      background: rgba(28,20,16,0.04); border: 1px solid rgba(28,20,16,0.06);
+    }
+    .interact.dark {
+      background: #12122a; color: #e0e0ff; border-color: transparent;
+    }
+    .interact .label {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; opacity: 0.7; margin-bottom: 6px;
+    }
+    .interact .big {
+      font-size: 1.8rem; font-weight: 700; font-variant-numeric: tabular-nums; margin: 4px 0 10px;
+    }
+    .interact button, .interact .chip {
+      padding: 8px 14px; border-radius: 999px; border: none;
+      font-family: inherit; font-size: 0.82rem; font-weight: 600;
+      cursor: pointer; transition: all 0.15s;
+    }
+    .interact button {
+      background: var(--accent); color: #fff;
+    }
+    .interact button:hover { filter: brightness(1.08); }
+    .interact.dark button { background: var(--accent); }
+    .chip-row { display: flex; flex-wrap: wrap; gap: 6px; }
+    .chip {
+      background: rgba(255,255,255,0.12); color: inherit;
+      border: 1px solid rgba(255,255,255,0.15) !important;
+    }
+    .chip.active {
+      background: var(--accent) !important; border-color: var(--accent) !important; color: #fff;
+    }
+    .interact:not(.dark) .chip {
+      background: rgba(28,20,16,0.06); color: var(--ink);
+      border: 1px solid rgba(28,20,16,0.08) !important;
+    }
+    .interact:not(.dark) .chip.active {
+      background: var(--ink) !important; color: var(--bg) !important;
+    }
+
+    .footer {
+      text-align: center; padding: 36px 20px 56px;
+      color: var(--muted); font-size: 0.84rem; position: relative; z-index: 1;
+    }
+    .footer a { color: var(--ink); text-decoration: none; }
+    .footer a:hover { text-decoration: underline; }
+
+    @media (min-width: 900px) {
+      .trail {
+        position: fixed; width: 7px; height: 7px; border-radius: 50%;
+        background: var(--pink); pointer-events: none; z-index: 999;
+        opacity: 0; mix-blend-mode: multiply;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="#" class="logo">Fruity Puppy <span>Outlet Mall</span></a>
+      <nav class="exits" aria-label="Exits and views">
+        <a class="exit" href="https://shop.fruitypuppy.com" target="_blank" rel="noopener">Shop</a>
+        <a class="exit" href="https://fruitypuppy.com" target="_blank" rel="noopener">FruityPuppy.com</a>
+        <a class="exit" href="#">BroBots</a>
+        <a class="exit" href="#">Town Map</a>
+        <a class="exit soon" href="#">Kudoken</a>
+        <div class="view-toggle" role="group" aria-label="View mode">
+          <button class="view-btn active" data-view="grid" type="button">Floor</button>
+          <button class="view-btn" data-view="map" type="button">Map</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <p class="hero-kicker">Enter through any door</p>
+    <h1>Fruity Puppy<br>Outlet Mall</h1>
+    <p>A living directory of stores, side projects, and strange rooms that all somehow belong together.</p>
+    <div class="hero-actions">
+      <button class="directory-toggle" id="openDir" type="button">Open Directory</button>
+      <button class="map-cta" id="goMap" type="button">View Map</button>
+    </div>
+  </section>
+
+  <div class="directory" id="directory" role="dialog" aria-modal="true" aria-labelledby="dirTitle">
+    <div class="directory-panel">
+      <div class="directory-header">
+        <h2 id="dirTitle">Mall Directory</h2>
+        <button class="close-dir" id="closeDir" aria-label="Close directory">×</button>
+      </div>
+      <input class="dir-search" id="dirSearch" type="search" placeholder="Search stores…" autocomplete="off" />
+      <div class="dir-grid" id="dirGrid"></div>
+    </div>
+  </div>
+
+  <main class="mall" id="mall">
+    <div class="map-board" id="mapBoard">
+      <div class="map-title">Mall Map</div>
+      <p class="map-sub">Click any pin to enter the store.</p>
+      <div class="map-canvas" id="mapCanvas"></div>
+    </div>
+  </main>
+
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-header">
+      <button class="drawer-close" id="closeDrawer" aria-label="Close">×</button>
+    </div>
+    <div class="drawer-visual" id="drawerVisual"></div>
+    <div class="drawer-content">
+      <div class="tag" id="drawerTag"></div>
+      <h2 id="drawerTitle"></h2>
+      <p id="drawerDesc"></p>
+      <div id="drawerExtra"></div>
+      <div class="drawer-actions">
+        <button class="btn btn-primary" id="drawerPrimary">Enter store</button>
+        <button class="btn btn-ghost" id="drawerSecondary">Back to floor</button>
+      </div>
+    </div>
+  </aside>
+
+  <footer class="footer">
+    <p>Some rooms play video and keep score with JavaScript. The doors work without it.</p>
+    <p style="margin-top:8px">FlashTown · Hawaiʻi · <a href="https://fruitypuppy.com">fruitypuppy.com</a></p>
+  </footer>
+
+  <script>
+    const IMG = "https://outletmall.space/assets/";
+
+    const stores = [
+      { id: "arcade", name: "The Arcade", floor: "Level 1 · Fun", desc: "Nine machines, a claw full of skin cream, and one cabinet you can hear.", badge: "Play", img: IMG + "arcade.jpg", span: 6, map: {x: 18, y: 28}, interact: "arcade" },
+      { id: "skincare", name: "Fruity Puppy Skincare", floor: "Level 1 · Core", desc: "Handmade biological skin cream, cold-extracted and refrigerated.", badge: "Flagship", img: IMG + "fruity-puppy-skincare.jpg", span: 6, map: {x: 42, y: 22}, interact: "skincare" },
+      { id: "pets", name: "Wet Pets", floor: "Level 1 · Fun", desc: "Freshwater, saltwater, and a back tunnel that stays dark all day.", badge: "Live", img: IMG + "fish-store.jpg", span: 4, map: {x: 68, y: 30}, interact: "pets" },
+      { id: "burger", name: "Burger Shack", floor: "Level 1 · Food", desc: "Food court. One guy behind the counter is trying to leave.", badge: "Eat", img: IMG + "burger-shack.jpg", span: 4, map: {x: 28, y: 55} },
+      { id: "rack", name: "The Rack", floor: "Level 1 · Style", desc: "Four racks, no order to any of it. Six fitting rooms, five that latch.", badge: "Clothes", img: IMG + "fitting-room.jpg", span: 4, map: {x: 55, y: 52} },
+      { id: "italian", name: "Italian Restaurant", floor: "Level 2 · Food", desc: "Sconces, wine racks, and a back table set every night.", badge: "Dinner", img: IMG + "restaurant.jpg", span: 5, map: {x: 78, y: 48} },
+      { id: "comics", name: "Bad Habitats + Good Habits", floor: "Level 2 · Culture", desc: "Comics. We don't sell them, we point you at the free ones.", badge: "Read", img: IMG + "comic-shop.jpg", span: 3, map: {x: 15, y: 72} },
+      { id: "merch", name: "Fruity Puppy Merch", floor: "Level 2 · Core", desc: "Tees, hats, and everything else.", badge: "Wear", img: IMG + "fruity-puppy-merch.jpg", span: 4, map: {x: 38, y: 70} },
+      { id: "brobots", name: "BroBots Space Factory", floor: "Level 2 · Robots", desc: "Imagination builds better humans. Robots for a brighter tomorrow.", badge: "Build", img: IMG + "brobots-retail.jpg", span: 6, map: {x: 62, y: 75}, interact: "brobots" },
+      { id: "studio", name: "BroBots Multimedia Studios", floor: "Level 2 · Robots", desc: "Record, mix, master. Robots putting bass on the track.", badge: "Sound", img: IMG + "brobots-multimedia.jpg", span: 6, map: {x: 85, y: 70}, interact: "studio" },
+      { id: "lounge", name: "Metal Dick's Robot Lounge", floor: "Level 3 · Night", desc: "Robot comedy, rap, and live bands. No humans allowed.", badge: "After dark", img: IMG + "metal-dicks-robot-lounge.jpg", span: 4, map: {x: 22, y: 88} },
+      { id: "toner", name: "Thorny Toad Toner Warehouse", floor: "Level 3 · Core", desc: "Face Juice: Hawaiʻi small-batch botanical facial toner. Five plants, four principles.", badge: "Toner", img: IMG + "thorny-toad.jpg", span: 4, map: {x: 48, y: 85} },
+      { id: "balm", name: "LavaGuava Bomb Balm", floor: "Level 3 · Core", desc: "Lava meets guava. Heat meets fruit.", badge: "New", img: IMG + "lava-guava.jpg", span: 4, map: {x: 72, y: 88} },
+      { id: "fpx", name: "FPX Boutique", floor: "Level 3 · Core", desc: "Fruity Puppy Extended armor and exclusive gear.", badge: "Extra", img: IMG + "fpx-boutique.jpg", span: 5, map: {x: 90, y: 25} },
+      { id: "seven", name: "7-Eleven", floor: "Ground · Always", desc: "Open 24/7. Convenience meets Fruity Puppy.", badge: "24h", img: IMG + "seven-eleven.jpg", span: 3, map: {x: 10, y: 45} },
+      { id: "dq", name: "Dairy Queen", floor: "Ground · Treats", desc: "Frozen treats meet Fruity Puppy flavors.", badge: "Sweet", img: IMG + "dairy-queen.jpg", span: 4, map: {x: 90, y: 55} },
+      { id: "museum", name: "Museum", floor: "Upper · Culture", desc: "Natural history, dinosaurs, and discovery.", badge: "Look", img: IMG + "museum.jpg", span: 4, map: {x: 12, y: 15} },
+      { id: "theater", name: "Theater", floor: "Upper · Culture", desc: "Movies, snacks, and Fruity Puppy now playing.", badge: "Watch", img: IMG + "theater.jpg", span: 4, map: {x: 88, y: 12}, interact: "theater" },
+      { id: "shoes", name: "Shoe Station", floor: "Upper · Style", desc: "Good shoes, brighter days. Comfort, style, every step.", badge: "Walk", img: IMG + "shoe-store.jpg", span: 4, map: {x: 55, y: 12} },
+      { id: "rocks", name: "Peter's Rocks", floor: "Outside", desc: "Field stones, bolos, and a cardboard sign that says ask him.", badge: "Ask", img: IMG + "peter-herres.jpg", span: 4, map: {x: 8, y: 90} },
+      { id: "meadows", name: "Kudoken Meadows", floor: "Outside", desc: "Behind the mall. Open grounds, mostly unfinished.", badge: "Soon", img: IMG + "meadows.jpg", span: 8, map: {x: 50, y: 95} },
+    ];
+
+    // Persistent state across drawer opens
+    const state = {
+      arcadeScore: 0,
+      fridgeTemp: 4,
+      tankMode: "fresh",
+      robotMood: "idle",
+      nowPlaying: "Fruity Puppy Feature",
+      bassLevel: 3
+    };
+
+    const floors = {};
+    stores.forEach(s => {
+      if (!floors[s.floor]) floors[s.floor] = [];
+      floors[s.floor].push(s);
+    });
+
+    const mallEl = document.getElementById("mall");
+    const dirGrid = document.getElementById("dirGrid");
+    const mapCanvas = document.getElementById("mapCanvas");
+    const mapBoard = document.getElementById("mapBoard");
+
+    // Build floor grids
+    Object.entries(floors).forEach(([floorName, list]) => {
+      const label = document.createElement("div");
+      label.className = "floor-label";
+      label.textContent = floorName;
+      mallEl.insertBefore(label, mapBoard);
+
+      const grid = document.createElement("div");
+      grid.className = "store-grid";
+
+      list.forEach(store => {
+        const card = document.createElement("article");
+        card.className = `store span-${store.span}`;
+        card.dataset.id = store.id;
+        card.tabIndex = 0;
+        card.innerHTML = `
+          <div class="store-visual">
+            <span class="store-badge">${store.badge}</span>
+            <img src="${store.img}" alt="${store.name}" loading="lazy" />
+          </div>
+          <div class="store-body">
+            <h3>${store.name}</h3>
+            <p>${store.desc}</p>
+            <span class="enter">Enter</span>
+          </div>
+        `;
+        card.addEventListener("click", () => openDrawer(store));
+        card.addEventListener("keydown", e => {
+          if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openDrawer(store); }
+        });
+        grid.appendChild(card);
+      });
+      mallEl.insertBefore(grid, mapBoard);
+    });
+
+    // Directory
+    stores.forEach(store => {
+      const a = document.createElement("a");
+      a.className = "dir-item";
+      a.href = `#${store.id}`;
+      a.dataset.name = store.name.toLowerCase();
+      a.innerHTML = `${store.name}<small>${store.floor}</small>`;
+      a.addEventListener("click", e => {
+        e.preventDefault();
+        closeDirectory();
+        setView("grid");
+        openDrawer(store);
+        const card = document.querySelector(`[data-id="${store.id}"]`);
+        if (card) card.scrollIntoView({ behavior: "smooth", block: "center" });
+      });
+      dirGrid.appendChild(a);
+    });
+
+    document.getElementById("dirSearch").addEventListener("input", e => {
+      const q = e.target.value.toLowerCase().trim();
+      document.querySelectorAll(".dir-item").forEach(item => {
+        item.classList.toggle("hidden", q && !item.dataset.name.includes(q));
+      });
+    });
+
+    // Map
+    [{ left: "8%", top: "40%", width: "84%", height: "12%" },
+     { left: "40%", top: "12%", width: "12%", height: "76%" }].forEach(c => {
+      const el = document.createElement("div");
+      el.className = "map-corridor";
+      Object.assign(el.style, c);
+      mapCanvas.appendChild(el);
+    });
+    stores.forEach(store => {
+      const pin = document.createElement("div");
+      pin.className = "map-pin";
+      pin.style.left = store.map.x + "%";
+      pin.style.top = store.map.y + "%";
+      pin.innerHTML = `<div class="pin-dot"></div><div class="pin-label">${store.name}</div>`;
+      pin.addEventListener("click", () => openDrawer(store));
+      mapCanvas.appendChild(pin);
+    });
+
+    function setView(mode) {
+      const mall = document.getElementById("mall");
+      document.querySelectorAll(".view-btn").forEach(b => {
+        b.classList.toggle("active", b.dataset.view === mode);
+      });
+      mall.classList.toggle("map-mode", mode === "map");
+    }
+    document.querySelectorAll(".view-btn").forEach(btn => {
+      btn.addEventListener("click", () => setView(btn.dataset.view));
+    });
+    document.getElementById("goMap").addEventListener("click", () => {
+      setView("map");
+      mapBoard.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+    // Directory controls
+    const directory = document.getElementById("directory");
+    document.getElementById("openDir").addEventListener("click", () => {
+      directory.classList.add("open");
+      setTimeout(() => document.getElementById("dirSearch").focus(), 200);
+    });
+    document.getElementById("closeDir").addEventListener("click", closeDirectory);
+    directory.addEventListener("click", e => { if (e.target === directory) closeDirectory(); });
+    function closeDirectory() {
+      directory.classList.remove("open");
+      document.getElementById("dirSearch").value = "";
+      document.querySelectorAll(".dir-item").forEach(i => i.classList.remove("hidden"));
+    }
+
+    // Drawer + interactions
+    const drawer = document.getElementById("drawer");
+    const backdrop = document.getElementById("drawerBackdrop");
+
+    function buildInteract(store) {
+      if (!store.interact) return "";
+      if (store.interact === "arcade") {
+        return `
+          <div class="interact dark">
+            <div class="label">Cabinet Online</div>
+            <div class="big" id="arcadeScore">${state.arcadeScore}</div>
+            <button type="button" id="playArcade">Drop a coin</button>
+          </div>`;
+      }
+      if (store.interact === "skincare") {
+        return `
+          <div class="interact">
+            <div class="label">Fridge · °C</div>
+            <div class="big" id="fridgeTemp">${state.fridgeTemp}°</div>
+            <div class="chip-row">
+              <button type="button" class="chip" data-temp="2">Colder</button>
+              <button type="button" class="chip" data-temp="4">Ideal</button>
+              <button type="button" class="chip" data-temp="6">Warmer</button>
+            </div>
+          </div>`;
+      }
+      if (store.interact === "pets") {
+        return `
+          <div class="interact">
+            <div class="label">Tank Mode</div>
+            <div class="big" id="tankMode">${state.tankMode === "fresh" ? "Freshwater" : "Saltwater"}</div>
+            <div class="chip-row">
+              <button type="button" class="chip ${state.tankMode==="fresh"?"active":""}" data-tank="fresh">Fresh</button>
+              <button type="button" class="chip ${state.tankMode==="salt"?"active":""}" data-tank="salt">Salt</button>
+            </div>
+          </div>`;
+      }
+      if (store.interact === "brobots") {
+        return `
+          <div class="interact dark">
+            <div class="label">Robot Status</div>
+            <div class="big" id="robotMood">${state.robotMood}</div>
+            <div class="chip-row">
+              <button type="button" class="chip" data-mood="idle">Idle</button>
+              <button type="button" class="chip" data-mood="building">Building</button>
+              <button type="button" class="chip" data-mood="curious">Curious</button>
+            </div>
+          </div>`;
+      }
+      if (store.interact === "studio") {
+        return `
+          <div class="interact dark">
+            <div class="label">Bass Level</div>
+            <div class="big" id="bassLevel">${"▮".repeat(state.bassLevel)}${"▯".repeat(5-state.bassLevel)}</div>
+            <div class="chip-row">
+              <button type="button" class="chip" data-bass="-1">−</button>
+              <button type="button" class="chip" data-bass="1">+</button>
+            </div>
+          </div>`;
+      }
+      if (store.interact === "theater") {
+        return `
+          <div class="interact">
+            <div class="label">Now Playing</div>
+            <div class="big" style="font-size:1.15rem" id="nowPlaying">${state.nowPlaying}</div>
+            <div class="chip-row">
+              <button type="button" class="chip" data-film="Fruity Puppy Feature">Feature</button>
+              <button type="button" class="chip" data-film="FlashTown Shorts">Shorts</button>
+              <button type="button" class="chip" data-film="Robot Comedy Night">Comedy</button>
+            </div>
+          </div>`;
+      }
+      return "";
+    }
+
+    function wireInteract(store) {
+      if (store.interact === "arcade") {
+        const btn = document.getElementById("playArcade");
+        if (btn) btn.onclick = () => {
+          state.arcadeScore += Math.floor(Math.random() * 140) + 30;
+          document.getElementById("arcadeScore").textContent = state.arcadeScore;
+        };
+      }
+      if (store.interact === "skincare") {
+        document.querySelectorAll("[data-temp]").forEach(b => {
+          b.onclick = () => {
+            state.fridgeTemp = +b.dataset.temp;
+            document.getElementById("fridgeTemp").textContent = state.fridgeTemp + "°";
+          };
+        });
+      }
+      if (store.interact === "pets") {
+        document.querySelectorAll("[data-tank]").forEach(b => {
+          b.onclick = () => {
+            state.tankMode = b.dataset.tank;
+            document.getElementById("tankMode").textContent = state.tankMode === "fresh" ? "Freshwater" : "Saltwater";
+            document.querySelectorAll("[data-tank]").forEach(c => c.classList.toggle("active", c.dataset.tank === state.tankMode));
+          };
+        });
+      }
+      if (store.interact === "brobots") {
+        document.querySelectorAll("[data-mood]").forEach(b => {
+          b.onclick = () => {
+            state.robotMood = b.dataset.mood;
+            document.getElementById("robotMood").textContent = state.robotMood;
+          };
+        });
+      }
+      if (store.interact === "studio") {
+        document.querySelectorAll("[data-bass]").forEach(b => {
+          b.onclick = () => {
+            state.bassLevel = Math.max(1, Math.min(5, state.bassLevel + (+b.dataset.bass)));
+            document.getElementById("bassLevel").textContent = "▮".repeat(state.bassLevel) + "▯".repeat(5 - state.bassLevel);
+          };
+        });
+      }
+      if (store.interact === "theater") {
+        document.querySelectorAll("[data-film]").forEach(b => {
+          b.onclick = () => {
+            state.nowPlaying = b.dataset.film;
+            document.getElementById("nowPlaying").textContent = state.nowPlaying;
+          };
+        });
+      }
+    }
+
+    function openDrawer(store) {
+      document.getElementById("drawerVisual").innerHTML = `<img src="${store.img}" alt="${store.name}" />`;
+      document.getElementById("drawerTag").textContent = store.floor + " · " + store.badge;
+      document.getElementById("drawerTitle").textContent = store.name;
+      document.getElementById("drawerDesc").textContent = store.desc;
+      document.getElementById("drawerExtra").innerHTML = buildInteract(store);
+      wireInteract(store);
+      drawer.classList.add("open");
+      backdrop.classList.add("open");
+      drawer.setAttribute("aria-hidden", "false");
+    }
+    function closeDrawer() {
+      drawer.classList.remove("open");
+      backdrop.classList.remove("open");
+      drawer.setAttribute("aria-hidden", "true");
+    }
+    document.getElementById("closeDrawer").addEventListener("click", closeDrawer);
+    document.getElementById("drawerSecondary").addEventListener("click", closeDrawer);
+    backdrop.addEventListener("click", closeDrawer);
+    document.getElementById("drawerPrimary").addEventListener("click", () => {
+      alert("This will eventually route to the real store experience / product page.");
+    });
+
+    document.addEventListener("keydown", e => {
+      if (e.key === "Escape") { closeDrawer(); closeDirectory(); }
+    });
+
+    // Soft trail
+    if (window.matchMedia("(min-width: 900px)").matches) {
+      const dots = [];
+      for (let i = 0; i < 5; i++) {
+        const d = document.createElement("div");
+        d.className = "trail";
+        document.body.appendChild(d);
+        dots.push({ el: d, x: 0, y: 0 });
+      }
+      let mx = 0, my = 0;
+      document.addEventListener("mousemove", e => {
+        mx = e.clientX; my = e.clientY;
+        dots.forEach(d => d.el.style.opacity = "0.45");
+      });
+      (function animate() {
+        let x = mx, y = my;
+        dots.forEach(d => {
+          d.x += (x - d.x) * 0.28;
+          d.y += (y - d.y) * 0.28;
+          d.el.style.transform = `translate(${d.x - 3.5}px, ${d.y - 3.5}px)`;
+          x = d.x; y = d.y;
+        });
+        requestAnimationFrame(animate);
+      })();
+    }
+  </script>
+</body>
+</html>
